@@ -5,10 +5,7 @@ class main {
 
         Map<String, Integer> monTerrain = Init.InitTypeTerrain();
 
-
         Hex caseActuelle = Init.GetTypeTerrain("0205", monTerrain);
-
-
 
     }
 }
