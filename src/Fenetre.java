@@ -19,9 +19,11 @@ public class Fenetre extends JFrame implements ActionListener {
     private JButton NW = new JButton("NW");
 
 
+
     Integer x= 5;
     Integer y= 5;
     private Panneau monPanneau = new Panneau(x,y);
+
 
 
     public Fenetre(){
@@ -60,13 +62,11 @@ public class Fenetre extends JFrame implements ActionListener {
         this.setVisible(true);
     }
 
-
     public void actionPerformed(ActionEvent arg8) {
         if(arg8.getSource() == N){
             monPanneau.x--;
             monPanneau.repaint();
         }
-
         if(arg8.getSource() == S){
             monPanneau.x++;
             monPanneau.repaint();
@@ -78,7 +78,6 @@ public class Fenetre extends JFrame implements ActionListener {
             }
             monPanneau.repaint();
         }
-
         if(arg8.getSource() == NE){
             monPanneau.y++;
             if(monPanneau.y % 2 != 0){
@@ -91,10 +90,8 @@ public class Fenetre extends JFrame implements ActionListener {
             if(monPanneau.y % 2 == 0){
                 monPanneau.x++;
             }
-
             monPanneau.repaint();
         }
-
         if(arg8.getSource() == NW){
             monPanneau.y--;
             if(monPanneau.y % 2 != 0){
@@ -102,6 +99,46 @@ public class Fenetre extends JFrame implements ActionListener {
             }
             monPanneau.repaint();
         }
+
+        boolean minY = monPanneau.y == 0;
+        boolean maxY = monPanneau.y == 19;
+        boolean minX = monPanneau.x == 0;
+        boolean maxX = monPanneau.x == 22;
+
+        if(minY){
+            NW.setEnabled(false);
+            SW.setEnabled(false);
+        } else {
+            NW.setEnabled(true);
+            SW.setEnabled(true);
+        }
+        if(maxY){
+            NE.setEnabled(false);
+            SE.setEnabled(false);
+        } else {
+            NE.setEnabled(true);
+            SE.setEnabled(true);
+        }
+        if (maxX){
+            S.setEnabled(false);
+            if(monPanneau.y % 2 == 0){
+                SW.setEnabled(false);
+                SE.setEnabled(false);
+            }
+        } else {
+            S.setEnabled(true);
+        }
+        if(minX){
+            N.setEnabled(false);
+            if(monPanneau.y % 2 == 0){
+                NW.setEnabled(false);
+                NE.setEnabled(false);
+            }
+        } else {
+            N.setEnabled(true);
+        }
+
     }
+
 
 }
