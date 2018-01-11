@@ -1,6 +1,5 @@
 import java.awt.*;
-import javax.swing.JPanel;
-
+import javax.swing.*;
 
 
 public class Panneau extends JPanel {
@@ -16,11 +15,13 @@ public class Panneau extends JPanel {
     int y;
 
     public void paint(Graphics arg0) {
-
-        Polygon p2 = getPolygon(0, 0, cote); // Crée un hexagone
-        Rectangle r = p2.getBounds(); // Récupère le plus petit rectangle // aux bord de la fenêtre dans lequel l'hexagone peut s'inscrire
+        ImagePanel monImage = new ImagePanel("map.jpg");
+        Polygon p2 = getPolygon(0, 0, cote);
+        Rectangle r = p2.getBounds();
         arg0.setColor(Color.black);
+
         super.paint(arg0);
+        monImage.paintComponent(arg0);
         Graphics2D g2d;
 
 
@@ -29,11 +30,10 @@ public class Panneau extends JPanel {
         g2d.translate(0,cote * (-30));
         BasicStroke epaisseur = new BasicStroke(1);// Permet de fixer l'épaisseur du trait dans la suite
         g2d.setStroke(epaisseur);
-        int i = 1;
         Polygon[][] Coord = new Polygon[23][20];
 
 
-        for(int l=1;l<20;l=l+2){// Remarquer le "+2" car la grille est constituée de 2 sous grilles (les lignes impaires sont décallées)
+        for(int l=1;l<20;l=l+2){
             for(int c=0;c<23;c++){
                 Polygon poly=getPolygon(c*r.width, (int)(l*cote*1.5),cote);
                 pol = poly;
@@ -46,7 +46,6 @@ public class Panneau extends JPanel {
                 }
                 g2d.setColor(Color.black);
                 Coord[c][19-l] = poly;
-                i++;
             }
         }
         for(int l=0;l<20;l=l+2){
@@ -62,7 +61,6 @@ public class Panneau extends JPanel {
                 g2d.setColor(Color.black);
                 pol = poly;
                 Coord[c][19-l]=poly;
-                i++;
             }
         }
         System.out.println();
@@ -83,14 +81,6 @@ public class Panneau extends JPanel {
 
         return hex;
     }
-
-     /* Polygon hex=new Polygon();
-        hex.addPoint(x,y+haut);// /
-        hex.addPoint(x+larg,y); // \
-        hex.addPoint(x+2*larg,y+haut);// |
-        hex.addPoint(x+2*larg,y+(int)(1.5*cote)); // /
-        hex.addPoint(x+larg,y+2*cote);// \
-        hex.addPoint(x,y+(int)(1.5*cote));// | */
 
 }
 
