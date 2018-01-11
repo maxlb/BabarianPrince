@@ -16,12 +16,14 @@ public class Panneau extends JPanel {
 
     public void paint(Graphics arg0) {
         ImagePanel monImage = new ImagePanel("map.jpg");
+
         Polygon p2 = getPolygon(0, 0, cote);
         Rectangle r = p2.getBounds();
         arg0.setColor(Color.black);
 
         super.paint(arg0);
         monImage.paintComponent(arg0);
+
         Graphics2D g2d;
 
 
