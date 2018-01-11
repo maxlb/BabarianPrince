@@ -2,11 +2,18 @@ import java.awt.*;
 import javax.swing.JPanel;
 
 
+
 public class Panneau extends JPanel {
 
+    public Panneau(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     final static int cote=24; // Ceci définit la taille du côté d'un polygone
-    int numero=0; // Retien le n° du polygone sur lequel est la souris
     Polygon pol;
+    int x;
+    int y;
 
     public void paint(Graphics arg0) {
 
@@ -23,33 +30,42 @@ public class Panneau extends JPanel {
         BasicStroke epaisseur = new BasicStroke(1);// Permet de fixer l'épaisseur du trait dans la suite
         g2d.setStroke(epaisseur);
         int i = 1;
+        Polygon[][] Coord = new Polygon[23][20];
 
-        for(int l=0;l<20;l=l+2){// Remarquer le "+2" car la grille est constituée de 2 sous grilles (les lignes impaires sont décallées)
+
+        for(int l=1;l<20;l=l+2){// Remarquer le "+2" car la grille est constituée de 2 sous grilles (les lignes impaires sont décallées)
             for(int c=0;c<23;c++){
                 Polygon poly=getPolygon(c*r.width, (int)(l*cote*1.5),cote);
-                numero=i;
-                pol=poly;
-                g2d.draw(poly);
-                i++;
-            }
-        }
-        for(int l=1;l<20;l=l+2){
-            for(int c=0;c<23;c++)
-            {
-                Polygon poly=getPolygon(c*r.width+r.width/2,  (int)(l*cote*1.5+0.5),cote);
-                numero= i;
-                System.out.println(numero);
-                if(numero == 289){
+                pol = poly;
+                System.out.println(19-l);
+                if(19-l == y && c == x) {
                     g2d.setColor(Color.red);
                     g2d.fill(poly);
                 }else {
                     g2d.draw(poly);
                 }
-                pol = poly;
-                g2d.setPaint(Color.black);
+                g2d.setColor(Color.black);
+                Coord[c][19-l] = poly;
                 i++;
             }
         }
+        for(int l=0;l<20;l=l+2){
+            for(int c=0;c<23;c++)
+            {
+                Polygon poly=getPolygon(c*r.width+r.width/2,  (int)(l*cote*1.5+0.5),cote);
+                if(19-l == y && c == x) {
+                    g2d.setColor(Color.red);
+                    g2d.fill(poly);
+                }else {
+                    g2d.draw(poly);
+                }
+                g2d.setColor(Color.black);
+                pol = poly;
+                Coord[c][19-l]=poly;
+                i++;
+            }
+        }
+        System.out.println();
     }
 
 

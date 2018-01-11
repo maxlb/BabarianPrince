@@ -1,4 +1,5 @@
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 public class Fenetre extends JFrame {
     public Fenetre(){
@@ -6,8 +7,6 @@ public class Fenetre extends JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setContentPane(new Panneau());
-
         this.setVisible(true);
     }
 }
