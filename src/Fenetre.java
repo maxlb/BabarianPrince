@@ -36,7 +36,7 @@ public class Fenetre extends JFrame implements ActionListener {
         monPanneau = new Panneau(x,y);
 
         this.setTitle("Prince des Barbares");
-        this.setSize(1000, 970);
+        this.setSize(1000, 990);
         this.setBackground(Color.GRAY);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,7 +81,7 @@ public class Fenetre extends JFrame implements ActionListener {
         commandes.add(Location);
         commandes.add(boutons);
 
-        monPanneau.setPreferredSize(new Dimension(720,920));
+        monPanneau.setPreferredSize(new Dimension(720,940));
 
         container.add(monPanneau,BorderLayout.WEST);
         container.add(commandes,BorderLayout.EAST);
@@ -123,7 +123,7 @@ public class Fenetre extends JFrame implements ActionListener {
             boolean minY = monPanneau.y <= 0;
             boolean maxY = monPanneau.y >= 19;
             boolean minX = monPanneau.x <= 0;
-            boolean maxX = monPanneau.x >= 21;
+            boolean maxX = monPanneau.x >= 22;
 
             if(minY){
                 NW.setEnabled(false);
@@ -139,9 +139,9 @@ public class Fenetre extends JFrame implements ActionListener {
                 NE.setEnabled(true);
                 SE.setEnabled(true);
             }
-            if (maxX && monPanneau.y % 2 != 0){
+            if (maxX && monPanneau.y % 2 == 0){
                 S.setEnabled(false);
-            } else if (monPanneau.x == 22 && monPanneau.y % 2 == 0) {
+            } else if (maxX && monPanneau.y % 2 != 0) {
                 S.setEnabled(false);
                 SW.setEnabled(false);
                 SE.setEnabled(false);
