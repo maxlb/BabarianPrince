@@ -9,7 +9,7 @@ class main {
         game myGame = new game();
 
         //Quelle case pour demarrer ?
-        happen tour1;
+        happen tour1 = new happen();
         Hex caseActuelle = tour1.e001(myGame);
 
         // JEU
@@ -21,8 +21,8 @@ class main {
             caseActuelle.Event(myGame, myPrince);
 
 
-                //où suis-je ? terrain ? monument ? route ?
-                //Hex caseActuelle = Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
+            //où suis-je ? terrain ? monument ? route ?
+            //Hex caseActuelle = Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
 
             //After all events (if any) are resolved for your daily action,
             // you must then eat your main (evening) meal, as described in the food rules (r215),
@@ -32,10 +32,11 @@ class main {
             //FOOD
             int foodneed;
             foodneed = myGame.FoodNeed(caseActuelle); //calcul du besoin de nourriture
-
+            
+            System.out.println("Vous êtes sur une case de type " + caseActuelle.type);
             System.out.println("Votre reserve actuelle de nourriture = " + myGame.getFood());
             System.out.println("Votre besoin quotidien de nourriture = " + foodneed);
-            System.out.println("Vous êtes sur une case de type " + caseActuelle.type);
+
 
 
             //FOOD-hunting

@@ -19,7 +19,7 @@ public class Hex {
     Integer type;       // typologie du terrain
     Integer monument;   // id du monument
 
-    String AbsOrd;              // id de la case
+    String AbsOrd;      // id de la case
 
 
     // Constructor
@@ -60,6 +60,8 @@ public class Hex {
                 default:break;
             }
         }
+
+        else System.out.println("Pas de rencontre aujourd'hui");
 
     }
 
