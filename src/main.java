@@ -6,7 +6,7 @@ class main {
 
         // Initialisation du jeu
         Prince myPrince = new Prince();
-        game myGame = new game();
+        game myGame = new game(myPrince);
 
         //Quelle case pour demarrer ?
         Hex caseActuelle = happen.e001(myGame);

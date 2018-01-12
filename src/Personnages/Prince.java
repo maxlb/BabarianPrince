@@ -1,5 +1,6 @@
 package Personnages;
 
+
 public class Prince extends SoloChar {
 
     public Prince(){
@@ -38,12 +39,11 @@ public class Prince extends SoloChar {
 
     //FEED
     public void Feed(){
-        /*if(this.combat < this.initcombat) {
-            this.combat++;
+        if(this.getCombat() < this.getInitcombat()) {
+            this.setCombat( this.getCombat() +1);
         }
-
-        if(this.loads<10)
-            this.loads ++;*/
+        if(this.getLoads()<10)
+            this.setLoads( this.getLoads() + 1);
     }
 
     //STARVE

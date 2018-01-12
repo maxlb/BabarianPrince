@@ -1,6 +1,7 @@
 import java.util.Map;
 import java.util.Scanner;
 
+import Personnages.BandChar;
 import Personnages.Prince;
 import Personnages.SoloChar;
 import util.de;
@@ -95,7 +96,7 @@ public class happen {
         }
     }
 
-    public void r231(game myGame){
+    public void r231(game myGame, Prince myPrince){
         System.out.println("You encounter a local Priest riding on a donkey\n" +
                 "with combat skill 3, " +
                 "endurance 3, wealth 25. He seems aloof and not disposed \n" +
@@ -118,12 +119,12 @@ public class happen {
         }
         else if (reponse.equals("f") || reponse.equals("F")){
             //fight!
-            r301(myGame);
+            r301(myGame, myPrince, donkeyPriest);
         }
 
 
     }
-    public void r232(game myGame){
+    public void r232(game myGame, Prince myPrince){
         System.out.println("You meet a swordsman adventurer.\n " +
                 "He is mounted on a horse with combat skill 6, \n" +
                 "endurance 6, and wealth 7. Sitting there on his horse\n" +
@@ -145,7 +146,7 @@ public class happen {
         }
         else if (reponse.equals("f") || reponse.equals("F")){
             //fight!
-            r301(myGame);
+            r301(myGame, myPrince, swordsman);
         }
     }
 
@@ -177,26 +178,42 @@ public class happen {
                 }
 
                 else System.out.println("I'm too manly to ride a pegasus!");
-
-
-            }
-
             }
         }
+    }
 
 
+    public void r234(game myGame, Prince myPrince){
+        //Simplifié avec juste l'event e032 Ghosts
+        //A group of ghosts surprise you in combat (r220),
+        // roll one die and add one (+1) for the number of ghosts,
+        // each of which is combat value 4, endurance 2.
 
-    public void r234(game myGame){
-        //
+        int nbGhosts = de.randomDie() +1;
+        System.out.println(" A group of " + nbGhosts + " ghosts surprise you in combat\n" +
+        "each of which is combat value 4, endurance 2");
+
+        BandChar GhostsBand =
+                new BandChar("Terrible Ghosts",
+                        4, 0, 1, 0,
+                        2, 4, nbGhosts);
+        //fight !
+        this.r301a(myGame, myPrince, GhostsBand);
     }
 
     public void r235(game myGame){
         //
     }
 
-    public void r301(game myGame){
-        //FIGHT
+    public void r301(game myGame, Prince myPrince, SoloChar adversaire){
+        //FIGHT SOLO CHARACTER
     }
+
+    public void r301a(game myGame, Prince myPrince, BandChar adversaires){
+        //FIGHT BAND
+    }
+
+
     public void r337(game myGame, SoloChar encounter){
         System.out.println(encounter.getName() + " encountered look unsavory, " +
                 "but willing to talk - you try to convince them to join " +

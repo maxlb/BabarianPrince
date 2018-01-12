@@ -9,6 +9,7 @@ public class game {
     private Integer timeTrack;
     private Integer Gold;
     private Integer Food; //unités de nourriture disponible
+    private Integer Endurance; //vie
     private Integer TotalLoad;
     private Boolean Status; //true : jeu en cours / False : game over
     private String currentCase; //case actuelle du jeu
@@ -18,13 +19,14 @@ public class game {
 
     //Constructors
     // Au début du jeu, il reste 70 tours, on a 2 pièces d'or (donc 1 load à porter)
-    public game(){
+    public game(Prince myPrince){
         this.timeTrack = 70;
         this.Gold = 2;
         this.Food = 5;
+        this.Endurance = myPrince.getEndurance();
         this.TotalLoad = 1;
         this.Status = true;
-        this.suite.add(0); //le premier membre util.util la suite est le Prince lui-même !
+        this.suite.add(myPrince); //le premier membre de la suite est le Prince lui-même !
         this.suiteLoad = 10;
         this.suiteFood = 1;
     }
@@ -63,7 +65,7 @@ public class game {
     // Le prince a récolté 50 pièces d'or : Gold >=500
     // L'endurance du prince est épuisée :
     public Boolean getStatus() {
-        if (this.timeTrack<=0 || this.Gold>=500)
+        if (this.timeTrack<=0 || this.Gold>=500 || this.Endurance<=0)
             this.Status=false;
         else
             this.Status=true;
@@ -174,9 +176,11 @@ public class game {
             if (chasse.equals("Y") || chasse.equals("y"))
             {
                 newHunt = myPrince.Hunt();
+                this.Endurance = myPrince.getEndurance();
 
                 if (newHunt == -1)
                     { //le Prince est tué dans la chasse => perdu
+                    this.Endurance = 0;
                     this.setStatus(false);
                     System.out.println("YOU DIE ! \n GAME OVER");
                 }
