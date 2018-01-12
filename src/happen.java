@@ -2,13 +2,13 @@ import java.util.Map;
 import java.util.Scanner;
 
 import Personnages.Prince;
-import Personnages.SoloChar;
+import Personnages.NewCharacter;
 import util.de;
 
 public class happen {
 
 
-    public static Hex e001(game myGame){
+    public static Hex e001(game myGame, String jete){
 
         System.out.println("\n\nWELCOME TO \"BARBARIAN PRINCE\"!!!\n" +
                 "____________________________________\n\n"+
@@ -24,30 +24,30 @@ public class happen {
 
 
         //quelle case pour démarrer
-        int jete = de.randomDie();
         myGame.setCurrentCase("null");
         switch (jete) {
-            case 1:
+            case "0101":
                 myGame.setCurrentCase("0101");
+
                 System.out.println("You are now in Ogon, small town in the CountrySide…");
                 break;
-            case 2:
+            case "0701":
                 myGame.setCurrentCase("0701");
                 System.out.println("You are now in the middle of the CountrySide…");
                 break;
-            case 3:
+            case "0901":
                 myGame.setCurrentCase("0901");
                 System.out.println("You are now in the moutains, in the Ruins of Jakor\'s Keep…");
                 break;
-            case 4:
+            case "1301":
                 myGame.setCurrentCase("1301");
                 System.out.println("You are now in the middle of the CountrySide…");
                 break;
-            case 5:
+            case "1501":
                 myGame.setCurrentCase("1501");
                 System.out.println("You are now in Weshor, small town in the Farmland…");
                 break;
-            case 6:
+            case "1901":
                 myGame.setCurrentCase("1901");
                 System.out.println("You are now in the mountains…");
 
@@ -102,9 +102,9 @@ public class happen {
                 "to conversation, but he may be afraid of you . . . You can let him pass,\n " +
                 "ending this encounter, or select one of the two options below:\n" +
                 "Type P for Pass, T for Talk or F for Fight!");
-        SoloChar donkeyPriest =
-                new SoloChar("Jose the donkey priest",
-                        2, 10, 2, 25, 3,3);
+        NewCharacter donkeyPriest =
+                new NewCharacter("Jose the donkey priest",
+                        2, 10, 2, 25, 3,3,1);
         Scanner sc = new Scanner(System.in);
         String reponse = sc.nextLine();
 
@@ -129,9 +129,9 @@ public class happen {
                 "endurance 6, and wealth 7. Sitting there on his horse\n" +
                 " he takes an active interest in your party. Your options are:\n" +
                 "Talk (type t), evade (type e) or fight (type f)");
-        SoloChar swordsman =
-                new SoloChar("Brutus the swodsman adventurer",
-                        3, 10, 2, 7, 6,6);
+        NewCharacter swordsman =
+                new NewCharacter("Brutus the swodsman adventurer",
+                        3, 10, 2, 7, 6,6,1);
         Scanner sc = new Scanner(System.in);
         String reponse = sc.nextLine();
 
@@ -182,9 +182,22 @@ public class happen {
     }
 
 
+    public void r234(game myGame, Prince myPrince){
+        //Simplifié avec juste l'event e032 Ghosts
+        //A group of ghosts surprise you in combat (r220),
+        // roll one die and add one (+1) for the number of ghosts,
+        // each of which is combat value 4, endurance 2.
 
-    public void r234(game myGame){
-        //
+        int nbGhosts = de.randomDie() +1;
+        System.out.println(" A group of " + nbGhosts + " ghosts surprise you in combat\n" +
+        "each of which is combat value 4, endurance 2");
+
+        NewCharacter GhostsBand =
+                new NewCharacter("Terrible Ghosts",
+                        4, 0, 1, 0,
+                        2, 4, nbGhosts);
+        //fight !
+        this.r301(myGame, myPrince, GhostsBand);
     }
 
     public void r235(game myGame, Prince myPrince){
@@ -219,6 +232,7 @@ public class happen {
 
     }
 
+
     public void r301(game myGame, Prince myPrince, SoloChar adversaire){
         //FIGHT
         // Récupération des indices de combat
@@ -251,19 +265,23 @@ public class happen {
         }
     }
 
-    public void r337(game myGame, SoloChar thepriest){
-        System.out.println(thepriest.getName() + "encountered look unsavory, " +
+
+
+
+
+    public void r337(game myGame, NewCharacter encounter){
+        System.out.println(encounter.getName() + " encountered look unsavory, " +
                 "but willing to talk - you try to convince them to join " +
                 "your party…");
         int jete = de.randomDie();
 
         if(jete<=3){
             //le personnage se joint
-            System.out.println(thepriest.getName()+ " se joint à votre suite !");
-            myGame.AddCharacter(thepriest);
+            System.out.println(encounter.getName()+ " is joining your party!");
+            myGame.AddCharacter(encounter);
         }
         else
-            System.out.println(thepriest.getName() + "refuse votre offre");
+            System.out.println(encounter.getName() + " turn down your offer.");
     }
     public Integer resteEndurance(Integer combat, Integer endurance){
         Integer resteCombat = combat;

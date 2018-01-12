@@ -31,7 +31,7 @@ public class Hex {
     //EVENEMENT
     public void Event(game myGame, Prince myPrince){
         if(de.randomDice() > this.event){
-            System.out.println("Il se passe quelque chose!");
+            System.out.println("uhoh! there is someone here!");
             int typologie = this.type;
 
             switch (typologie) {
@@ -58,7 +58,10 @@ public class Hex {
                 default:break;
             }
         }
-        else System.out.println("Pas de rencontre aujourd'hui");
+
+        else System.out.println("No living soul around here");
+
+
     }
 
     public void EventCountrySide(game myGame, Prince myPrince){
@@ -79,7 +82,7 @@ public class Hex {
                     whathappen.r233(myGame, myPrince);
                     break;
                 case 5:
-                    whathappen.r234(myGame);
+                    whathappen.r234(myGame, myPrince);
                     break;
                 case 6:
                     whathappen.r235(myGame, myPrince);
@@ -107,7 +110,7 @@ public class Hex {
                 whathappen.r233(myGame, myPrince);
                 break;
             case 5:
-                whathappen.r234(myGame);
+                whathappen.r234(myGame, myPrince);
                 break;
             case 6:
                 whathappen.r235(myGame, myPrince);
@@ -135,7 +138,7 @@ public class Hex {
                 whathappen.r233(myGame, myPrince);
                 break;
             case 5:
-                whathappen.r234(myGame);
+                whathappen.r234(myGame, myPrince);
                 break;
             case 6:
                 whathappen.r235(myGame, myPrince);
@@ -163,7 +166,7 @@ public class Hex {
                 whathappen.r233(myGame, myPrince);
                 break;
             case 5:
-                whathappen.r234(myGame);
+                whathappen.r234(myGame, myPrince);
                 break;
             case 6:
                 whathappen.r235(myGame, myPrince);
@@ -191,7 +194,7 @@ public class Hex {
                 whathappen.r233(myGame, myPrince);
                 break;
             case 5:
-                whathappen.r234(myGame);
+                whathappen.r234(myGame, myPrince);
                 break;
             case 6:
                 whathappen.r235(myGame, myPrince);
@@ -219,7 +222,7 @@ public class Hex {
                 whathappen.r233(myGame, myPrince);
                 break;
             case 5:
-                whathappen.r234(myGame);
+                whathappen.r234(myGame, myPrince);
                 break;
             case 6:
                 whathappen.r235(myGame, myPrince);
@@ -247,7 +250,7 @@ public class Hex {
                 whathappen.r233(myGame, myPrince);
                 break;
             case 5:
-                whathappen.r234(myGame);
+                whathappen.r234(myGame, myPrince);
                 break;
             case 6:
                 whathappen.r235(myGame, myPrince);
@@ -257,3 +260,4 @@ public class Hex {
         }
     }
 }
+

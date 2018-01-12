@@ -11,6 +11,13 @@ public class Character {
     private Integer mount; //monture : 1: à pied, 2: sur monture, 3: sur monture ailée
     private Integer loads; //poids qu'il peut porter
     private Integer identifiant;
+    private String name;
+    private Integer characterNumber; //nbre de personnages si meute ou bande
+
+
+    //Name
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
     //Indice de combat actuel
     public Integer getCombat() {
@@ -67,4 +74,18 @@ public class Character {
         else
             this.loads = 40; //capacité util.util 40 avec monture
     }
+
+
+    //Nombre de personnages (si meute ou bande)
+    public Integer getCharacterNumber() {
+        return characterNumber;
+    }
+    public void setCharacterNumber(Integer newBandNumber) {
+        this.characterNumber = newBandNumber;
+    }
+
+
+
+
 }
+
