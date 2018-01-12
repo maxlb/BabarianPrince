@@ -128,6 +128,7 @@ public class game {
 
     //AJOUT D'UN PERSONNAGE DANS LA SUITE
     public void AddCharacter(SoloChar newCharacter){
+
         this.setGold( this.getGold() + newCharacter.getWealth());
         this.setSuiteLoad( this.getSuiteLoad() + newCharacter.getLoads() ) ;
         this.setSuite(newCharacter);

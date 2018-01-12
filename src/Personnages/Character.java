@@ -11,6 +11,12 @@ public class Character {
     private Integer mount; //monture : 1: à pied, 2: sur monture, 3: sur monture ailée
     private Integer loads; //poids qu'il peut porter
     private Integer identifiant;
+    private String name;
+
+
+    //Name
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
     //Indice de combat actuel
     public Integer getCombat() {
