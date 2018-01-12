@@ -1,5 +1,4 @@
 import Personnages.NewCharacter;
-import Personnages.Character;
 import Personnages.Prince;
 import util.de;
 
@@ -15,7 +14,7 @@ public class game {
     private Integer TotalLoad; //total de la charge à porter
     private Boolean Status; //true : jeu en cours / False : game over
     private String currentCase; //case actuelle du jeu
-    private ArrayList<NewCharacter> suite = new ArrayList<NewCharacter>(); //Liste des personnages présents dans la suite du prince
+    private ArrayList<NewCharacter> suite = new ArrayList<>(); //Liste des personnages présents dans la suite du prince
     private Integer suiteLoad; //capacité de portage de la suite
     private Integer suiteFood; //besoin en nourriture de la suite du Prince
 
@@ -160,7 +159,6 @@ public class game {
 
 
 
-
     /*
     FOOD
     Calcul en besoin de nourriture par tour
@@ -295,7 +293,7 @@ public class game {
                             //le personnage déserte
                             this.DeleteCharacter(this.suite.get(i));
                             System.out.println( this.suite.get(i).getName() + "refuses to serve such\n" +
-                                    "    // a penurious leader! He deserts");
+                                    "a penurious leader! He deserts");
                         }
 
                     }
@@ -321,7 +319,7 @@ public class game {
 
         }
 
-    }
+    }//fin du purchaselodging
 
 
 }
