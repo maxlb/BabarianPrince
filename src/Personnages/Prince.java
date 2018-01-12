@@ -1,7 +1,7 @@
 package Personnages;
 
 
-public class Prince extends SoloChar {
+public class Prince extends NewCharacter {
 
     public Prince(){
         this.setCombat(8);
@@ -37,32 +37,6 @@ public class Prince extends SoloChar {
         return hunt;
     }
 
-    //FEED
-    public void Feed(){
-        if(this.getCombat() < this.getInitcombat()) {
-            this.setCombat( this.getCombat() +1);
-        }
-        if(this.getLoads()<10)
-            this.setLoads( this.getLoads() + 1);
-    }
-
-    //STARVE
-    // if a character goes, without food for a day,
-    // on the following day his ability to carry loads (r206)
-    // is halved, with fractions rounded down, and his combat skill
-    // is reduced by one. If he goes without food again, load carrying
-    // and combat skill is reduced again. When food is available and eaten again,
-    // each day's normal meal also eliminates the effect of one day of starvation.
-    public void Starve(){
-        this.setCombat(this.getCombat() -1);
-        this.setLoads(this.getLoads() -1);
-    }
-
-    //HEAL
-    public void Heal(){
-        if (this.getEndurance() < this.getInitEndurance())
-            setEndurance(getEndurance() +1);
-    }
 }
 
 

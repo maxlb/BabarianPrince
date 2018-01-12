@@ -12,6 +12,7 @@ public class Character {
     private Integer loads; //poids qu'il peut porter
     private Integer identifiant;
     private String name;
+    private Integer characterNumber; //nbre de personnages si meute ou bande
 
 
     //Name
@@ -72,6 +73,14 @@ public class Character {
             this.loads = 10; //capacité util.util 10 sans monture
         else
             this.loads = 40; //capacité util.util 40 avec monture
+    }
+
+    //Nombre de personnages (si meute ou bande)
+    public Integer getCharacterNumber() {
+        return characterNumber;
+    }
+    public void setCharacterNumber(Integer newBandNumber) {
+        this.characterNumber = newBandNumber;
     }
 
 
