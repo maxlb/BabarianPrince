@@ -6,10 +6,11 @@ import java.awt.event.ActionListener;
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
 
-
     private JPanel boutons = new JPanel();
     private JPanel boutonsN = new JPanel();
     private JPanel boutonsS = new JPanel();
+    private JPanel Posi = new JPanel();
+
 
     private JButton N = new JButton("N");
     private JButton S = new JButton("S");
@@ -22,6 +23,9 @@ public class Fenetre extends JFrame implements ActionListener {
     Integer x= 5;
     Integer y= 5;
     private Panneau monPanneau = new Panneau(x,y);
+
+    JLabel posX = new JLabel(String.valueOf(monPanneau.x));
+    JLabel posY = new JLabel(String.valueOf(monPanneau.y));
 
 
     public Fenetre(){
@@ -39,7 +43,6 @@ public class Fenetre extends JFrame implements ActionListener {
         NW.addActionListener(this);
         SW.addActionListener(this);
 
-
         boutonsN.add(NW);
         boutonsN.add(N);
         boutonsN.add(NE);
@@ -48,6 +51,8 @@ public class Fenetre extends JFrame implements ActionListener {
         boutonsS.add(S);
         boutonsS.add(SE);
 
+        container.add(posX, BorderLayout.EAST);
+        container.add(posY, BorderLayout.EAST);
         boutons.add(boutonsN,BorderLayout.NORTH);
         boutons.add(boutonsS,BorderLayout.SOUTH);
 
@@ -63,13 +68,19 @@ public class Fenetre extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent arg8) {
         if(arg8.getSource() == N){
+
             monPanneau.x--;
             monPanneau.repaint();
+            posX.setText("position x : " + monPanneau.x);
+            posY.setText("position y : " + monPanneau.y);
+
         }
 
         if(arg8.getSource() == S){
             monPanneau.x++;
             monPanneau.repaint();
+            posX.setText("position x : " + monPanneau.x);
+            posY.setText("position y : " + monPanneau.y);
         }
         if(arg8.getSource() == SE){
             monPanneau.y++;
@@ -77,6 +88,8 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x++;
             }
             monPanneau.repaint();
+            posX.setText("position x : " + monPanneau.x);
+            posY.setText("position y : " + monPanneau.y);
         }
 
         if(arg8.getSource() == NE){
@@ -85,6 +98,8 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x--;
             }
             monPanneau.repaint();
+            posX.setText("position x : " + monPanneau.x);
+            posY.setText("position y : " + monPanneau.y);
         }
         if(arg8.getSource() == SW){
             monPanneau.y--;
@@ -93,6 +108,8 @@ public class Fenetre extends JFrame implements ActionListener {
             }
 
             monPanneau.repaint();
+            posX.setText("position x : " + monPanneau.x);
+            posY.setText("position y : " + monPanneau.y);
         }
 
         if(arg8.getSource() == NW){
@@ -101,6 +118,8 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x--;
             }
             monPanneau.repaint();
+            posX.setText("position x : " + monPanneau.x);
+            posY.setText("position y : " + monPanneau.y);
         }
     }
 

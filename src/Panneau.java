@@ -39,7 +39,6 @@ public class Panneau extends JPanel {
             for(int c=0;c<23;c++){
                 Polygon poly=getPolygon(c*r.width, (int)(l*cote*1.5),cote);
                 pol = poly;
-                System.out.println(19-l);
                 if(19-l == y && c == x) {
                     g2d.setColor(Color.red);
                     g2d.fill(poly);
@@ -65,7 +64,6 @@ public class Panneau extends JPanel {
                 Coord[c][19-l]=poly;
             }
         }
-        System.out.println();
     }
 
 
