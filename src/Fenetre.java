@@ -1,3 +1,5 @@
+import util.de;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -6,6 +8,7 @@ import java.awt.event.ActionListener;
 
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
+    public Boolean Begin = false;
 
 
 
@@ -52,6 +55,9 @@ public class Fenetre extends JFrame implements ActionListener {
         private JPanel Location = new JPanel();
                 private JPanel PanelDep = new JPanel();
                 private JButton Dep = new JButton("Départ");
+            private JPanel PanelStr = new JPanel();
+                private JLabel StrLoc = new JLabel("Identifiant de la case : ");
+                private JLabel Loc = new JLabel();
 
 
         private JPanel boutons = new JPanel();
@@ -223,6 +229,7 @@ public class Fenetre extends JFrame implements ActionListener {
             if(minY){
                 NW.setEnabled(false);
                 SW.setEnabled(false);
+
             } else {
                 NW.setEnabled(true);
                 SW.setEnabled(true);
@@ -274,6 +281,8 @@ public class Fenetre extends JFrame implements ActionListener {
             val[5] = 18;
             monPanneau.y = val[de.randomDie()-1];
             monPanneau.repaint();
+            Loc.setText(getLoc(monPanneau.x, monPanneau.y));
+            Begin = true;
             Dep.setEnabled(false);
         }
         if(arg8.getSource() == N){
