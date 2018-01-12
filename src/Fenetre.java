@@ -9,6 +9,8 @@ public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
     private JPanel Infos = new JPanel();
     public Boolean Begin = false;
+    public Boolean isYes = false;
+    public Boolean isNo = false;
 
 
 
@@ -80,7 +82,7 @@ public class Fenetre extends JFrame implements ActionListener {
         monPanneau = new Panneau(x,y);
 
         this.setTitle("Prince des Barbares");
-        this.setSize(1000, 990);
+        this.setSize(1100, 990);
         this.setBackground(Color.GRAY);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

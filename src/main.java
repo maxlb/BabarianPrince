@@ -36,6 +36,8 @@ class main {
             maFenetre.Nourri.setText(myGame.getFood().toString());
             maFenetre.Quete.setText(myGame.getTimeTrack().toString());
             maFenetre.Typo.setText(caseActuelle.getType(caseActuelle.type));
+            maFenetre.Route.setText(caseActuelle.getRoad());
+
             if(caseActuelle.monument != null){
                 maFenetre.Monu.setText(caseActuelle.getMonum(caseActuelle.monument));
             } else {

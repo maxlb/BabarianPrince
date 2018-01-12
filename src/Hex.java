@@ -29,6 +29,14 @@ public class Hex {
         this.road= 0;
     }
 
+    public String getRoad(){
+        String str = "Pas de route";
+        if(this.road == 1){
+            str= "Sur une route";
+        }
+        return str;
+    }
+
     public String getMonum(int tp){
         String str = "";
         switch(tp){
@@ -203,8 +211,6 @@ public class Hex {
         }
     }
 
-
-
     public void EventHills(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
         int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
@@ -232,8 +238,6 @@ public class Hex {
             default:break;
         }
     }
-
-
 
     public void EventMountains(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
@@ -263,9 +267,6 @@ public class Hex {
         }
     }
 
-
-
-
     public void EventDesert(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
         int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
@@ -293,8 +294,6 @@ public class Hex {
             default:break;
         }
     }
-
-
 
     public void EventSwamp(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
