@@ -29,11 +29,20 @@ class main {
         // JEU
         while (myGame.getStatus()) //tant que le jeu est en cours
         {
+            maFenetre.Nourri.setText(myGame.getFood().toString());
+            maFenetre.Quete.setText(myGame.getTimeTrack().toString());
+            maFenetre.Typo.setText(caseActuelle.getType(caseActuelle.type));
+            if(caseActuelle.monument != null){
+                maFenetre.Monu.setText(caseActuelle.getMonum(caseActuelle.monument));
+            } else {
+                maFenetre.Monu.setText(caseActuelle.getMonum(8));
+            }
+
             //TOUR
 
             //EVENT : se passe-t-il quelque chose sur cette case ?
 
-            caseActuelle.Event(myGame, myPrince);
+            caseActuelle.Event(myGame, myPrince, maFenetre);
 
             //où suis-je ? terrain ? monument ? route ?
             //Hex caseActuelle = Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
@@ -47,13 +56,13 @@ class main {
             int foodneed = myGame.FoodNeed(caseActuelle);
 
             //FOOD-hunting
-            myGame.FoodHunt(myPrince, caseActuelle);
+            myGame.FoodHunt(myPrince, caseActuelle, maFenetre);
 
             //FOOD-purchase meal
-            myGame.FoodPurchase(caseActuelle, foodneed);
+            myGame.FoodPurchase(caseActuelle, foodneed, maFenetre);
 
             //Est-on sur une case où on peut manger ??
-            myGame.Food(caseActuelle, myPrince, foodneed);
+            myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
 
             //PURCHASE LODGING (if in a town, castle, or temple hex)
             myGame.PurchaseLodging(caseActuelle);
@@ -78,7 +87,8 @@ class main {
             */
 
             //FIN DE TOUR
-            myGame.setTimeTrack(myGame.getTimeTrack()-1);
+            myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
+
             System.out.println("Jours restants : " + myGame.getTimeTrack());
             System.out.println("Fin de tour, appuyer sur une touche pour continuer");
             Scanner sc = new Scanner(System.in);

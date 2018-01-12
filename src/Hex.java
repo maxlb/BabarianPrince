@@ -29,34 +29,88 @@ public class Hex {
         this.road= 0;
     }
 
+    public String getMonum(int tp){
+        String str = "";
+        switch(tp){
+            case 1:
+                    str = "Temple";
+                break;
+            case 2:
+                str = "Ruins";
+                break;
+            case 3:
+                str = "Castle";
+                break;
+            case 4:
+                str = "Town";
+                break;
+            case 5:
+                str = "Oasis";
+                break;
+            default:
+                str = "Aucun Monument";
+                break;
+        }
+        return str;
+    }
+
+    public String getType(int tp){
+        String str = "";
+        switch(tp){
+            case 1:
+                str = "Open CountrySide";
+                break;
+            case 2:
+                str = "FarmLand";
+                break;
+            case 3:
+                str = "Forest";
+                break;
+            case 4:
+                str = "Hills";
+                break;
+            case 5:
+                str = "Mountains";
+                break;
+            case 6:
+                str = "Desert";
+                break;
+            case 7:
+                str = "Swamp";
+            default:
+                break;
+        }
+        return str;
+    }
+
     //EVENEMENT
 
-    public void Event(game myGame, Prince myPrince){
+    public void Event(game myGame, Prince myPrince, Fenetre fenetre){
         if(de.randomDice() > this.event){
             System.out.println("uhoh! there is someone here!");
             int typologie = this.type;
 
             switch (typologie) {
                 case 1:
-                    EventCountrySide(myGame, myPrince);
+                    EventCountrySide(myGame, myPrince,fenetre);
                     break;
                 case 2:
-                    EventFarmLand(myGame, myPrince);
+                    EventFarmLand(myGame, myPrince,fenetre);
                     break;
                 case 3:
-                    EventForest(myGame, myPrince);
+                    EventForest(myGame, myPrince,fenetre);
                     break;
                 case 4:
-                    EventHills(myGame, myPrince);
+                    EventHills(myGame, myPrince,fenetre);
                     break;
                 case 5:
-                    EventMountains(myGame, myPrince);
+                    EventMountains(myGame, myPrince,fenetre);
                     break;
                 case 6:
-                    EventDesert(myGame, myPrince);
+                    EventDesert(myGame, myPrince,fenetre);
                     break;
                 case 7:
-                    EventSwamp(myGame, myPrince);
+                    EventSwamp(myGame, myPrince,fenetre);
                 default:break;
             }
         }
@@ -65,13 +119,13 @@ public class Hex {
 
     }
 
-    public void EventCountrySide(game myGame, Prince myPrince){
+    public void EventCountrySide(game myGame, Prince myPrince, Fenetre fenetre){
             happen whathappen = new happen();
             int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
 
             switch (jete) {
                 case 1:
-                    whathappen.e009(myGame);
+                    whathappen.e009(myGame, fenetre);
                     break;
                 case 2:
                     whathappen.r231(myGame, myPrince);
@@ -93,13 +147,13 @@ public class Hex {
             }
         }
 
-    public void EventFarmLand(game myGame, Prince myPrince){
+    public void EventFarmLand(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
         int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame);
+                whathappen.e009(myGame,fenetre);
                 break;
             case 2:
                 whathappen.r231(myGame, myPrince);
@@ -121,43 +175,13 @@ public class Hex {
         }
     }
 
-    public void EventForest(game myGame, Prince myPrince){
+    public void EventForest(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
         int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame);
-                break;
-            case 2:
-                whathappen.r231(myGame, myPrince);
-                break;
-            case 3:
-                whathappen.r232(myGame, myPrince);
-                break;
-            case 4:
-                whathappen.r233(myGame, myPrince);
-                break;
-            case 5:
-                whathappen.r234(myGame, myPrince);
-                break;
-            case 6:
-                whathappen.r235(myGame);
-                break;
-
-            default:break;
-        }
-    }
-
-
-
-    public void EventHills(game myGame, Prince myPrince){
-        happen whathappen = new happen();
-        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
-
-        switch (jete) {
-            case 1:
-                whathappen.e009(myGame);
+                whathappen.e009(myGame,fenetre);
                 break;
             case 2:
                 whathappen.r231(myGame, myPrince);
@@ -181,13 +205,43 @@ public class Hex {
 
 
 
-    public void EventMountains(game myGame, Prince myPrince){
+    public void EventHills(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
         int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame);
+                whathappen.e009(myGame, fenetre);
+                break;
+            case 2:
+                whathappen.r231(myGame, myPrince);
+                break;
+            case 3:
+                whathappen.r232(myGame, myPrince);
+                break;
+            case 4:
+                whathappen.r233(myGame, myPrince);
+                break;
+            case 5:
+                whathappen.r234(myGame, myPrince);
+                break;
+            case 6:
+                whathappen.r235(myGame);
+                break;
+
+            default:break;
+        }
+    }
+
+
+
+    public void EventMountains(game myGame, Prince myPrince, Fenetre fenetre){
+        happen whathappen = new happen();
+        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+
+        switch (jete) {
+            case 1:
+                whathappen.e009(myGame, fenetre);
                 break;
             case 2:
                 whathappen.r231(myGame, myPrince);
@@ -212,13 +266,13 @@ public class Hex {
 
 
 
-    public void EventDesert(game myGame, Prince myPrince){
+    public void EventDesert(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
         int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame);
+                whathappen.e009(myGame, fenetre);
                 break;
             case 2:
                 whathappen.r231(myGame, myPrince);
@@ -242,13 +296,13 @@ public class Hex {
 
 
 
-    public void EventSwamp(game myGame, Prince myPrince){
+    public void EventSwamp(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
         int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame);
+                whathappen.e009(myGame,fenetre);
                 break;
             case 2:
                 whathappen.r231(myGame, myPrince);

@@ -63,7 +63,7 @@ public class happen {
     }
 
 
-    public void e009(game myGame){
+    public void e009(game myGame, Fenetre maFenetre){
 
         System.out.println("You spot a small farm ahead. You may detour around it,\n" +
                 "but that will consume the rest of the day, ending all travel\n" +
@@ -91,7 +91,7 @@ public class happen {
                     "He begs the charity of 5 food units from you. If you don't have 5 food units,\n " +
                     "there is no special event and the encounter ends.\n");
             if(myGame.getFood()>=5)
-                myGame.setFood( myGame.getFood() - 5 );
+                myGame.setFood( myGame.getFood() - 5 , maFenetre);
         }
     }
 

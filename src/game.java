@@ -45,8 +45,9 @@ public class game {
     public Integer getFood() {
         return Food;
     }
-    public void setFood(Integer food) {
+    public void setFood(Integer food, Fenetre fenetre) {
         Food = food;
+        fenetre.Nourri.setText(food.toString());
     }
 
     // Total Load : chaque point Food vaut 1, 100 pièces ou moins vaut 1
@@ -82,8 +83,9 @@ public class game {
         return timeTrack;
     }
 
-    public void setTimeTrack(Integer timeTrack) {
+    public void setTimeTrack(Integer timeTrack, Fenetre fenetre) {
         this.timeTrack = timeTrack;
+        fenetre.Quete.setText(timeTrack.toString());
     }
 
     //Current Case
@@ -162,7 +164,7 @@ public class game {
 
 
     //FOOD-HUNT
-    public void FoodHunt(Personnages.Prince myPrince, Hex currentCase) {
+    public void FoodHunt(Personnages.Prince myPrince, Hex currentCase, Fenetre fenetre) {
 
         int newHunt = 0;
         //peut on chasser sur ce type de terrain ?
@@ -185,7 +187,7 @@ public class game {
                     System.out.println("YOU DIE ! \n GAME OVER");
                 }
                 else {
-                    this.setFood(this.getFood() + newHunt);
+                    this.setFood(this.getFood() + newHunt, fenetre);
                     System.out.println("You hunted " + newHunt + " food unit(s)");
                 }
             }
@@ -194,7 +196,7 @@ public class game {
 
 
     //FOOD-PURCHASE
-    public void FoodPurchase(Hex currentCase, int foodneed){
+    public void FoodPurchase(Hex currentCase, int foodneed, Fenetre fenentre){
 
         //if you are in a town, castle, or village
         // you can purchase food for each character in your party.
@@ -211,7 +213,7 @@ public class game {
             {
                 if(this.getGold()>=foodneed){ //si le Prince a assez d'argent
                     this.setGold(this.getGold() - foodneed);
-                    this.setFood( this.getFood() + foodneed);
+                    this.setFood( this.getFood() + foodneed, fenentre);
                     System.out.println("You bought " + foodneed + " food unit(s)\n"+
                     "You now have " + this.getGold() + " gold unit and " + this.Food + " food unit");
                 }
@@ -222,10 +224,10 @@ public class game {
     }//fin de food-purchase
 
     //FOOD : se nourrir
-    public void Food(Hex currentCase, Prince myPrince, int foodneed){
+    public void Food(Hex currentCase, Prince myPrince, int foodneed, Fenetre fenetre){
         if(currentCase.fodder) {
             if (this.getFood() >= foodneed) { //il y a assez de nourriture pour tous
-                this.setFood(this.getFood() - foodneed);
+                this.setFood(this.getFood() - foodneed, fenetre);
                 myPrince.Feed();
                 //!!!! à rajouter le festin de la troupe (boucle)
             } else myPrince.Starve(); //!!!! à rajouter la famine de la troupe (boucle)
