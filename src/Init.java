@@ -88,7 +88,7 @@ public class Init {
         isMonument.put("0101", 4); // Town Ogon
         isMonument.put("0109", 4); // Town Angleae
         isMonument.put("0206", 5); // Oasis
-        isMonument.put("0206", 2); // Ruins
+        isMonument.put("0207", 2); // Ruins
         isMonument.put("0323", 3); // Drogat Castles
         isMonument.put("0419", 4); // Town Halowich
         isMonument.put("0422", 4); // Lower Drogat
@@ -117,7 +117,7 @@ public class Init {
 
         Map<String, Integer> typeTerrain = new HashMap<>();
 
-        /* Initialisation de la Map
+        /* Initialisation util.util la Map
         Open CountrySide :  code 1
         FarmLand :          code 2
         Forest :            code 3
@@ -641,7 +641,7 @@ public class Init {
                 case 1: // il y a une route
                     maCase.road = 1;
                     break;
-                case 0: //pas de route
+                case 0: //pas util.util route
                     maCase.road = 0;
                     break;
                 default:
@@ -655,50 +655,50 @@ public class Init {
             switch (type) {
                 case 1: //Open Country Side
                     maCase.event = 9;          //indice du score minimal pour lancer un event
-                    maCase.hunt = true;       // droit de chasser
-                    maCase.fodder = true;     // droit de manger
+                    maCase.hunt = true;       // droit util.util chasser
+                    maCase.fodder = true;     // droit util.util manger
                     maCase.type = 1;
                     break;
 
                 case 2: //Farmland
                     maCase.event = 8;          //indice du score minimal pour lancer un event
-                    maCase.hunt = false;       // droit de chasser
-                    maCase.fodder = false;     // droit de manger
+                    maCase.hunt = false;       // droit util.util chasser
+                    maCase.fodder = false;     // droit util.util manger
                     maCase.type = 2;
                     break;
 
                 case 3: //Forest
                     maCase.event = 9;          //indice du score minimal pour lancer un event
-                    maCase.hunt = true;       // droit de chasser
-                    maCase.fodder = true;     // droit de manger
+                    maCase.hunt = true;       // droit util.util chasser
+                    maCase.fodder = true;     // droit util.util manger
                     maCase.type = 3;
                     break;
 
                 case 4: //Hills
                     maCase.event = 10;          //indice du score minimal pour lancer un event
-                    maCase.hunt = true;       // droit de chasser
-                    maCase.fodder = true;     // droit de manger
+                    maCase.hunt = true;       // droit util.util chasser
+                    maCase.fodder = true;     // droit util.util manger
                     maCase.type = 4;
                     break;
 
                 case 5: //Mountains
                     maCase.event = 9;          //indice du score minimal pour lancer un event
-                    maCase.hunt = false;       // droit de chasser
-                    maCase.fodder = false;     // droit de manger
+                    maCase.hunt = false;       // droit util.util chasser
+                    maCase.fodder = false;     // droit util.util manger
                     maCase.type = 5;
                     break;
 
                 case 6: //Desert
                     maCase.event = 10;          //indice du score minimal pour lancer un event
-                    maCase.hunt = false;       // droit de chasser
-                    maCase.fodder = false;     // droit de manger
+                    maCase.hunt = false;       // droit util.util chasser
+                    maCase.fodder = false;     // droit util.util manger
                     maCase.type = 6;
                     break;
 
                 case 7: //Swamp
                     maCase.event = 10;          //indice du score minimal pour lancer un event
-                    maCase.hunt = true;       // droit de chasser
-                    maCase.fodder = false;     // droit de manger
+                    maCase.hunt = true;       // droit util.util chasser
+                    maCase.fodder = false;     // droit util.util manger
                     maCase.type = 7;
                     break;
 
