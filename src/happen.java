@@ -25,12 +25,10 @@ public class happen {
 
 
         //quelle case pour démarrer
-        //int jete = de.randomDie();
         myGame.setCurrentCase("null");
         switch (jete) {
             case "0101":
                 myGame.setCurrentCase("0101");
-
                 System.out.println("You are now in Ogon, small town in the CountrySide…");
                 break;
             case "0701":

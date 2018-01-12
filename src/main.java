@@ -11,8 +11,20 @@ class main {
         Prince myPrince = new Prince();
         game myGame = new game(myPrince);
 
+        Hex caseActuelle = new Hex("0000");
+
         //Quelle case pour demarrer ?
-        Hex caseActuelle = happen.e001(myGame, maFenetre.Loc.getText());
+        Boolean a = true;
+
+        while(a){
+            Boolean b = maFenetre.Begin;
+            System.out.print("");
+            if(b){
+                caseActuelle = happen.e001(myGame, maFenetre.Loc.getText());
+                a = false;
+                myGame.setStatus(true);
+            }
+        }
 
         // JEU
         while (myGame.getStatus()) //tant que le jeu est en cours
@@ -20,6 +32,7 @@ class main {
             //TOUR
 
             //EVENT : se passe-t-il quelque chose sur cette case ?
+
             caseActuelle.Event(myGame, myPrince);
 
             //où suis-je ? terrain ? monument ? route ?

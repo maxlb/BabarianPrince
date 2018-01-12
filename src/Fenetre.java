@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
-
+    public Boolean Begin = false;
     private JPanel commandes = new JPanel();
         private JPanel Location = new JPanel();
                 private JPanel PanelDep = new JPanel();
@@ -176,6 +176,8 @@ public class Fenetre extends JFrame implements ActionListener {
             val[5] = 18;
             monPanneau.y = val[de.randomDie()-1];
             monPanneau.repaint();
+            Loc.setText(getLoc(monPanneau.x, monPanneau.y));
+            Begin = true;
             Dep.setEnabled(false);
         }
         if(arg8.getSource() == N){

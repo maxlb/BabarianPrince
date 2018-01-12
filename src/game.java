@@ -25,7 +25,7 @@ public class game {
         this.Food = 5;
         this.Endurance = myPrince.getEndurance();
         this.TotalLoad = 1;
-        this.Status = true;
+        this.Status = false;
         this.suite.add(myPrince); //le premier membre de la suite est le Prince lui-même !
         this.suiteLoad = 10;
         this.suiteFood = 1;
