@@ -7,6 +7,9 @@ public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
 
     private JPanel Posi = new JPanel();
+    JLabel posX = new JLabel();
+    JLabel posY = new JLabel();
+
     private JPanel commandes = new JPanel();
         private JPanel Location = new JPanel();
             private JPanel PanelDep = new JPanel();
@@ -25,22 +28,13 @@ public class Fenetre extends JFrame implements ActionListener {
                 private JButton SE = new JButton("SE");
                 private JButton SW = new JButton("SW");
 
-    private JButton N = new JButton("N");
-    private JButton S = new JButton("S");
-    private JButton NE = new JButton("NE");
-    private JButton SE = new JButton("SE");
-    private JButton SW = new JButton("SW");
-    private JButton NW = new JButton("NW");
 
     private Panneau monPanneau;
 
 
     public Fenetre(int x, int y){
         monPanneau = new Panneau(x,y);
-    JLabel posX = new JLabel(String.valueOf(monPanneau.x));
-    JLabel posY = new JLabel(String.valueOf(monPanneau.y));
 
-    public Fenetre(){
         this.setTitle("Prince des Barbares");
         this.setSize(1000, 970);
         this.setBackground(Color.GRAY);
@@ -67,8 +61,6 @@ public class Fenetre extends JFrame implements ActionListener {
         boutonsS.add(S);
         boutonsS.add(SE);
 
-        container.add(posY, BorderLayout.EAST);
-        container.add(posX, BorderLayout.EAST);
         boutons.setLayout(new BoxLayout(boutons, BoxLayout.PAGE_AXIS));
         boutons.add(boutonsN);
         boutons.add(boutonsS);
@@ -181,10 +173,10 @@ public class Fenetre extends JFrame implements ActionListener {
             int[] val = new int[6];
             val[0] = 0;
             val[1] = 6;
-            val[2] = 7;
+            val[2] = 8;
             val[3] = 12;
             val[4] = 14;
-            val[5] = 17;
+            val[5] = 18;
             monPanneau.y = val[(int)(Math.random()*6)];
             monPanneau.repaint();
             Dep.setEnabled(false);
@@ -193,15 +185,11 @@ public class Fenetre extends JFrame implements ActionListener {
 
             monPanneau.x--;
             monPanneau.repaint();
-            posX.setText("position x : " + monPanneau.x);
-            posY.setText("position y : " + monPanneau.y);
 
         }
         if(arg8.getSource() == S){
             monPanneau.x++;
             monPanneau.repaint();
-            posX.setText("position x : " + monPanneau.x);
-            posY.setText("position y : " + monPanneau.y);
         }
         if(arg8.getSource() == SE){
             monPanneau.y++;
@@ -209,8 +197,6 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x++;
             }
             monPanneau.repaint();
-            posX.setText("position x : " + monPanneau.x);
-            posY.setText("position y : " + monPanneau.y);
         }
         if(arg8.getSource() == NE){
             monPanneau.y++;
@@ -218,8 +204,6 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x--;
             }
             monPanneau.repaint();
-            posX.setText("position x : " + monPanneau.x);
-            posY.setText("position y : " + monPanneau.y);
         }
         if(arg8.getSource() == SW){
             monPanneau.y--;
@@ -227,8 +211,6 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x++;
             }
             monPanneau.repaint();
-            posX.setText("position x : " + monPanneau.x);
-            posY.setText("position y : " + monPanneau.y);
         }
         if(arg8.getSource() == NW){
             monPanneau.y--;
@@ -236,10 +218,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x--;
             }
             monPanneau.repaint();
-            posX.setText("position x : " + monPanneau.x);
-            posY.setText("position y : " + monPanneau.y);
         }
-
         verifBords();
         Loc.setText(getLoc(monPanneau.x, monPanneau.y));
     }
