@@ -16,7 +16,7 @@ public class Fenetre extends JFrame implements ActionListener {
         private JLabel Terrain = new JLabel("Infos Terrain");
         private JPanel PanelLoc = new JPanel();
             private JLabel StrLoc = new JLabel("Identifiant de la case : ");
-            private JLabel Loc = new JLabel();
+            public JLabel Loc = new JLabel();
         private JPanel PanelTypo = new JPanel();
             private JLabel StrTypo = new JLabel("Typologie du terrain : ");
             private JLabel Typo = new JLabel();
@@ -55,10 +55,6 @@ public class Fenetre extends JFrame implements ActionListener {
         private JPanel Location = new JPanel();
                 private JPanel PanelDep = new JPanel();
                 private JButton Dep = new JButton("Départ");
-            private JPanel PanelStr = new JPanel();
-                private JLabel StrLoc = new JLabel("Identifiant de la case : ");
-                private JLabel Loc = new JLabel();
-
 
         private JPanel boutons = new JPanel();
             private JPanel boutonsN = new JPanel();
