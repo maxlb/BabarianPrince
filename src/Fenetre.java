@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,7 +7,9 @@ import java.awt.event.ActionListener;
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
 
-    private JPanel InfosTerrain = new JPanel();
+
+
+    private Box InfosTerrain;
         private JLabel Terrain = new JLabel("Infos Terrain");
         private JPanel PanelLoc = new JPanel();
             private JLabel StrLoc = new JLabel("Identifiant de la case : ");
@@ -21,7 +24,7 @@ public class Fenetre extends JFrame implements ActionListener {
             private JLabel StrRoute = new JLabel("Route : ");
             private JLabel Route = new JLabel();
 
-    private JPanel InfosPrince = new JPanel();
+    private Box InfosPrince;
         private JLabel Prince = new JLabel("Infos Prince");
         private JPanel PanelQuete = new JPanel();
             private JLabel StrQuete = new JLabel("Jours de quêtes restants : ");
@@ -77,9 +80,6 @@ public class Fenetre extends JFrame implements ActionListener {
 
         boutons.setLayout(new BorderLayout());
         commandes.setLayout(new BorderLayout());
-        InfosTerrain.setLayout(new BorderLayout());
-        PanelMonu.setLayout(new BorderLayout());
-        InfosPrince.setLayout(new BorderLayout());
 
         N.addActionListener(this);
         S.addActionListener(this);
@@ -105,23 +105,23 @@ public class Fenetre extends JFrame implements ActionListener {
         PanelDep.setLayout(new BoxLayout(PanelDep, BoxLayout.LINE_AXIS));
         PanelDep.add(Dep);
 
-        PanelLoc.setLayout(new BoxLayout(PanelLoc, BoxLayout.LINE_AXIS));
+        PanelLoc.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelLoc.add(StrLoc);
         PanelLoc.add(Loc);
 
-        PanelTypo.setLayout(new BoxLayout(PanelTypo, BoxLayout.LINE_AXIS));
+        PanelTypo.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelTypo.add(StrTypo);
         PanelTypo.add(Typo);
 
-        PanelMonu.setLayout(new BoxLayout(PanelMonu, BoxLayout.LINE_AXIS));
+        PanelMonu.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelMonu.add(StrMonu);
         PanelMonu.add(Monu);
 
-        PanelRoute.setLayout(new BoxLayout(PanelRoute, BoxLayout.LINE_AXIS));
+        PanelRoute.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelRoute.add(StrRoute);
         PanelRoute.add(Route);
 
-        InfosTerrain.setLayout(new BoxLayout(InfosTerrain, BoxLayout.PAGE_AXIS));
+        InfosTerrain = Box.createVerticalBox();
         InfosTerrain.add(Terrain);
         InfosTerrain.add(PanelLoc);
         InfosTerrain.add(PanelTypo);
@@ -129,7 +129,7 @@ public class Fenetre extends JFrame implements ActionListener {
         InfosTerrain.add(PanelRoute);
 
 
-        InfosPrince.setLayout(new BoxLayout(InfosPrince, BoxLayout.PAGE_AXIS));
+        InfosPrince = Box.createVerticalBox();
         InfosPrince.add(Prince);
         InfosPrince.add(PanelQuete);
         InfosPrince.add(PanelOr);
@@ -140,31 +140,31 @@ public class Fenetre extends JFrame implements ActionListener {
         InfosPrince.add(PanelPortage);
 
 
-        PanelQuete.setLayout(new BoxLayout(PanelQuete, BoxLayout.LINE_AXIS));
+        PanelQuete.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelQuete.add(StrQuete);
         PanelQuete.add(Quete);
 
-        PanelOr.setLayout(new BoxLayout(PanelOr, BoxLayout.LINE_AXIS));
+        PanelOr.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelOr.add(StrOr);
         PanelOr.add(Or);
 
-        PanelNourri.setLayout(new BoxLayout(PanelNourri, BoxLayout.LINE_AXIS));
+        PanelNourri.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelNourri.add(StrNourri);
         PanelNourri.add(Nourri);
 
-        PanelVie.setLayout(new BoxLayout(PanelVie, BoxLayout.LINE_AXIS));
+        PanelVie.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelVie.add(StrVie);
         PanelVie.add(Vie);
 
-        PanelPoids.setLayout(new BoxLayout(PanelPoids, BoxLayout.LINE_AXIS));
+        PanelPoids.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelPoids.add(StrPoids);
         PanelPoids.add(Poids);
 
-        PanelSuite.setLayout(new BoxLayout(PanelSuite, BoxLayout.LINE_AXIS));
+        PanelSuite.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelSuite.add(StrSuite);
         PanelSuite.add(Suite);
 
-        PanelPortage.setLayout(new BoxLayout(PanelPortage, BoxLayout.LINE_AXIS));
+        PanelPortage.setLayout(new FlowLayout(FlowLayout.LEFT));
         PanelPortage.add(StrPortage);
         PanelPortage.add(Portage);
 
