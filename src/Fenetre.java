@@ -1,12 +1,9 @@
 import util.de;
-
-import javax.sound.sampled.Line;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.geom.AffineTransform;
+
 
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();

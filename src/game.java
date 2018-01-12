@@ -65,8 +65,8 @@ public class game {
     // Le temps est écoulé : timeTrack <= 0
     // Le prince a récolté 50 pièces d'or : Gold >=500
     // L'endurance du prince est épuisée :
-    public Boolean getStatus() {
-        if (this.timeTrack<=0 || this.Gold>=500 || this.Endurance<=0)
+    public Boolean getStatus(Prince myPrince) {
+        if (this.timeTrack<=0 || this.Gold>=500 || myPrince.getEndurance() <= 0)
             this.Status=false;
         else
             this.Status=true;

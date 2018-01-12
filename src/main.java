@@ -27,7 +27,7 @@ class main {
         }
 
         // JEU
-        while (myGame.getStatus()) //tant que le jeu est en cours
+        while (myGame.getStatus(myPrince)) //tant que le jeu est en cours
         {
             maFenetre.Nourri.setText(myGame.getFood().toString());
             maFenetre.Quete.setText(myGame.getTimeTrack().toString());
