@@ -1,4 +1,5 @@
 import Personnages.Prince;
+import Personnages.SoloChar;
 
 import java.util.Scanner;
 
@@ -29,6 +30,9 @@ class main {
         // JEU
         while (myGame.getStatus(myPrince)) //tant que le jeu est en cours
         {
+
+            maFenetre.Portage.setText(myGame.getSuiteLoad().toString());
+            maFenetre.Or.setText(myGame.getGold().toString());
             maFenetre.Nourri.setText(myGame.getFood().toString());
             maFenetre.Quete.setText(myGame.getTimeTrack().toString());
             maFenetre.Typo.setText(caseActuelle.getType(caseActuelle.type));

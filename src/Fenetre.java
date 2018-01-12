@@ -34,22 +34,22 @@ public class Fenetre extends JFrame implements ActionListener {
             public JLabel Quete = new JLabel();
         private JPanel PanelOr = new JPanel();
             private JLabel StrOr = new JLabel("Or disponible : ");
-            private JLabel Or = new JLabel();
+            public JLabel Or = new JLabel();
         private JPanel PanelNourri = new JPanel();
             private JLabel StrNourri = new JLabel("Nourriture Disponible : ");
             public JLabel Nourri = new JLabel();
         private JPanel PanelVie = new JPanel();
             private JLabel StrVie = new JLabel("Vie : ");
-            private JLabel Vie = new JLabel();
+            public JLabel Vie = new JLabel();
         private JPanel PanelPoids = new JPanel();
             private JLabel StrPoids = new JLabel("Poids à porter : ");
-            private JLabel Poids = new JLabel();
+            public JLabel Poids = new JLabel();
         private JPanel PanelSuite = new JPanel();
             private JLabel StrSuite = new JLabel("Equipe : ");
-            private JLabel Suite = new JLabel();
+            public JLabel Suite = new JLabel();
         private JPanel PanelPortage = new JPanel();
             private JLabel StrPortage = new JLabel("Capacité de portage : ");
-            private JLabel Portage = new JLabel();
+            public JLabel Portage = new JLabel();
 
     private JPanel commandes = new JPanel();
         private JPanel Location = new JPanel();
@@ -70,7 +70,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 private JButton Non = new JButton("NON");
     private JPanel Affichage = new JPanel();
         private JLabel StrStory = new JLabel("Boite de dialogue : ");
-        private JLabel Story = new JLabel();
+        public JLabel Story = new JLabel();
 
 
     private Panneau monPanneau;

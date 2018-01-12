@@ -37,8 +37,9 @@ public class game {
     public Integer getGold() {
         return Gold;
     }
-    public void setGold(Integer gold) {
+    public void setGold(Integer gold, Fenetre fenetre) {
         Gold = gold;
+        fenetre.Or.setText(gold.toString());
     }
 
     //Food
@@ -131,9 +132,9 @@ public class game {
 
 
     //AJOUT D'UN PERSONNAGE DANS LA SUITE
-    public void AddCharacter(SoloChar newCharacter){
+    public void AddCharacter(SoloChar newCharacter, Fenetre fenetre){
 
-        this.setGold( this.getGold() + newCharacter.getWealth());
+        this.setGold( this.getGold() + newCharacter.getWealth(), fenetre);
         this.setSuiteLoad( this.getSuiteLoad() + newCharacter.getLoads() ) ;
         this.setSuite(newCharacter);
         if (newCharacter.getMount()==1)
@@ -196,7 +197,7 @@ public class game {
 
 
     //FOOD-PURCHASE
-    public void FoodPurchase(Hex currentCase, int foodneed, Fenetre fenentre){
+    public void FoodPurchase(Hex currentCase, int foodneed, Fenetre fenetre){
 
         //if you are in a town, castle, or village
         // you can purchase food for each character in your party.
@@ -212,8 +213,8 @@ public class game {
             if(achat.equals("Y") || achat.equals("y"))
             {
                 if(this.getGold()>=foodneed){ //si le Prince a assez d'argent
-                    this.setGold(this.getGold() - foodneed);
-                    this.setFood( this.getFood() + foodneed, fenentre);
+                    this.setGold(this.getGold() - foodneed, fenetre);
+                    this.setFood( this.getFood() + foodneed, fenetre);
                     System.out.println("You bought " + foodneed + " food unit(s)\n"+
                     "You now have " + this.getGold() + " gold unit and " + this.Food + " food unit");
                 }

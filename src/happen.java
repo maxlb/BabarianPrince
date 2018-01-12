@@ -95,7 +95,7 @@ public class happen {
         }
     }
 
-    public void r231(game myGame, Prince myPrince){
+    public void r231(game myGame, Prince myPrince, Fenetre fenetre){
         System.out.println("You encounter a local Priest riding on a donkey\n" +
                 "with combat skill 3, " +
                 "endurance 3, wealth 25. He seems aloof and not disposed \n" +
@@ -114,7 +114,7 @@ public class happen {
         }
         else if (reponse.equals("t") || reponse.equals("T")){
             //talk
-            r337(myGame, donkeyPriest);
+            r337(myGame, donkeyPriest, fenetre);
         }
         else if (reponse.equals("f") || reponse.equals("F")){
             //fight!
@@ -123,7 +123,7 @@ public class happen {
 
 
     }
-    public void r232(game myGame, Prince myPrince){
+    public void r232(game myGame, Prince myPrince, Fenetre fenetre){
         System.out.println("You meet a swordsman adventurer.\n " +
                 "He is mounted on a horse with combat skill 6, \n" +
                 "endurance 6, and wealth 7. Sitting there on his horse\n" +
@@ -141,7 +141,7 @@ public class happen {
         }
         else if (reponse.equals("t") || reponse.equals("T")){
             //talk
-            r337(myGame, swordsman);
+            r337(myGame, swordsman, fenetre);
         }
         else if (reponse.equals("f") || reponse.equals("F")){
             //fight!
@@ -149,7 +149,7 @@ public class happen {
         }
     }
 
-    public void r233(game myGame, Prince myPrince){
+    public void r233(game myGame, Prince myPrince, Fenetre fenetre){
         System.out.println("You meet a friendly merchant.\n " +
                 "You can either pass by and ignore him, ending this encounter,\n " +
                 "or you can stop to chat and barter." +
@@ -172,7 +172,7 @@ public class happen {
 
                 if(achatPegasus.equals("Y") || achatPegasus.equals("y")){
                     myPrince.setMount(3);
-                    myGame.setGold( myGame.getGold() - 50);
+                    myGame.setGold( myGame.getGold() - 50, fenetre);
                     System.out.println("You now ride a pegasus !");
                 }
 
@@ -213,7 +213,7 @@ public class happen {
     }
 
 
-    public void r337(game myGame, SoloChar encounter){
+    public void r337(game myGame, SoloChar encounter, Fenetre fenetre){
         System.out.println(encounter.getName() + " encountered look unsavory, " +
                 "but willing to talk - you try to convince them to join " +
                 "your party…");
@@ -222,7 +222,7 @@ public class happen {
         if(jete<=3){
             //le personnage se joint
             System.out.println(encounter.getName()+ " is joining your party!");
-            myGame.AddCharacter(encounter);
+            myGame.AddCharacter(encounter, fenetre);
         }
         else
             System.out.println(encounter.getName() + " turn down your offer.");
