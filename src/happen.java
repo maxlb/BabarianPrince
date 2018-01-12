@@ -8,60 +8,52 @@ import util.de;
 
 public class happen {
 
+    static Map<String, Integer> monTerrain = Init.InitTypeTerrain(); //initialise les topologies de terrain de chaque case
+    static Map<String, Integer> mesMonum = Init.InitMonument(); //initialise la position des monuments
+    static Map<String, Integer> mesRoutes = Init.InitRoute(); //initialise la position des routes
 
-    public static Hex e001(game myGame, String jete){
-
-        System.out.println("\n\nWELCOME TO \"BARBARIAN PRINCE\"!!!\n" +
-                "____________________________________\n\n"+
-                "Evil events have overtaken your Northlands Kingdom. Your father, \n" +
-                "the old king, is dead - assassinated by rivals to the throne. \n" +
-                "These usurpers now hold the palace with their mercenary royal guard.\n" +
-                "You have escaped, and must collect 500 GOLD PIECES to raise a force to smash them \n" +
-                "and retake your heritage. Furthermore, the usurpers have powerful friends overseas. \n" +
-                "If you can't return to take them out in 70 DAYS, their allies will arm\n" +
-                "and you will lose your kingdom forever.\n"+
-                "To escape the mercenary and royal guard, your loyal body servant \n" +
-                "Ogab smuggled you into a merchant caravan to the southern border. \n");
-
+    public static Hex e001(game myGame, Fenetre fenetre){
 
         //quelle case pour démarrer
         myGame.setCurrentCase("null");
-        switch (jete) {
-            case "0101":
+        String str ="";
+        switch (fenetre.resultDe) {
+            case 1:
                 myGame.setCurrentCase("0101");
-                System.out.println("You are now in Ogon, small town in the CountrySide…");
+                str = "dans Ogon, une petite ville du royaume.";
                 break;
-            case "0701":
+            case 2:
                 myGame.setCurrentCase("0701");
-                System.out.println("You are now in the middle of the CountrySide…");
+                str = "dans la campagne du royaume.";
                 break;
-            case "0901":
+            case 3:
                 myGame.setCurrentCase("0901");
-                System.out.println("You are now in the moutains, in the Ruins of Jakor\'s Keep…");
+                str = "dans les ruines du donjon de Jakor";
                 break;
-            case "1301":
+            case 4:
                 myGame.setCurrentCase("1301");
-                System.out.println("You are now in the middle of the CountrySide…");
+                str = "dans la campagne du royaume.";
                 break;
-            case "1501":
+            case 5:
                 myGame.setCurrentCase("1501");
-                System.out.println("You are now in Weshor, small town in the Farmland…");
+                str = "dans Weshor, une petite ville du royaume.";
                 break;
-            case "1901":
+            case 6:
                 myGame.setCurrentCase("1901");
-                System.out.println("You are now in the mountains…");
+                str = "dans les montagnes du royaume.";
 
         }
-
-        Map<String, Integer> monTerrain = Init.InitTypeTerrain(); //initialise les topologies de terrain de chaque case
-        Map<String, Integer> mesMonum = Init.InitMonument(); //initialise la position des monuments
-        Map<String, Integer> mesRoutes = Init.InitRoute(); //initialise la position des routes
+        fenetre.setStory("La première journée ...\n" +
+                        "Alors que le pauvre Ogab fait face à la colère des gardes royaux \n" +
+                        "pour rentrer à la maison, vous vous trouvez \n" +
+                        str + "\n\n" +
+                        "Maintenant, à l'aube, vous poussez les chariots marchands dans un fossé, \n" +
+                        "époussetez vos vêtements, desserrez votre ceinture d'épée et \n" +
+                        "vous vous préparez à commencer le premier jour de votre aventure !");
 
         //retourne la HEX sur laquelle on se positionne
         return Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
-
     }
-
 
     public void e009(game myGame, Fenetre maFenetre){
 
@@ -123,6 +115,7 @@ public class happen {
 
 
     }
+
     public void r232(game myGame, Prince myPrince, Fenetre fenetre){
         System.out.println("You meet a swordsman adventurer.\n " +
                 "He is mounted on a horse with combat skill 6, \n" +
@@ -152,7 +145,7 @@ public class happen {
     public void r233(game myGame, Prince myPrince, Fenetre fenetre){
         System.out.println("You meet a friendly merchant.\n " +
                 "You can either pass by and ignore him, ending this encounter,\n " +
-                "or you can stop to chat and barter." +
+                "or you can stop to chat and barter.\n" +
                 "Stop (type S), Pass (Type P)\n");
         Scanner sc = new Scanner(System.in);
         String reponse = sc.nextLine();
@@ -166,11 +159,10 @@ public class happen {
                 System.out.println("You are too poor to buy anything your highness !");}
             else {
                 System.out.println("Merchant has pegasus mount for sale, 50 gold.\n" +
-                "Do you buy it ?\n" +
-                "Yes (type Y), No (type N)");
-                String achatPegasus = sc.nextLine();
+                "Do you buy it ?\n");
+                String achatPegasus = fenetre.aRepondu();
 
-                if(achatPegasus.equals("Y") || achatPegasus.equals("y")){
+                if(achatPegasus.equals("Oui")){
                     myPrince.setMount(3);
                     myGame.setGold( myGame.getGold() - 50, fenetre);
                     System.out.println("You now ride a pegasus !");
@@ -180,7 +172,6 @@ public class happen {
             }
         }
     }
-
 
     public void r234(game myGame, Prince myPrince){
         //Simplifié avec juste l'event e032 Ghosts
@@ -211,7 +202,6 @@ public class happen {
     public void r301a(game myGame, Prince myPrince, BandChar adversaires){
         //FIGHT BAND
     }
-
 
     public void r337(game myGame, SoloChar encounter, Fenetre fenetre){
         System.out.println(encounter.getName() + " encountered look unsavory, " +

@@ -158,9 +158,7 @@ public class game {
             foodneed = this.suiteFood*2;
             else
             foodneed = this.suiteFood;
-    System.out.println("Available food: " + this.getFood());
-    System.out.println("Food need for you and your party: " + foodneed);
-    return foodneed;
+        return foodneed;
     }
 
 
@@ -172,24 +170,21 @@ public class game {
         if (currentCase.type != null
                 && (currentCase.type == 2 || currentCase.type == 1 || currentCase.type == 3 || currentCase.type == 4 || currentCase.type == 7))
         {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Are you in the mood for hunting ? Type \"Y\" for Yes, \"N\" for No");
-            String chasse = sc.nextLine();
+            fenetre.setStory(fenetre.getStory() + "\nÊtes-vous d'humeur à chasser ? ");
+            String chasse = fenetre.aRepondu();
 
-            if (chasse.equals("Y") || chasse.equals("y"))
+            if (chasse.equals("Oui"))
             {
                 newHunt = myPrince.Hunt();
                 this.Endurance = myPrince.getEndurance();
 
-                if (newHunt == -1)
-                    { //le Prince est tué dans la chasse => perdu
+                if (newHunt == -1) { //le Prince est tué dans la chasse => perdu
                     this.Endurance = 0;
                     this.setStatus(false);
-                    System.out.println("YOU DIE ! \n GAME OVER");
-                }
-                else {
+                    fenetre.setStory(fenetre.getStory() + "\nDommage vous êtes MORT à la chasse ! \n GAME OVER");
+                } else {
                     this.setFood(this.getFood() + newHunt, fenetre);
-                    System.out.println("You hunted " + newHunt + " food unit(s)");
+                    fenetre.setStory(fenetre.getStory() + "\nBravo ! Vous avez récupéré " + newHunt + " unité(s) de nourriture");
                 }
             }
         }
@@ -205,18 +200,16 @@ public class game {
         // Animals cost 1 gold piece per day to feed at the stables of the town/castle/village.
         // If you don't purchase food, you must eat stores, as hunting is prohibited in these hexes.
 
-        if(currentCase.monument!= null && (currentCase.monument==4 || currentCase.monument==3) ) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Do you want to purchase food? Type Y for Yes, N for No");
-            String achat = sc.nextLine();
+        if(currentCase.monument!= null && (currentCase.monument == 4 || currentCase.monument == 3) ) {
+            fenetre.setStory(fenetre.getStory() + "\nVoulez vous acheter de la nourriture ?");
+            String achat = fenetre.aRepondu();
 
-            if(achat.equals("Y") || achat.equals("y"))
+            if(achat.equals("Oui"))
             {
                 if(this.getGold()>=foodneed){ //si le Prince a assez d'argent
                     this.setGold(this.getGold() - foodneed, fenetre);
                     this.setFood( this.getFood() + foodneed, fenetre);
-                    System.out.println("You bought " + foodneed + " food unit(s)\n"+
-                    "You now have " + this.getGold() + " gold unit and " + this.Food + " food unit");
+                    fenetre.setStory(fenetre.getStory() + "\nVous avez pu acheter " + foodneed + " unité(s) de nourriture.");
                 }
                 else
                     System.out.println("You're so broke my highness! You can't buy food");
@@ -230,8 +223,12 @@ public class game {
             if (this.getFood() >= foodneed) { //il y a assez de nourriture pour tous
                 this.setFood(this.getFood() - foodneed, fenetre);
                 myPrince.Feed();
+                fenetre.setStory(fenetre.getStory()+"\nVotre groupe mange "+ foodneed +" nourriture(s) pour survire.");
                 //!!!! à rajouter le festin de la troupe (boucle)
-            } else myPrince.Starve(); //!!!! à rajouter la famine de la troupe (boucle)
+            } else {
+                myPrince.Starve(); //!!!! à rajouter la famine de la troupe (boucle)
+                fenetre.setStory(fenetre.getStory()+"\nVotre groupe n'a pas assez a manger, c'est la famine !");
+            }
         }
     }//fin de la méthode Food
 

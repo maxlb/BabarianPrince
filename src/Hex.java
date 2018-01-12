@@ -30,7 +30,7 @@ public class Hex {
     }
 
     public String getRoad(){
-        String str = "Pas de route";
+        String str = "Aucune route";
         if(this.road == 1){
             str= "Sur une route";
         }
@@ -95,7 +95,7 @@ public class Hex {
 
     public void Event(game myGame, Prince myPrince, Fenetre fenetre){
         if(de.randomDice() > this.event){
-            System.out.println("uhoh! there is someone here!");
+            fenetre.setStory(fenetre.getStory() + "\n UHOH ! Il y a quelqu'un ici !");
             int typologie = this.type;
 
             switch (typologie) {
@@ -123,13 +123,13 @@ public class Hex {
             }
         }
 
-        else System.out.println("No living soul around here");
+        else fenetre.setStory(fenetre.getStory() + "Ouf ! Il n'y a rien de vivant par ici.");
 
     }
 
     public void EventCountrySide(game myGame, Prince myPrince, Fenetre fenetre){
             happen whathappen = new happen();
-            int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+            int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
             switch (jete) {
                 case 1:
@@ -157,7 +157,7 @@ public class Hex {
 
     public void EventFarmLand(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
-        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+        int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
@@ -185,7 +185,7 @@ public class Hex {
 
     public void EventForest(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
-        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+        int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
@@ -213,7 +213,7 @@ public class Hex {
 
     public void EventHills(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
-        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+        int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
@@ -241,7 +241,7 @@ public class Hex {
 
     public void EventMountains(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
-        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+        int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
@@ -269,7 +269,7 @@ public class Hex {
 
     public void EventDesert(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
-        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+        int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:
@@ -297,7 +297,7 @@ public class Hex {
 
     public void EventSwamp(game myGame, Prince myPrince, Fenetre fenetre){
         happen whathappen = new happen();
-        int jete = de.randomDie(); //lancer de dé pour déterminer l'événement
+        int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
         switch (jete) {
             case 1:

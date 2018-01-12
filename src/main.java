@@ -16,12 +16,13 @@ class main {
 
         //Quelle case pour demarrer ?
         Boolean a = true;
+        Boolean tour1Fini = false;
 
         while(a){
             Boolean b = maFenetre.Begin;
             System.out.print("");
             if(b){
-                caseActuelle = happen.e001(myGame, maFenetre.Loc.getText());
+                caseActuelle = happen.e001(myGame, maFenetre);
                 a = false;
                 myGame.setStatus(true);
             }
@@ -30,14 +31,20 @@ class main {
         // JEU
         while (myGame.getStatus(myPrince)) //tant que le jeu est en cours
         {
-
             maFenetre.Portage.setText(myGame.getSuiteLoad().toString());
             maFenetre.Or.setText(myGame.getGold().toString());
             maFenetre.Nourri.setText(myGame.getFood().toString());
             maFenetre.Quete.setText(myGame.getTimeTrack().toString());
+            maFenetre.Non.setEnabled(false);
+            maFenetre.Oui.setEnabled(false);
+
+
+            if(tour1Fini){
+                maFenetre.Story.setText("Nouvelle journée ! \n");
+                caseActuelle = Init.GetTypeTerrain(maFenetre.estDeplace(), happen.monTerrain, happen.mesMonum, happen.mesRoutes);
+            }
             maFenetre.Typo.setText(caseActuelle.getType(caseActuelle.type));
             maFenetre.Route.setText(caseActuelle.getRoad());
-
             if(caseActuelle.monument != null){
                 maFenetre.Monu.setText(caseActuelle.getMonum(caseActuelle.monument));
             } else {
@@ -47,11 +54,7 @@ class main {
             //TOUR
 
             //EVENT : se passe-t-il quelque chose sur cette case ?
-
             caseActuelle.Event(myGame, myPrince, maFenetre);
-
-            //où suis-je ? terrain ? monument ? route ?
-            //Hex caseActuelle = Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
 
             //After all events (if any) are resolved for your daily action,
             // you must then eat your main (evening) meal, as described in the food rules (r215),
@@ -59,7 +62,8 @@ class main {
 
             //FOOD
             //calcul du besoin de nourriture
-            int foodneed = myGame.FoodNeed(caseActuelle);
+            Integer foodneed = myGame.FoodNeed(caseActuelle);
+            maFenetre.setStory(maFenetre.getStory()+"\nVotre groupe à besoin de "+ foodneed.toString() +" unité(s) de nourriture.");
 
             //FOOD-hunting
             myGame.FoodHunt(myPrince, caseActuelle, maFenetre);
@@ -95,20 +99,15 @@ class main {
             //FIN DE TOUR
             myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
 
-            System.out.println("Jours restants : " + myGame.getTimeTrack());
-            System.out.println("Fin de tour, appuyer sur une touche pour continuer");
-            Scanner sc = new Scanner(System.in);
-            String findetour = sc.nextLine();
-            System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - -");
-
-
-
+            maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
+            maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la directions \nque vous souhaitez prendre.");
+            if(!tour1Fini){
+                tour1Fini = true;
+            }
         }
 
         //TEMPS ÉPUISÉ
-        System.out.println("Le temps imparti est épuisé. Vous avez perdu");
-
-
+        maFenetre.setStory(maFenetre.getStory() + "\nLe temps imparti est épuisé. Vous avez perdu.");
     }
 
 }
