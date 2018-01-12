@@ -1,9 +1,8 @@
 import java.util.Map;
 import java.util.Scanner;
 
-import Personnages.BandChar;
 import Personnages.Prince;
-import Personnages.SoloChar;
+import Personnages.NewCharacter;
 import util.de;
 
 public class happen {
@@ -25,7 +24,6 @@ public class happen {
 
 
         //quelle case pour démarrer
-        //int jete = de.randomDie();
         myGame.setCurrentCase("null");
         switch (jete) {
             case "0101":
@@ -104,9 +102,9 @@ public class happen {
                 "to conversation, but he may be afraid of you . . . You can let him pass,\n " +
                 "ending this encounter, or select one of the two options below:\n" +
                 "Type P for Pass, T for Talk or F for Fight!");
-        SoloChar donkeyPriest =
-                new SoloChar("Jose the donkey priest",
-                        2, 10, 2, 25, 3,3);
+        NewCharacter donkeyPriest =
+                new NewCharacter("Jose the donkey priest",
+                        2, 10, 2, 25, 3,3,1);
         Scanner sc = new Scanner(System.in);
         String reponse = sc.nextLine();
 
@@ -131,9 +129,9 @@ public class happen {
                 "endurance 6, and wealth 7. Sitting there on his horse\n" +
                 " he takes an active interest in your party. Your options are:\n" +
                 "Talk (type t), evade (type e) or fight (type f)");
-        SoloChar swordsman =
-                new SoloChar("Brutus the swodsman adventurer",
-                        3, 10, 2, 7, 6,6);
+        NewCharacter swordsman =
+                new NewCharacter("Brutus the swodsman adventurer",
+                        3, 10, 2, 7, 6,6,1);
         Scanner sc = new Scanner(System.in);
         String reponse = sc.nextLine();
 
@@ -194,28 +192,24 @@ public class happen {
         System.out.println(" A group of " + nbGhosts + " ghosts surprise you in combat\n" +
         "each of which is combat value 4, endurance 2");
 
-        BandChar GhostsBand =
-                new BandChar("Terrible Ghosts",
+        NewCharacter GhostsBand =
+                new NewCharacter("Terrible Ghosts",
                         4, 0, 1, 0,
                         2, 4, nbGhosts);
         //fight !
-        this.r301a(myGame, myPrince, GhostsBand);
+        this.r301(myGame, myPrince, GhostsBand);
     }
 
     public void r235(game myGame){
         //
     }
 
-    public void r301(game myGame, Prince myPrince, SoloChar adversaire){
+    public void r301(game myGame, Prince myPrince, NewCharacter adversaire){
         //FIGHT SOLO CHARACTER
     }
 
-    public void r301a(game myGame, Prince myPrince, BandChar adversaires){
-        //FIGHT BAND
-    }
 
-
-    public void r337(game myGame, SoloChar encounter){
+    public void r337(game myGame, NewCharacter encounter){
         System.out.println(encounter.getName() + " encountered look unsavory, " +
                 "but willing to talk - you try to convince them to join " +
                 "your party…");

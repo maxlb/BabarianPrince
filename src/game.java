@@ -1,4 +1,4 @@
-import Personnages.SoloChar;
+import Personnages.NewCharacter;
 import Personnages.Character;
 import Personnages.Prince;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class game {
     private Integer Gold;
     private Integer Food; //unités de nourriture disponible
     private Integer Endurance; //vie
-    private Integer TotalLoad;
+    private Integer TotalLoad; //total de la charge à porter
     private Boolean Status; //true : jeu en cours / False : game over
     private String currentCase; //case actuelle du jeu
     private ArrayList suite = new ArrayList(); //Liste des personnages présents dans la suite du prince
@@ -129,7 +129,7 @@ public class game {
 
 
     //AJOUT D'UN PERSONNAGE DANS LA SUITE
-    public void AddCharacter(SoloChar newCharacter){
+    public void AddCharacter(NewCharacter newCharacter){
 
         this.setGold( this.getGold() + newCharacter.getWealth());
         this.setSuiteLoad( this.getSuiteLoad() + newCharacter.getLoads() ) ;
@@ -247,10 +247,7 @@ public class game {
         if(currentCase.monument!= null
                 && (currentCase.monument==4 || currentCase.monument==3 || currentCase.monument==1 )){
 
-
-
         }
-
 
     }//fin de purchase lodging
 
