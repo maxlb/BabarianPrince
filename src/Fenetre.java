@@ -6,17 +6,50 @@ import java.awt.event.ActionListener;
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
 
-    private JPanel InfosPerso = new JPanel();
-        JLabel posX = new JLabel();
-        JLabel posY = new JLabel();
+    private JPanel InfosTerrain = new JPanel();
+        private JLabel Terrain = new JLabel("Infos Terrain");
+        private JPanel PanelLoc = new JPanel();
+            private JLabel StrLoc = new JLabel("Identifiant de la case : ");
+            private JLabel Loc = new JLabel();
+        private JPanel PanelTypo = new JPanel();
+            private JLabel StrTypo = new JLabel("Typologie du terrain : ");
+            private JLabel Typo = new JLabel();
+        private JPanel PanelMonu = new JPanel();
+            private JLabel StrMonu = new JLabel("Monument : ");
+            private JLabel Monu = new JLabel();
+        private JPanel PanelRoute = new JPanel();
+            private JLabel StrRoute = new JLabel("Route : ");
+            private JLabel Route = new JLabel();
+
+    private JPanel InfosPrince = new JPanel();
+        private JLabel Prince = new JLabel("Infos Prince");
+        private JPanel PanelQuete = new JPanel();
+            private JLabel StrQuete = new JLabel("Jours de quêtes restants : ");
+            private JLabel Quete = new JLabel();
+        private JPanel PanelOr = new JPanel();
+            private JLabel StrOr = new JLabel("Or disponible : ");
+            private JLabel Or = new JLabel();
+        private JPanel PanelNourri = new JPanel();
+            private JLabel StrNourri = new JLabel("Nourriture Disponible : ");
+            private JLabel Nourri = new JLabel();
+        private JPanel PanelVie = new JPanel();
+            private JLabel StrVie = new JLabel("Vie : ");
+            private JLabel Vie = new JLabel();
+        private JPanel PanelPoids = new JPanel();
+            private JLabel StrPoids = new JLabel("Poids à porter : ");
+            private JLabel Poids = new JLabel();
+        private JPanel PanelSuite = new JPanel();
+            private JLabel StrSuite = new JLabel("Equipe : ");
+            private JLabel Suite = new JLabel();
+        private JPanel PanelPortage = new JPanel();
+            private JLabel StrPortage = new JLabel("Capacité de portage : ");
+            private JLabel Portage = new JLabel();
 
     private JPanel commandes = new JPanel();
         private JPanel Location = new JPanel();
                 private JPanel PanelDep = new JPanel();
                 private JButton Dep = new JButton("Départ");
-            private JPanel PanelStr = new JPanel();
-                private JLabel StrLoc = new JLabel("Identifiant de la case : ");
-                private JLabel Loc = new JLabel();
+
 
         private JPanel boutons = new JPanel();
             private JPanel boutonsN = new JPanel();
@@ -44,6 +77,9 @@ public class Fenetre extends JFrame implements ActionListener {
 
         boutons.setLayout(new BorderLayout());
         commandes.setLayout(new BorderLayout());
+        InfosTerrain.setLayout(new BorderLayout());
+        PanelMonu.setLayout(new BorderLayout());
+        InfosPrince.setLayout(new BorderLayout());
 
         N.addActionListener(this);
         S.addActionListener(this);
@@ -52,6 +88,7 @@ public class Fenetre extends JFrame implements ActionListener {
         NW.addActionListener(this);
         SW.addActionListener(this);
         Dep.addActionListener(this);
+
 
         boutonsN.add(NW);
         boutonsN.add(N);
@@ -65,26 +102,86 @@ public class Fenetre extends JFrame implements ActionListener {
         boutons.add(boutonsN);
         boutons.add(boutonsS);
 
-
         PanelDep.setLayout(new BoxLayout(PanelDep, BoxLayout.LINE_AXIS));
         PanelDep.add(Dep);
 
-        PanelStr.setLayout(new BoxLayout(PanelStr, BoxLayout.LINE_AXIS));
-        PanelStr.add(StrLoc);
-        PanelStr.add(Loc);
+        PanelLoc.setLayout(new BoxLayout(PanelLoc, BoxLayout.LINE_AXIS));
+        PanelLoc.add(StrLoc);
+        PanelLoc.add(Loc);
+
+        PanelTypo.setLayout(new BoxLayout(PanelTypo, BoxLayout.LINE_AXIS));
+        PanelTypo.add(StrTypo);
+        PanelTypo.add(Typo);
+
+        PanelMonu.setLayout(new BoxLayout(PanelMonu, BoxLayout.LINE_AXIS));
+        PanelMonu.add(StrMonu);
+        PanelMonu.add(Monu);
+
+        PanelRoute.setLayout(new BoxLayout(PanelRoute, BoxLayout.LINE_AXIS));
+        PanelRoute.add(StrRoute);
+        PanelRoute.add(Route);
+
+        InfosTerrain.setLayout(new BoxLayout(InfosTerrain, BoxLayout.PAGE_AXIS));
+        InfosTerrain.add(Terrain);
+        InfosTerrain.add(PanelLoc);
+        InfosTerrain.add(PanelTypo);
+        InfosTerrain.add(PanelMonu);
+        InfosTerrain.add(PanelRoute);
+
+
+        InfosPrince.setLayout(new BoxLayout(InfosPrince, BoxLayout.PAGE_AXIS));
+        InfosPrince.add(Prince);
+        InfosPrince.add(PanelQuete);
+        InfosPrince.add(PanelOr);
+        InfosPrince.add(PanelNourri);
+        InfosPrince.add(PanelVie);
+        InfosPrince.add(PanelPoids);
+        InfosPrince.add(PanelSuite);
+        InfosPrince.add(PanelPortage);
+
+
+        PanelQuete.setLayout(new BoxLayout(PanelQuete, BoxLayout.LINE_AXIS));
+        PanelQuete.add(StrQuete);
+        PanelQuete.add(Quete);
+
+        PanelOr.setLayout(new BoxLayout(PanelOr, BoxLayout.LINE_AXIS));
+        PanelOr.add(StrOr);
+        PanelOr.add(Or);
+
+        PanelNourri.setLayout(new BoxLayout(PanelNourri, BoxLayout.LINE_AXIS));
+        PanelNourri.add(StrNourri);
+        PanelNourri.add(Nourri);
+
+        PanelVie.setLayout(new BoxLayout(PanelVie, BoxLayout.LINE_AXIS));
+        PanelVie.add(StrVie);
+        PanelVie.add(Vie);
+
+        PanelPoids.setLayout(new BoxLayout(PanelPoids, BoxLayout.LINE_AXIS));
+        PanelPoids.add(StrPoids);
+        PanelPoids.add(Poids);
+
+        PanelSuite.setLayout(new BoxLayout(PanelSuite, BoxLayout.LINE_AXIS));
+        PanelSuite.add(StrSuite);
+        PanelSuite.add(Suite);
+
+        PanelPortage.setLayout(new BoxLayout(PanelPortage, BoxLayout.LINE_AXIS));
+        PanelPortage.add(StrPortage);
+        PanelPortage.add(Portage);
+
 
         Location.setLayout(new BoxLayout(Location, BoxLayout.PAGE_AXIS));
         Location.add(PanelDep);
-        Location.add(PanelStr);
 
         commandes.setLayout(new BoxLayout(commandes, BoxLayout.PAGE_AXIS));
         commandes.add(Location);
+        commandes.add(InfosTerrain);
+        commandes.add(InfosPrince);
         commandes.add(boutons);
 
         monPanneau.setPreferredSize(new Dimension(720,940));
 
         container.add(monPanneau,BorderLayout.WEST);
-        container.add(commandes,BorderLayout.EAST);
+        container.add(commandes);
 
         this.add(container);
         this.setVisible(true);
