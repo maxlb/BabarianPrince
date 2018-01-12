@@ -8,60 +8,62 @@ import util.de;
 public class happen {
 
 
-    public Hex e001(game myGame){
+    public static Hex e001(game myGame){
+
+        System.out.println("\n\nWELCOME TO \"BARBARIAN PRINCE\"!!!\n" +
+                "____________________________________\n\n"+
+                "Evil events have overtaken your Northlands Kingdom. Your father, \n" +
+                "the old king, is dead - assassinated by rivals to the throne. \n" +
+                "These usurpers now hold the palace with their mercenary royal guard.\n" +
+                "You have escaped, and must collect 500 GOLD PIECES to raise a force to smash them \n" +
+                "and retake your heritage. Furthermore, the usurpers have powerful friends overseas. \n" +
+                "If you can't return to take them out in 70 DAYS, their allies will arm\n" +
+                "and you will lose your kingdom forever.\n"+
+                "To escape the mercenary and royal guard, your loyal body servant \n" +
+                "Ogab smuggled you into a merchant caravan to the southern border. \n");
+
+
         //quelle case pour démarrer
         int jete = de.randomDie();
         myGame.setCurrentCase("null");
         switch (jete) {
             case 1:
                 myGame.setCurrentCase("0101");
+                System.out.println("You are now in Ogon, small town in the CountrySide…");
                 break;
             case 2:
                 myGame.setCurrentCase("0701");
+                System.out.println("You are now in the middle of the CountrySide…");
                 break;
             case 3:
                 myGame.setCurrentCase("0901");
+                System.out.println("You are now in the moutains, in the Ruins of Jakor\'s Keep…");
                 break;
             case 4:
                 myGame.setCurrentCase("1301");
+                System.out.println("You are now in the middle of the CountrySide…");
                 break;
             case 5:
                 myGame.setCurrentCase("1501");
+                System.out.println("You are now in Weshor, small town in the Farmland…");
                 break;
             case 6:
                 myGame.setCurrentCase("1901");
+                System.out.println("You are now in the mountains…");
+
         }
 
         Map<String, Integer> monTerrain = Init.InitTypeTerrain(); //initialise les topologies de terrain de chaque case
         Map<String, Integer> mesMonum = Init.InitMonument(); //initialise la position des monuments
         Map<String, Integer> mesRoutes = Init.InitRoute(); //initialise la position des routes
 
-        Hex caseActuelle = Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
+        //retourne la HEX sur laquelle on se positionne
+        return Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
 
-        System.out.println("Evil events have overtaken your Northlands Kingdom. Your father, \n" +
-                        "the old king, is dead - assassinated by rivals to the throne. \n" +
-                        "These usurpers now hold the palace with their mercenary royal guard.\n " +
-                        "You have escaped, and must collect 500 gold pieces to raise a force to smash them \n" +
-                        "and retake your heritage. Furthermore, the usurpers have powerful friends overseas. \n" +
-                        "If you can't return to take them out in ten weeks, their allies will arm\n " +
-                        "and you will lose your kingdom forever. Now consult r202 to determine\n " +
-                        "the starting attributes of yourself as the Barbarian Prince, \n" +
-                        "and then return to this event and read the paragraph below: \n" +
-                        "To escape the mercenary and royal guard, your loyal body servant \n" +
-                        "Ogab smuggled you into a merchant caravan to the southern border. \n");
-
-        return caseActuelle;
     }
 
 
     public void e009(game myGame){
-    //e009 Farm
-        // You spot a small farm ahead. You may detour around it,
-        // but that will consume the rest of the day, ending all travel
-        // for today. Alternately, you can go up to it. If you approach
-        // the farm, you must decide whether to make it a friendly approach,
-        // or a raid.
-
 
         System.out.println("You spot a small farm ahead. You may detour around it,\n" +
                 "but that will consume the rest of the day, ending all travel\n" +
@@ -193,7 +195,7 @@ public class happen {
     }
 
     public void r301(game myGame){
-        //
+        //FIGHT
     }
     public void r337(game myGame, SoloChar thepriest){
         System.out.println(thepriest.getName() + "encountered look unsavory, " +

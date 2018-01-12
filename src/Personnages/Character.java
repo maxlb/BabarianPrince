@@ -69,33 +69,7 @@ public class Character {
     }
 
 
-    //FEED
-    public void Feed(){
-        /*if(this.combat < this.initcombat) {
-            this.combat++;
-        }
 
-        if(this.loads<10)
-            this.loads ++;*/
-    }
-
-    //STARVE
-    // if a character goes, without food for a day,
-    // on the following day his ability to carry loads (r206)
-    // is halved, with fractions rounded down, and his combat skill
-    // is reduced by one. If he goes without food again, load carrying
-    // and combat skill is reduced again. When food is available and eaten again,
-    // each day's normal meal also eliminates the effect of one day of starvation.
-    public void Starve(){
-        /*this.combat--;
-        this.loads--;*/
-    }
-
-    //HEAL
-    public void Heal(){
-        if (endurance < initEndurance)
-            endurance++;
-    }
 
 }
 

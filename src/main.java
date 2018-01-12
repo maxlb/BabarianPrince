@@ -9,13 +9,14 @@ class main {
         game myGame = new game();
 
         //Quelle case pour demarrer ?
-        happen tour1 = new happen();
-        Hex caseActuelle = tour1.e001(myGame);
+        Hex caseActuelle = happen.e001(myGame);
 
         // JEU
         while (myGame.getStatus()) //tant que le jeu est en cours
         {
             //TOUR
+
+            System.out.println("Vous êtes sur une case de type " + caseActuelle.type);
 
             //EVENT : se passe-t-il quelque chose sur cette case ?
             caseActuelle.Event(myGame, myPrince);
@@ -32,8 +33,8 @@ class main {
             //FOOD
             int foodneed;
             foodneed = myGame.FoodNeed(caseActuelle); //calcul du besoin de nourriture
-            
-            System.out.println("Vous êtes sur une case de type " + caseActuelle.type);
+
+
             System.out.println("Votre reserve actuelle de nourriture = " + myGame.getFood());
             System.out.println("Votre besoin quotidien de nourriture = " + foodneed);
 
