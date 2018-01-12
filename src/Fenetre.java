@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
 
-    private JPanel Posi = new JPanel();
-    JLabel posX = new JLabel();
-    JLabel posY = new JLabel();
+    private JPanel InfosPerso = new JPanel();
+        JLabel posX = new JLabel();
+        JLabel posY = new JLabel();
 
     private JPanel commandes = new JPanel();
         private JPanel Location = new JPanel();
-            private JPanel PanelDep = new JPanel();
+                private JPanel PanelDep = new JPanel();
                 private JButton Dep = new JButton("Départ");
             private JPanel PanelStr = new JPanel();
                 private JLabel StrLoc = new JLabel("Identifiant de la case : ");
@@ -92,9 +92,7 @@ public class Fenetre extends JFrame implements ActionListener {
         Loc.setText(getLoc(monPanneau.x, monPanneau.y));
     }
 
-
-
-    public String getLoc(Integer x, Integer y){
+    private String getLoc(Integer x, Integer y){
         String str = "";
         Integer valx = x+1;
         Integer valy = y+1;
@@ -118,7 +116,7 @@ public class Fenetre extends JFrame implements ActionListener {
         return str;
     }
 
-    public void verifBords(){
+    private void verifBords(){
         if(monPanneau.y != 50){
             boolean minY = monPanneau.y <= 0;
             boolean maxY = monPanneau.y >= 19;
