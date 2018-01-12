@@ -21,7 +21,6 @@ public class Hex {
 
     String AbsOrd;      // id de la case
 
-
     // Constructor
     public Hex(String loc)
     {
@@ -30,7 +29,6 @@ public class Hex {
     }
 
     //EVENEMENT
-
     public void Event(game myGame, Prince myPrince){
         if(de.randomDice() > this.event){
             System.out.println("Il se passe quelque chose!");
@@ -60,9 +58,7 @@ public class Hex {
                 default:break;
             }
         }
-
         else System.out.println("Pas de rencontre aujourd'hui");
-
     }
 
     public void EventCountrySide(game myGame, Prince myPrince){
@@ -74,10 +70,10 @@ public class Hex {
                     whathappen.e009(myGame);
                     break;
                 case 2:
-                    whathappen.r231(myGame);
+                    whathappen.r231(myGame, myPrince);
                     break;
                 case 3:
-                    whathappen.r232(myGame);
+                    whathappen.r232(myGame, myPrince);
                     break;
                 case 4:
                     whathappen.r233(myGame, myPrince);
@@ -86,7 +82,7 @@ public class Hex {
                     whathappen.r234(myGame);
                     break;
                 case 6:
-                    whathappen.r235(myGame);
+                    whathappen.r235(myGame, myPrince);
                     break;
 
                 default:break;
@@ -102,10 +98,10 @@ public class Hex {
                 whathappen.e009(myGame);
                 break;
             case 2:
-                whathappen.r231(myGame);
+                whathappen.r231(myGame, myPrince);
                 break;
             case 3:
-                whathappen.r232(myGame);
+                whathappen.r232(myGame, myPrince);
                 break;
             case 4:
                 whathappen.r233(myGame, myPrince);
@@ -114,7 +110,7 @@ public class Hex {
                 whathappen.r234(myGame);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, myPrince);
                 break;
 
             default:break;
@@ -130,10 +126,10 @@ public class Hex {
                 whathappen.e009(myGame);
                 break;
             case 2:
-                whathappen.r231(myGame);
+                whathappen.r231(myGame, myPrince);
                 break;
             case 3:
-                whathappen.r232(myGame);
+                whathappen.r232(myGame, myPrince);
                 break;
             case 4:
                 whathappen.r233(myGame, myPrince);
@@ -142,14 +138,12 @@ public class Hex {
                 whathappen.r234(myGame);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, myPrince);
                 break;
 
             default:break;
         }
     }
-
-
 
     public void EventHills(game myGame, Prince myPrince){
         happen whathappen = new happen();
@@ -160,10 +154,10 @@ public class Hex {
                 whathappen.e009(myGame);
                 break;
             case 2:
-                whathappen.r231(myGame);
+                whathappen.r231(myGame, myPrince);
                 break;
             case 3:
-                whathappen.r232(myGame);
+                whathappen.r232(myGame, myPrince);
                 break;
             case 4:
                 whathappen.r233(myGame, myPrince);
@@ -172,14 +166,12 @@ public class Hex {
                 whathappen.r234(myGame);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, myPrince);
                 break;
 
             default:break;
         }
     }
-
-
 
     public void EventMountains(game myGame, Prince myPrince){
         happen whathappen = new happen();
@@ -190,10 +182,10 @@ public class Hex {
                 whathappen.e009(myGame);
                 break;
             case 2:
-                whathappen.r231(myGame);
+                whathappen.r231(myGame, myPrince);
                 break;
             case 3:
-                whathappen.r232(myGame);
+                whathappen.r232(myGame, myPrince);
                 break;
             case 4:
                 whathappen.r233(myGame, myPrince);
@@ -202,15 +194,12 @@ public class Hex {
                 whathappen.r234(myGame);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, myPrince);
                 break;
 
             default:break;
         }
     }
-
-
-
 
     public void EventDesert(game myGame, Prince myPrince){
         happen whathappen = new happen();
@@ -221,10 +210,10 @@ public class Hex {
                 whathappen.e009(myGame);
                 break;
             case 2:
-                whathappen.r231(myGame);
+                whathappen.r231(myGame, myPrince);
                 break;
             case 3:
-                whathappen.r232(myGame);
+                whathappen.r232(myGame, myPrince);
                 break;
             case 4:
                 whathappen.r233(myGame, myPrince);
@@ -233,14 +222,12 @@ public class Hex {
                 whathappen.r234(myGame);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, myPrince);
                 break;
 
             default:break;
         }
     }
-
-
 
     public void EventSwamp(game myGame, Prince myPrince){
         happen whathappen = new happen();
@@ -251,10 +238,10 @@ public class Hex {
                 whathappen.e009(myGame);
                 break;
             case 2:
-                whathappen.r231(myGame);
+                whathappen.r231(myGame, myPrince);
                 break;
             case 3:
-                whathappen.r232(myGame);
+                whathappen.r232(myGame, myPrince);
                 break;
             case 4:
                 whathappen.r233(myGame, myPrince);
@@ -263,25 +250,10 @@ public class Hex {
                 whathappen.r234(myGame);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, myPrince);
                 break;
 
             default:break;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-
-
+}

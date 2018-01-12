@@ -95,7 +95,7 @@ public class happen {
         }
     }
 
-    public void r231(game myGame){
+    public void r231(game myGame, Prince myPrince){
         System.out.println("You encounter a local Priest riding on a donkey\n" +
                 "with combat skill 3, " +
                 "endurance 3, wealth 25. He seems aloof and not disposed \n" +
@@ -118,12 +118,12 @@ public class happen {
         }
         else if (reponse.equals("f") || reponse.equals("F")){
             //fight!
-            r301(myGame);
+            r301(myGame, myPrince, donkeyPriest);
         }
 
 
     }
-    public void r232(game myGame){
+    public void r232(game myGame, Prince myPrince){
         System.out.println("You meet a swordsman adventurer.\n " +
                 "He is mounted on a horse with combat skill 6, \n" +
                 "endurance 6, and wealth 7. Sitting there on his horse\n" +
@@ -145,7 +145,7 @@ public class happen {
         }
         else if (reponse.equals("f") || reponse.equals("F")){
             //fight!
-            r301(myGame);
+            r301(myGame, myPrince, swordsman);
         }
     }
 
@@ -177,12 +177,9 @@ public class happen {
                 }
 
                 else System.out.println("I'm too manly to ride a pegasus!");
-
-
-            }
-
             }
         }
+    }
 
 
 
@@ -190,13 +187,70 @@ public class happen {
         //
     }
 
-    public void r235(game myGame){
+    public void r235(game myGame, Prince myPrince){
         //
+        Integer endurance = myPrince.getEndurance();
+        Boolean froid = false;
+
+        int de = util.de.randomDie();
+        if (de==5 || de==6){
+            froid = true;
+            endurance = endurance--;
+            myPrince.setEndurance(endurance);
+        }
+        //Jour suivant
+        de = util.de.randomDie();
+        if (de>=4){
+            for(int i = 0 ; i < myGame.getSuite().size(); i++){
+                /*
+                if ((myGame.getSuite().get(i).)>1){
+                    int die = util.de.randomDie();
+                    if (die==5 || die==6){
+
+                    }
+                }*/
+            }
+
+            if (!froid);
+            int die = util.de.randomDie();
+            endurance = endurance--;
+            myPrince.setEndurance(endurance);
+        }
+
     }
 
-    public void r301(game myGame){
+    public void r301(game myGame, Prince myPrince, SoloChar adversaire){
         //FIGHT
+        // Récupération des indices de combat
+        Integer a = myPrince.getCombat();
+        Integer b = adversaire.getCombat();
+        Integer endurancePrince = myPrince.getEndurance();
+        Integer enduranceAdversaire = adversaire.getEndurance();
+
+        Boolean joueur = true;
+        while ((endurancePrince>0) && (enduranceAdversaire>0)){
+            int de = util.de.randomDice();
+            Integer reste = (a - b + de);
+
+            if (joueur){
+                // Récupération de l'indice d'endurance de l'averssaire
+                Integer c = adversaire.getEndurance();
+
+                enduranceAdversaire = resteEndurance(reste, c);
+                adversaire.setEndurance(enduranceAdversaire);
+                joueur = false;
+            }
+            else {
+                // Récupération de l'indice d'endurance du prince
+                Integer c = myPrince.getEndurance();
+
+                endurancePrince = resteEndurance(reste, c);
+                myPrince.setEndurance(endurancePrince);
+                joueur = true;
+            }
+        }
     }
+
     public void r337(game myGame, SoloChar thepriest){
         System.out.println(thepriest.getName() + "encountered look unsavory, " +
                 "but willing to talk - you try to convince them to join " +
@@ -210,8 +264,25 @@ public class happen {
         }
         else
             System.out.println(thepriest.getName() + "refuse votre offre");
-
     }
-
-
+    public Integer resteEndurance(Integer combat, Integer endurance){
+        Integer resteCombat = combat;
+        Integer resteEndurance = endurance;
+        if ((resteCombat==-1) || (resteCombat==3) || (resteCombat==8) || (resteCombat==11)){
+            resteEndurance = resteEndurance-1;
+        }
+        if ((resteCombat==10) || (resteCombat==12) || (resteCombat==13) || (resteCombat==17)){
+            resteEndurance = resteEndurance-2;
+        }
+        if (resteCombat==14){
+            resteEndurance = resteEndurance-3;
+        }
+        if ((resteCombat==16) || (resteCombat==18) || (resteCombat==19)){
+            resteEndurance = resteEndurance-5;
+        }
+        if (resteCombat==20){
+            resteEndurance = resteEndurance-6;
+        }
+        return resteEndurance;
+    }
 }

@@ -9,7 +9,7 @@ public class game {
     private Integer TotalLoad;
     private Boolean Status; //true : jeu en cours / False : game over
     private String currentCase; //case actuelle du jeu
-    private ArrayList suite = new ArrayList(); //Liste des identifiants des personnages présents dans la suite du prince
+    private ArrayList suite = new ArrayList(); //Liste des personnages présents dans la suite du prince
     private Integer suiteLoad; //capacité de portage util.util la suite
     private Integer suiteFood; //besoin en nourriture util.util la suite du Prince
 
@@ -102,6 +102,11 @@ public class game {
         this.suite.add(newCharacterId);
     }
 
+    public void removeSuite(Integer newCharacterId){
+        //suppression d'un personnage dans la suite du prince
+        this.suite.remove(newCharacterId);
+    }
+
     public Integer getSuiteLoad(){
         // à calculer en fonction de la suite
         return suiteLoad;
@@ -135,7 +140,6 @@ public class game {
     return Foodneed;
     }
 
-
     //AJOUT D'UN PERSONNAGE DANS LA SUITE
     public void AddCharacter(SoloChar newCharacter){
         this.setGold( this.getGold() + newCharacter.getWealth());
@@ -146,7 +150,4 @@ public class game {
         else
             this.setSuiteFood( this.getSuiteFood() +2);
     }
-
 }
-
-

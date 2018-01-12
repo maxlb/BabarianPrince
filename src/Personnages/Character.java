@@ -67,12 +67,4 @@ public class Character {
         else
             this.loads = 40; //capacité util.util 40 avec monture
     }
-
-
-
-
 }
-
-
-
-
