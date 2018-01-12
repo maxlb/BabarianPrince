@@ -175,7 +175,7 @@ public class Fenetre extends JFrame implements ActionListener {
             val[3] = 12;
             val[4] = 14;
             val[5] = 18;
-            monPanneau.y = val[(int)(Math.random()*6)];
+            monPanneau.y = val[de.randomDie()-1];
             monPanneau.repaint();
             Dep.setEnabled(false);
         }
