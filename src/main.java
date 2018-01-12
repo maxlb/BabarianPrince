@@ -1,6 +1,12 @@
-public class main {
+class main {
     public static void main(String[] args) {
-        Fenetre fen = new Fenetre(0,50);
+        System.out.println("Un dés");
+        for (int i = 0; i < 10; i++){
+            System.out.println(de.randomDie());
+        }
+        System.out.println("Deux dés");
+        for (int i = 0; i < 10; i++){
+            System.out.println(de.randomDice());
+        }
     }
 }
-
