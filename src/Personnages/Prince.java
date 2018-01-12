@@ -18,7 +18,6 @@ public class Prince extends Character {
         // The result is the number of food units gained by hunting.
         int de = util.de.randomDice();
         int hunt = ((combat + (endurance / 2)) - de);
-        System.out.println("votre indice random de chasse = " + hunt);
 
         //If the dice roll was "12" exactly, the hunter himself was hurt,
         // regardless of success or failure, roll one die for the number of wounds he suffered.

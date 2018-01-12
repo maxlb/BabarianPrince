@@ -197,19 +197,19 @@ public class happen {
     public void r301(game myGame){
         //FIGHT
     }
-    public void r337(game myGame, SoloChar thepriest){
-        System.out.println(thepriest.getName() + "encountered look unsavory, " +
+    public void r337(game myGame, SoloChar encounter){
+        System.out.println(encounter.getName() + " encountered look unsavory, " +
                 "but willing to talk - you try to convince them to join " +
                 "your party…");
         int jete = de.randomDie();
 
         if(jete<=3){
             //le personnage se joint
-            System.out.println(thepriest.getName()+ " se joint à votre suite !");
-            myGame.AddCharacter(thepriest);
+            System.out.println(encounter.getName()+ " is joining your party!");
+            myGame.AddCharacter(encounter);
         }
         else
-            System.out.println(thepriest.getName() + "refuse votre offre");
+            System.out.println(encounter.getName() + " turn down your offer.");
 
     }
 

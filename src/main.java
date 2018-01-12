@@ -16,11 +16,8 @@ class main {
         {
             //TOUR
 
-            System.out.println("Vous êtes sur une case de type " + caseActuelle.type);
-
             //EVENT : se passe-t-il quelque chose sur cette case ?
             caseActuelle.Event(myGame, myPrince);
-
 
             //où suis-je ? terrain ? monument ? route ?
             //Hex caseActuelle = Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
@@ -29,80 +26,21 @@ class main {
             // you must then eat your main (evening) meal, as described in the food rules (r215),
             // and if in a town, castle, or temple hex, you must also purchase lodging (r217).
 
-
             //FOOD
-            int foodneed;
-            foodneed = myGame.FoodNeed(caseActuelle); //calcul du besoin de nourriture
-
-
-            System.out.println("Votre reserve actuelle de nourriture = " + myGame.getFood());
-            System.out.println("Votre besoin quotidien de nourriture = " + foodneed);
-
-
+            //calcul du besoin de nourriture
+            int foodneed = myGame.FoodNeed(caseActuelle);
 
             //FOOD-hunting
-            if(caseActuelle.type!= null && (caseActuelle.type==2 || caseActuelle.type==1 || caseActuelle.type==3 || caseActuelle.type==4 || caseActuelle.type==7))
-            {
-                Scanner sc = new Scanner(System.in);
-                System.out.println("Voulez-vous chasser votre nourriture ? Tapez Y pour oui, N pour non");
-                String chasse = sc.nextLine();
-
-                if(chasse.equals("Y") || chasse.equals("y"))
-                {
-                    int newHunt = myPrince.Hunt();
-
-                    if(newHunt==-1) { //le Prince est tué dans la chasse => perdu
-                        myGame.setStatus(false);
-                        System.out.println("GAME OVER");
-                        break;
-                    }
-                    else {
-                        myGame.setFood( myGame.getFood() + newHunt);
-                        System.out.println("Vous avez chassé " + newHunt + " unité(s) de nourriture");
-                    }
-                }
-
-            }
-
+            myGame.FoodHunt(myPrince, caseActuelle);
 
             //FOOD-purchase meal
-            //(r215d): if you are in a town, castle, or village
-            // you can purchase food for each character in your party.
-            // Normal cost is 1 gold piece per character for food that day.
-            // Animals cost 1 gold piece per day to feed at the stables of the town/castle/village.
-            // If you don't purchase food, you must eat stores, as hunting is prohibited in these hexes.
+            myGame.FoodPurchase(caseActuelle, foodneed);
 
-            if(caseActuelle.monument!= null && (caseActuelle.monument==4 || caseActuelle.monument==3) ) {
-                Scanner sc = new Scanner(System.in);
-                System.out.println("Voulez-vous acheter de la nourriture ? Tapez Y pour oui, N pour non");
-                String achat = sc.nextLine();
-
-                if(achat.equals("Y") || achat.equals("y"))
-                {
-                    if(myGame.getGold()>=foodneed){ //si le Prince a assez d'argent
-                        myGame.setGold(myGame.getGold() - foodneed);
-                        myGame.setFood( myGame.getFood() + foodneed);
-                    }
-
-                    else
-                        System.out.println("Vous n'avez pas assez d'argent");
-                }
-
-            }
-
-            // on a chassé, on a fait les courses, on MANGE !!
-
-            //starvation !
-            //!!!! à rajouter la famine de la troupe (boucle)
-            if (myGame.getFood() >= foodneed){ //il y a assez de nourriture pour tous
-                myGame.setFood(myGame.getFood() - foodneed);
-                myPrince.Feed();
-                //!!!! à rajouter le festin de la troupe (boucle)
-            }
-
-            else myPrince.Starve();
+            //Est-on sur une case où on peut manger ??
+            myGame.Food(caseActuelle, myPrince, foodneed);
 
             //PURCHASE LODGING (if in a town, castle, or temple hex)
+            myGame.PurchaseLodging(caseActuelle);
 
             //DAILY ACTION : REST OR TRAVEL
 

@@ -9,7 +9,7 @@ public class SoloChar extends Character {
     private Integer mount; //monture : 1: à pied, 2: sur monture, 3: sur monture ailée
     private Integer loads; //poids qu'il peut porter
     private Integer identifiant;
-    private String name; 
+    private String name;
 
     public SoloChar(String hisname, Integer id, Integer hisloads,
                     Integer hismount, Integer hiswealth, Integer hisendurance, Integer hiscombat){

@@ -33,7 +33,7 @@ public class Hex {
 
     public void Event(game myGame, Prince myPrince){
         if(de.randomDice() > this.event){
-            System.out.println("Il se passe quelque chose!");
+            System.out.println("uhoh! there is someone here!");
             int typologie = this.type;
 
             switch (typologie) {
@@ -61,7 +61,7 @@ public class Hex {
             }
         }
 
-        else System.out.println("Pas de rencontre aujourd'hui");
+        else System.out.println("No living soul around here");
 
     }
 
