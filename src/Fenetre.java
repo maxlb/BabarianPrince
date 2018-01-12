@@ -6,10 +6,6 @@ import java.awt.event.ActionListener;
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
 
-    private JPanel InfosPerso = new JPanel();
-        JLabel posX = new JLabel();
-        JLabel posY = new JLabel();
-
     private JPanel commandes = new JPanel();
         private JPanel Location = new JPanel();
                 private JPanel PanelDep = new JPanel();
@@ -126,6 +122,7 @@ public class Fenetre extends JFrame implements ActionListener {
             if(minY){
                 NW.setEnabled(false);
                 SW.setEnabled(false);
+
             } else {
                 NW.setEnabled(true);
                 SW.setEnabled(true);
