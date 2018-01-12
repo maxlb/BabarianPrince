@@ -1,19 +1,22 @@
 import util.de;
 
+import javax.sound.sampled.Line;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.AffineTransform;
 
 public class Fenetre extends JFrame implements ActionListener {
     private JPanel container = new JPanel();
+    private JPanel Infos = new JPanel();
     public Boolean Begin = false;
 
 
 
     private Box InfosTerrain;
-        private JLabel Terrain = new JLabel("Infos Terrain");
+        private JLabel Terrain = new JLabel("Infos Terrain :");
         private JPanel PanelLoc = new JPanel();
             private JLabel StrLoc = new JLabel("Identifiant de la case : ");
             public JLabel Loc = new JLabel();
@@ -28,7 +31,7 @@ public class Fenetre extends JFrame implements ActionListener {
             public JLabel Route = new JLabel();
 
     private Box InfosPrince;
-        private JLabel Prince = new JLabel("Infos Prince");
+        private JLabel Prince = new JLabel("Infos Prince :");
         private JPanel PanelQuete = new JPanel();
             private JLabel StrQuete = new JLabel("Jours de quêtes restants : ");
             public JLabel Quete = new JLabel();
@@ -65,6 +68,12 @@ public class Fenetre extends JFrame implements ActionListener {
                 private JButton S = new JButton("S");
                 private JButton SE = new JButton("SE");
                 private JButton SW = new JButton("SW");
+            private JPanel Yesno = new JPanel();
+                private JButton Oui = new JButton("OUI");
+                private JButton Non = new JButton("NON");
+    private JPanel Affichage = new JPanel();
+        private JLabel StrStory = new JLabel("Boite de dialogue : ");
+        private JLabel Story = new JLabel();
 
 
     private Panneau monPanneau;
@@ -82,6 +91,7 @@ public class Fenetre extends JFrame implements ActionListener {
 
         boutons.setLayout(new BorderLayout());
         commandes.setLayout(new BorderLayout());
+        Affichage.setLayout(new BorderLayout());
 
         N.addActionListener(this);
         S.addActionListener(this);
@@ -90,7 +100,8 @@ public class Fenetre extends JFrame implements ActionListener {
         NW.addActionListener(this);
         SW.addActionListener(this);
         Dep.addActionListener(this);
-
+        Oui.addActionListener(this);
+        Non.addActionListener(this);
 
         boutonsN.add(NW);
         boutonsN.add(N);
@@ -100,9 +111,13 @@ public class Fenetre extends JFrame implements ActionListener {
         boutonsS.add(S);
         boutonsS.add(SE);
 
+        Yesno.add(Oui);
+        Yesno.add(Non);
+
         boutons.setLayout(new BoxLayout(boutons, BoxLayout.PAGE_AXIS));
         boutons.add(boutonsN);
         boutons.add(boutonsS);
+        boutons.add(Yesno);
 
         PanelDep.setLayout(new BoxLayout(PanelDep, BoxLayout.LINE_AXIS));
         PanelDep.add(Dep);
@@ -180,10 +195,19 @@ public class Fenetre extends JFrame implements ActionListener {
         commandes.add(InfosPrince);
         commandes.add(boutons);
 
+        Infos.setLayout(new BoxLayout(Infos, BoxLayout.PAGE_AXIS));
+        Infos.add(commandes);
+        Infos.add(Affichage);
+
+        Affichage.setLayout(new BoxLayout(Affichage, BoxLayout.PAGE_AXIS));
+        Affichage.add(StrStory);
+        Affichage.add(Story);
+
         monPanneau.setPreferredSize(new Dimension(720,940));
 
         container.add(monPanneau,BorderLayout.WEST);
-        container.add(commandes);
+        container.add(Infos);
+
 
         this.add(container);
         this.setVisible(true);
@@ -279,7 +303,7 @@ public class Fenetre extends JFrame implements ActionListener {
             monPanneau.repaint();
             Loc.setText(getLoc(monPanneau.x, monPanneau.y));
             Begin = true;
-            Dep.setEnabled(false);
+            Dep.setVisible(false);
         }
         if(arg8.getSource() == N){
 
@@ -318,6 +342,12 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x--;
             }
             monPanneau.repaint();
+        }
+        if(arg8.getSource() == Oui){
+            //BOUTON OUI A DEFINIR
+        }
+        if(arg8.getSource() == Non){
+            //BOUTON NON A DEFINIR
         }
         verifBords();
         Loc.setText(getLoc(monPanneau.x, monPanneau.y));
