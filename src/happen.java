@@ -9,7 +9,7 @@ import util.de;
 public class happen {
 
 
-    public static Hex e001(game myGame){
+    public static Hex e001(game myGame, String jete){
 
         System.out.println("\n\nWELCOME TO \"BARBARIAN PRINCE\"!!!\n" +
                 "____________________________________\n\n"+
@@ -25,30 +25,31 @@ public class happen {
 
 
         //quelle case pour démarrer
-        int jete = de.randomDie();
+        //int jete = de.randomDie();
         myGame.setCurrentCase("null");
         switch (jete) {
-            case 1:
+            case "0101":
                 myGame.setCurrentCase("0101");
+
                 System.out.println("You are now in Ogon, small town in the CountrySide…");
                 break;
-            case 2:
+            case "0701":
                 myGame.setCurrentCase("0701");
                 System.out.println("You are now in the middle of the CountrySide…");
                 break;
-            case 3:
+            case "0901":
                 myGame.setCurrentCase("0901");
                 System.out.println("You are now in the moutains, in the Ruins of Jakor\'s Keep…");
                 break;
-            case 4:
+            case "1301":
                 myGame.setCurrentCase("1301");
                 System.out.println("You are now in the middle of the CountrySide…");
                 break;
-            case 5:
+            case "1501":
                 myGame.setCurrentCase("1501");
                 System.out.println("You are now in Weshor, small town in the Farmland…");
                 break;
-            case 6:
+            case "1901":
                 myGame.setCurrentCase("1901");
                 System.out.println("You are now in the mountains…");
 

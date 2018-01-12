@@ -1,3 +1,5 @@
+import util.de;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +14,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 private JButton Dep = new JButton("Départ");
             private JPanel PanelStr = new JPanel();
                 private JLabel StrLoc = new JLabel("Identifiant de la case : ");
-                private JLabel Loc = new JLabel();
+                public JLabel Loc = new JLabel();
 
         private JPanel boutons = new JPanel();
             private JPanel boutonsN = new JPanel();
