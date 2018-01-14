@@ -18,7 +18,6 @@ public class Hex {
     Integer road;       //route sur cette case si 0 : non, si 1 : route
     Integer type;       // typologie du terrain
     Integer monument;   // id du monument
-
     String AbsOrd;      // id de la case
 
 

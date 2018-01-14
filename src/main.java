@@ -1,7 +1,4 @@
 import Personnages.Prince;
-import Personnages.SoloChar;
-
-import java.util.Scanner;
 
 class main {
 
@@ -56,14 +53,14 @@ class main {
             //EVENT : se passe-t-il quelque chose sur cette case ?
             caseActuelle.Event(myGame, myPrince, maFenetre);
 
-            //After all events (if any) are resolved for your daily action,
-            // you must then eat your main (evening) meal, as described in the food rules (r215),
-            // and if in a town, castle, or temple hex, you must also purchase lodging (r217).
+            /*After all events (if any) are resolved for your daily action,
+             you must then eat your main (evening) meal, as described in the food rules (r215),
+            and if in a town, castle, or temple hex, you must also purchase lodging (r217).*/
 
             //FOOD
             //calcul du besoin de nourriture
             Integer foodneed = myGame.FoodNeed(caseActuelle);
-            maFenetre.setStory(maFenetre.getStory()+"\nVotre groupe à besoin de "+ foodneed.toString() +" unité(s) de nourriture.");
+            maFenetre.setStory(maFenetre.getStory()+"\nVotre groupe à besoin de "+ foodneed.toString() +" unité(s) de nourriture aujourd'hui.");
 
             //FOOD-hunting
             myGame.FoodHunt(myPrince, caseActuelle, maFenetre);
@@ -77,24 +74,12 @@ class main {
             //PURCHASE LODGING (if in a town, castle, or temple hex)
             myGame.PurchaseLodging(caseActuelle);
 
+            //CHECK DU POIDS
+            myGame.CheckLoads(maFenetre);
+
             //DAILY ACTION : REST OR TRAVEL
+            myGame.DailyAction();
 
-            /*System.out.println("Voulez vous rester sur cette case (Tapez R) ou changer de case (Taper T) ?");
-            Scanner sc = new Scanner(System.in);
-            String reponse = sc.nextLine();
-
-                //REST : on reste sur cette case et on guérit
-            if(reponse.equals("R") || reponse.equals("r")){
-                //
-            }
-
-
-                //TRAVEL : on souhaite changer de case
-            else if(reponse.equals("T") || reponse.equals("t")){
-                // changement de caseActuelle
-            }
-
-            */
 
             //FIN DE TOUR
             myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
