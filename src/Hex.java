@@ -24,7 +24,7 @@ public class Hex {
     // Constructor
     public Hex(String loc)
     {
-        this.AbsOrd = loc;
+        this.setAbsOrd(loc);
         this.road= 0;
     }
 
@@ -89,6 +89,9 @@ public class Hex {
         }
         return str;
     }
+
+    public void setAbsOrd(String absOrd) { this.AbsOrd = absOrd; }
+
 
     //EVENEMENT
 

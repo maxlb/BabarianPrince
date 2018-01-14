@@ -79,22 +79,22 @@ public class Fenetre extends JFrame implements ActionListener {
 
         private JPanel PanelTitre = new JPanel();
         private JLabel StrStory = new JLabel("BARBARIAN PRINCE");
-        public JTextArea Story = new JTextArea("BIENVENUE AU \"PRINCE BARBARE\" ! \n\n" +
-                "Des événements maléfiques ont dépassés votre royaume du Nord. Votre \n" +
-                "père, le vieux roi, est mort assassiné par ses rivaux au trône. \n" +
-                "Ces usurpateurs tiennent maintenant le palais avec leur garde \n" +
-                "royale mercenaire. \n" +
-                "Vous vous êtes échappé et devez collecter 500 PIECES D'OR pour lever \n" +
-                "une armée pour les écraser et reprendre votre héritage. De plus, \n" +
-                "les usurpateurs ont de puissants amis à l'étranger. \n" +
-                "Si vous ne pouvez pas revenir pour les vaincre dans 70 JOURS, leurs \n" +
-                "alliés s'armeront et vous perdrez votre royaume pour toujours. \n" +
-                "Pour échapper à la garde mercenaire et royale, votre fidèle serviteur \n" +
-                "Ogab vous a fait passer clandestinement dans une caravane marchande \n" +
-                "jusqu'à la frontière sud. \n\n" +
-                "Pour commencer le jeu, lancez les dés en cliquant sur le bouton \n " +
-                "ci-dessous !");
-
+        public JTextArea Story = new JTextArea(" BIENVENUE DANS \"PRINCE BARBARE\" ! \n\n" +
+                "  Votre royaume est le théatre de terribles événements. \n" +
+                "  Votre vénérable père, le vieux roi, est mort assassiné par ses rivaux \n" +
+                "  convoitant le trône. Ces usurpateurs tiennent maintenant le palais,\n" +
+                "  protégés par leur féroce garde royale de mercenaires sans pitié. \n" +
+                "  Vous avez pu vous échapper et devez au plus vite rassembler\n" +
+                "  500 PIECES D'OR pour lever une armée et écraser \n" +
+                "  ces immondes traîtres et reprendre votre héritage. \n\n" +
+                "  Mais ATTENTION ! Les usurpateurs ont de puissants amis \n" +
+                "  à l'étranger. Si vous ne pouvez pas revenir pour les vaincre\n" +
+                "  dans 70 JOURS, leurs alliés s'armeront et vous perdrez votre royaume \n" +
+                "  pour toujours… Pour échapper à la garde mercenaire et royale, \n" +
+                "  votre fidèle serviteur Ogab vous a fait passer clandestinement dans \n" +
+                "  une caravane marchande jusqu'à la frontière sud. \n" +
+                "  Pour commencer le jeu, lancez les dés en cliquant sur le bouton \n " +
+                "  ci-dessous ! Bonne chance !");
 
 
     private Panneau monPanneau;

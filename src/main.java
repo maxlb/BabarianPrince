@@ -72,23 +72,19 @@ class main {
             myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
 
             //PURCHASE LODGING (if in a town, castle, or temple hex)
-            myGame.PurchaseLodging(caseActuelle);
+            myGame.PurchaseLodging(caseActuelle, maFenetre);
 
             //CHECK DU POIDS
             myGame.CheckLoads(maFenetre);
 
             //DAILY ACTION : REST OR TRAVEL
-            myGame.DailyAction();
+            myGame.DailyAction(maFenetre, tour1Fini);
 
 
             //FIN DE TOUR
             myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
-
             maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
-            maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la directions \nque vous souhaitez prendre.");
-            if(!tour1Fini){
-                tour1Fini = true;
-            }
+
         }
 
         //TEMPS ÉPUISÉ

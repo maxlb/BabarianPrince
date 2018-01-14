@@ -14,7 +14,7 @@ public class happen {
     public static Hex e001(game myGame, Fenetre fenetre){
 
         //quelle case pour démarrer
-        myGame.setCurrentCase("null");
+        //myGame.setCurrentCase("null");
         String str ="";
         switch (fenetre.resultDe) {
             case 1:
@@ -27,7 +27,7 @@ public class happen {
                 break;
             case 3:
                 myGame.setCurrentCase("0901");
-                str = "dans les ruines du donjon de Jakor";
+                str = "dans les ruines du Donjon de Jakor";
                 break;
             case 4:
                 myGame.setCurrentCase("1301");
@@ -44,11 +44,11 @@ public class happen {
         }
         fenetre.setStory("La première journée ...\n" +
                         "Alors que le pauvre Ogab fait face à la colère des gardes royaux \n" +
-                        "pour rentrer à la maison, vous vous trouvez \n" +
+                        "vous vous trouvez " +
                         str + "\n\n" +
-                        "Maintenant, à l'aube, vous poussez les chariots marchands dans un fossé, \n" +
-                        "époussetez vos vêtements, desserrez votre ceinture d'épée et \n" +
-                        "vous vous préparez à commencer le premier jour de votre aventure !");
+                        "À l'aube, vous poussez les chariots marchands dans un fossé, \n" +
+                        "époussetez vos vêtements, vérifiez votre épée et \n" +
+                        "vous vous préparez à affronter le premier jour de votre aventure !");
 
         //retourne la HEX sur laquelle on se positionne
         return Init.GetTypeTerrain(myGame.getCurrentCase().AbsOrd, monTerrain, mesMonum, mesRoutes);

@@ -8,7 +8,6 @@ public class game {
     private Integer timeTrack;
     private Integer Gold;
     private Integer Food; //unités de nourriture disponible
-    private Integer Endurance; //vie
     private Integer TotalLoad;
     private Boolean Status; //true : jeu en cours / False : game over
     private Hex currentCase; //case actuelle du jeu
@@ -22,7 +21,6 @@ public class game {
         this.timeTrack = 70;
         this.Gold = 2;
         this.Food = 5;
-        this.Endurance = myPrince.getEndurance();
         this.TotalLoad = 1;
         this.Status = false;
         this.suite.add(myPrince); //le premier membre de la suite est le Prince lui-même !
@@ -63,11 +61,13 @@ public class game {
         TotalLoad = totalLoad;
     }
 
-    //Status
-    // Le jeu est terminé si
-    // Le temps est écoulé : timeTrack <= 0
-    // Le prince a récolté 50 pièces d'or : Gold >=500
-    // L'endurance du prince est épuisée :
+    /*
+    GAME STATUS
+    Le jeu est terminé si
+    Le temps est écoulé : timeTrack <= 0
+    Le prince a récolté 50 pièces d'or : Gold >=500
+    L'endurance du prince est épuisée : */
+
     public Boolean getStatus(Prince myPrince) {
         if (this.timeTrack<=0 || this.Gold>=500 || myPrince.getEndurance() <= 0)
             this.Status=false;
@@ -97,15 +97,11 @@ public class game {
         return currentCase;
     }
 
-    public void setCurrentCase(Hex currentCase) {
-        this.currentCase = currentCase;
-    }
+    //public void setCurrentCase(Hex currentCase) { this.currentCase = currentCase; }
+
     public void setCurrentCase(String loc) {
-        this.currentCase.AbsOrd = loc;
+        this.currentCase.setAbsOrd(loc);
     }
-
-
-
 
     //SUITE DU PRINCE (TROUPE)
 
@@ -197,10 +193,8 @@ public class game {
             if (chasse.equals("Oui"))
             {
                 newHunt = myPrince.Hunt();
-                this.Endurance = myPrince.getEndurance();
 
                 if (newHunt == -1) { //le Prince est tué dans la chasse => perdu
-                    this.Endurance = 0;
                     this.setStatus(false);
                     fenetre.setStory(fenetre.getStory() + "\nUn sanglier sans vergogne a foncé sur vous, vous êtes mort. \n GAME OVER");
                 } else {
@@ -318,67 +312,74 @@ public class game {
 
     //DAILY ACTION : REST AND TRAVEL
 
-    public Hex DailyAction() {
-        System.out.println("Would you like to stay on this hex for the next round and heal your wounds ?\n" +
-                "Type R if you want to rest or type T if you want to change hex");
-        Scanner sc = new Scanner(System.in);
-        String reponse = sc.nextLine();
+    public Hex DailyAction(Fenetre fenetre, Boolean tour1Fini) {
+        fenetre.setStory(fenetre.getStory() + "\nVoulez-vous rester sur cette case au prochain tour pour panser vos éventuelles plaies et vous reposer ou continuer à voyager ?");
+        String reponse = fenetre.aRepondu();
 
-        if(reponse.equals("R")||reponse.equals("r"))//REST
-        {   this.Rest();
-            return this.currentCase;}
+        if(reponse.equals("Rester"))//REST
+        {   this.Rest(fenetre);
+            //case inchangée
+        }
 
-        else if(reponse.equals("T") || reponse.equals("t"))//TRAVEL
-            return this.Travel();
+        else if(reponse.equals("L'aventure n'attend pas !")){
+            fenetre.setStory(fenetre.getStory() + "\nSelectionnez la direction \nque vous souhaitez prendre.");
+            this.currentCase=this.Travel(fenetre);
+
+            }
+        if(!tour1Fini){
+            tour1Fini = true;
         return this.currentCase;
+        }
+
+
+    return this.currentCase;
     } //fin de DailyAction
 
 
     //REST
-    public void Rest(){
+    public void Rest(Fenetre fenetre){
         for (int i = 0; i < this.suite.size(); i++)
             this.suite.get(i).Heal(); //chaque personnage de la suite se repose et guérit
-        System.out.println("You and your party rest and heal in that hex. What a lovely day!");
+        fenetre.setStory(fenetre.getStory() + "\nVous et votre suite vous reposez à cet endroit. Quelle charmante journée !");
     }
     //TRAVEL
-    public Hex Travel(){
-        //TRAVEL À ÉCRIRE !!!!!!
-        Hex newHex = new Hex("loc");
+    public Hex Travel(Fenetre fenetre){
+        //À VÉRIFIER !!
+        Hex newHex = new Hex(fenetre.estDeplace());
         return newHex;
     }
 
     //CHECK LOADS
-    public void CheckLoads(Fenetre myfenetre) {
+    public void CheckLoads(Fenetre fenetre) {
         int diff = this.getTotalLoad() - this.getSuiteLoad();
         while (diff < 0) {
-            System.out.println("Your burden is too heavy, you must leave food or gold behind you\n" +
-                    "Type G if you prefer leave Gold behind or type F for leaving food behind");
-            Scanner sc = new Scanner(System.in);
-            String abandon = sc.nextLine();
-            if (abandon.equals("F") || abandon.equals("f"))//FOOD
+            fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite. Vous devez abandonner des réserves de nourriture ou de l'or");
+            String abandon = fenetre.aRepondu();
+
+            if (abandon.equals("Abandonner de la nourriture"))//FOOD
             {
                 if (this.getFood() < 0) {
-                    System.out.println("Poor Lad! You don't have any food to leave behind");
+                    System.out.println("Pauvre fou ! Vous n'avez pas même de nourriture à abandonner");
                 } else {
-                    this.setFood(this.getFood() - diff, myfenetre);
+                    this.setFood(this.getFood() - diff, fenetre);
                     this.setTotalLoad(this.getTotalLoad());
                     System.out.println
-                            ("You left some food behind. You now have " + this.getFood() + " food unit(s)");
+                            ("Vous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
                 }
             } else//GOLD
             {
                 if (this.getGold() <= 0)
-                    System.out.println("Poor Lad! You don't have any gold to leave behind");
+                    System.out.println("Pauvre Prince ruiné, vous n'avez pas d'or à abandonner");
 
                 else {//de 1 à 100 pièces d'or = 1 loads
                     int goldLoad = this.Gold / 100;
                     int newGoldLoad = goldLoad - diff;
                     if (newGoldLoad <= 0)
-                        this.setGold(0, myfenetre);
+                        this.setGold(0, fenetre);
                     else {
-                        this.setGold(100 * newGoldLoad, myfenetre);
+                        this.setGold(100 * newGoldLoad, fenetre);
                     }
-                    System.out.println("You left some gold behind. You now have " + this.getGold() + " gold unit(s)");
+                    System.out.println("Vous voilà allégé de quelques pièces. Vous avez maintenant " + this.getGold() + " pièce(s) d'or)");
                 }
 
             }
