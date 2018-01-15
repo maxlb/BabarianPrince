@@ -123,7 +123,7 @@ public class Hex {
             }
         }
 
-        else fenetre.setStory(fenetre.getStory() + "Ouf ! Il n'y a rien de vivant par ici.");
+        else fenetre.setStory(fenetre.getStory() + "\nOuf ! Il n'y a rien de vivant par ici.");
 
     }
 
