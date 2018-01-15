@@ -41,7 +41,6 @@ class main {
 
             if(tour1Fini){
                 String newCase = maFenetre.estDeplace();
-                System.out.println(newCase);
                 caseActuelle = Init.GetTypeTerrain(newCase, happen.monTerrain, happen.mesMonum, happen.mesRoutes);
                 maFenetre.Story.setText("Nouvelle journée ! \n");
             }

@@ -129,6 +129,7 @@ public class Hex {
 
     public void EventCountrySide(game myGame, Prince myPrince, Fenetre fenetre){
             happen whathappen = new happen();
+
             int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
             switch (jete) {

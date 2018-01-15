@@ -103,6 +103,7 @@ public class Fenetre extends JFrame implements ActionListener {
     public Fenetre(int x, int y){
         monPanneau = new Panneau(x,y);
         Story.setEditable(false);
+        Story.setAutoscrolls(true);
 
         this.setTitle("Prince des Barbares");
         this.setSize(1200, 1000);
@@ -483,7 +484,7 @@ public class Fenetre extends JFrame implements ActionListener {
         S.setEnabled(true);
         N.setEnabled(true);
         verifBords();
-        System.out.print("ok");
+
 
         while(loc.equals("")){
             if(aBouger){

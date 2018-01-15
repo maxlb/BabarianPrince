@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a5b065c-42f2-4db0-aafb-67935b197344" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Hex.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Hex.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/Prince.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/Prince.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Fenetre.java" afterPath="$PROJECT_DIR$/src/Fenetre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Personnages/Prince.java" afterPath="$PROJECT_DIR$/src/Personnages/Prince.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hex.java" afterPath="$PROJECT_DIR$/src/Hex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,34 +17,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Fenetre.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
+      <file leaf-file-name="game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1505">
-              <caret line="367" column="27" lean-forward="true" selection-start-line="367" selection-start-column="27" selection-end-line="367" selection-end-column="27" />
+            <state relative-caret-position="180">
+              <caret line="186" column="115" lean-forward="false" selection-start-line="186" selection-start-column="115" selection-end-line="186" selection-end-column="115" />
               <folding>
-                <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
-                <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
-                <element signature="method#aLancerDe#0;class#Fenetre#0" expanded="false" />
-                <element signature="e#15075#15076#0" expanded="true" />
-                <element signature="e#15116#15117#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hex.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Hex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
-              <folding>
-                <element signature="method#EventFarmLand#0;class#Hex#0" expanded="false" />
-                <element signature="method#EventForest#0;class#Hex#0" expanded="false" />
-                <element signature="method#EventHills#0;class#Hex#0" expanded="false" />
-                <element signature="method#EventMountains#0;class#Hex#0" expanded="false" />
-                <element signature="method#EventDesert#0;class#Hex#0" expanded="false" />
-                <element signature="method#EventSwamp#0;class#Hex#0" expanded="false" />
+                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1278#1279#0" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
+                <element signature="e#1477#1478#0" expanded="true" />
+                <element signature="e#2378#2379#0" expanded="true" />
+                <element signature="e#2409#2410#0" expanded="true" />
+                <element signature="e#2463#2464#0" expanded="true" />
+                <element signature="e#2495#2496#0" expanded="true" />
+                <element signature="e#2716#2717#0" expanded="true" />
+                <element signature="e#2750#2751#0" expanded="true" />
+                <element signature="e#2804#2805#0" expanded="true" />
+                <element signature="e#2850#2851#0" expanded="true" />
+                <element signature="e#2918#2919#0" expanded="true" />
+                <element signature="e#2950#2951#0" expanded="true" />
+                <element signature="e#3263#3264#0" expanded="true" />
+                <element signature="e#3302#3303#0" expanded="true" />
+                <element signature="e#3484#3485#0" expanded="true" />
+                <element signature="e#3526#3527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,38 +49,30 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="60" column="64" lean-forward="false" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/game.java">
+      <file leaf-file-name="Fenetre.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="171" column="9" lean-forward="true" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
-              <folding>
-                <element signature="method#getStatus#0;class#game#0" expanded="false" />
-                <element signature="method#setTimeTrack#0;class#game#0" expanded="false" />
-                <element signature="method#setSuite#0;class#game#0" expanded="false" />
-                <element signature="method#getSuiteLoad#0;class#game#0" expanded="false" />
-                <element signature="method#getSuiteFood#0;class#game#0" expanded="false" />
-                <element signature="method#AddCharacter#0;class#game#0" expanded="false" />
-                <element signature="method#FoodNeed#0;class#game#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="336">
+              <caret line="498" column="28" lean-forward="false" selection-start-line="498" selection-start-column="12" selection-end-line="498" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Prince.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Personnages/Prince.java">
+      <file leaf-file-name="happen.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/happen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" column="73" lean-forward="true" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+            <state relative-caret-position="2771">
+              <caret line="210" column="0" lean-forward="true" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
               <folding>
-                <element signature="method#Feed#0;class#Prince#0" expanded="false" />
+                <element signature="method#e001#0;class#happen#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,6 +86,9 @@
       <find>Type \&quot;Y\&quot; for Yes, \&quot;N\&quot; for No</find>
       <find>Type Y</find>
       <find>getc</find>
+      <find>alan</find>
+      <find>System.out.print</find>
+      <find>de.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,11 +105,11 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/Personnages/Character.java" />
         <option value="$PROJECT_DIR$/src/happen.java" />
-        <option value="$PROJECT_DIR$/src/Hex.java" />
         <option value="$PROJECT_DIR$/src/Personnages/Prince.java" />
         <option value="$PROJECT_DIR$/src/game.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Fenetre.java" />
+        <option value="$PROJECT_DIR$/src/main.java" />
+        <option value="$PROJECT_DIR$/src/Hex.java" />
       </list>
     </option>
   </component>
@@ -147,8 +134,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,20 +147,18 @@
             <path>
               <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
               <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="rules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
               <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Personnages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -307,7 +293,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -317,7 +302,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -376,11 +361,144 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnages/SoloChar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnages/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnages/BandChar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Init.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="632" column="0" lean-forward="false" selection-start-line="632" selection-start-column="0" selection-end-line="632" selection-end-column="0" />
+          <folding>
+            <element signature="method#InitRoute#0;class#Init#0" expanded="false" />
+            <element signature="method#InitMonument#0;class#Init#0" expanded="false" />
+            <element signature="method#InitTypeTerrain#0;class#Init#0" expanded="false" />
+            <element signature="method#GetTypeTerrain#0;class#Init#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnages/Prince.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="method#Feed#0;class#Prince#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1751">
+          <caret line="338" column="0" lean-forward="true" selection-start-line="338" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="84" column="0" lean-forward="true" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/happen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="222" column="1" lean-forward="true" selection-start-line="222" selection-start-column="1" selection-end-line="222" selection-end-column="1" />
+          <folding>
+            <element signature="method#e001#0;class#happen#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="97" column="68" lean-forward="false" selection-start-line="97" selection-start-column="68" selection-end-line="97" selection-end-column="68" />
+          <folding>
+            <element signature="method#Hex#0;class#Hex#0" expanded="false" />
+            <element signature="method#getRoad#0;class#Hex#0" expanded="false" />
+            <element signature="method#getMonum#0;class#Hex#0" expanded="false" />
+            <element signature="method#getType#0;class#Hex#0" expanded="false" />
+            <element signature="method#Event#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventCountrySide#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventFarmLand#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventForest#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventHills#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventMountains#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventDesert#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventSwamp#0;class#Hex#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="43" />
+          <folding>
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#2378#2379#0" expanded="true" />
+            <element signature="e#2409#2410#0" expanded="true" />
+            <element signature="e#2463#2464#0" expanded="true" />
+            <element signature="e#2495#2496#0" expanded="true" />
+            <element signature="e#2716#2717#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+            <element signature="e#2918#2919#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3263#3264#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3526#3527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -441,13 +559,24 @@
         <state relative-caret-position="340">
           <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
           <folding>
-            <element signature="method#getStatus#0;class#game#0" expanded="false" />
-            <element signature="method#setTimeTrack#0;class#game#0" expanded="false" />
-            <element signature="method#setSuite#0;class#game#0" expanded="false" />
-            <element signature="method#getSuiteLoad#0;class#game#0" expanded="false" />
-            <element signature="method#getSuiteFood#0;class#game#0" expanded="false" />
-            <element signature="method#AddCharacter#0;class#game#0" expanded="false" />
-            <element signature="method#FoodNeed#0;class#game#0" expanded="false" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#2378#2379#0" expanded="true" />
+            <element signature="e#2409#2410#0" expanded="true" />
+            <element signature="e#2463#2464#0" expanded="true" />
+            <element signature="e#2495#2496#0" expanded="true" />
+            <element signature="e#2716#2717#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+            <element signature="e#2918#2919#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3263#3264#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3526#3527#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -456,13 +585,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
           <caret line="338" column="0" lean-forward="true" selection-start-line="338" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
-          <folding>
-            <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
-            <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
-            <element signature="method#aLancerDe#0;class#Fenetre#0" expanded="false" />
-            <element signature="e#15075#15076#0" expanded="true" />
-            <element signature="e#15116#15117#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -471,6 +594,12 @@
         <state relative-caret-position="488">
           <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding>
+            <element signature="method#Hex#0;class#Hex#0" expanded="false" />
+            <element signature="method#getRoad#0;class#Hex#0" expanded="false" />
+            <element signature="method#getMonum#0;class#Hex#0" expanded="false" />
+            <element signature="method#getType#0;class#Hex#0" expanded="false" />
+            <element signature="method#Event#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventCountrySide#0;class#Hex#0" expanded="false" />
             <element signature="method#EventFarmLand#0;class#Hex#0" expanded="false" />
             <element signature="method#EventForest#0;class#Hex#0" expanded="false" />
             <element signature="method#EventHills#0;class#Hex#0" expanded="false" />
@@ -493,7 +622,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="method#e001#0;class#happen#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -543,15 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/happen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2479">
-          <caret line="210" column="0" lean-forward="true" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -565,33 +687,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java">
+    <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="180">
+          <caret line="186" column="115" lean-forward="false" selection-start-line="186" selection-start-column="115" selection-end-line="186" selection-end-column="115" />
+          <folding>
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#2378#2379#0" expanded="true" />
+            <element signature="e#2409#2410#0" expanded="true" />
+            <element signature="e#2463#2464#0" expanded="true" />
+            <element signature="e#2495#2496#0" expanded="true" />
+            <element signature="e#2716#2717#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2804#2805#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+            <element signature="e#2918#2919#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="true" />
+            <element signature="e#3263#3264#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3526#3527#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
+    <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1505">
-          <caret line="367" column="27" lean-forward="true" selection-start-line="367" selection-start-column="27" selection-end-line="367" selection-end-column="27" />
-          <folding>
-            <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
-            <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
-            <element signature="method#aLancerDe#0;class#Fenetre#0" expanded="false" />
-            <element signature="e#15075#15076#0" expanded="true" />
-            <element signature="e#15116#15117#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="60" column="64" lean-forward="false" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Hex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        <state relative-caret-position="219">
+          <caret line="93" column="15" lean-forward="true" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
           <folding>
+            <element signature="method#Hex#0;class#Hex#0" expanded="false" />
+            <element signature="method#getRoad#0;class#Hex#0" expanded="false" />
+            <element signature="method#getMonum#0;class#Hex#0" expanded="false" />
+            <element signature="method#getType#0;class#Hex#0" expanded="false" />
+            <element signature="method#Event#0;class#Hex#0" expanded="false" />
+            <element signature="method#EventCountrySide#0;class#Hex#0" expanded="false" />
             <element signature="method#EventFarmLand#0;class#Hex#0" expanded="false" />
             <element signature="method#EventForest#0;class#Hex#0" expanded="false" />
             <element signature="method#EventHills#0;class#Hex#0" expanded="false" />
@@ -602,18 +743,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game.java">
+    <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="171" column="9" lean-forward="true" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
+        <state relative-caret-position="336">
+          <caret line="498" column="28" lean-forward="false" selection-start-line="498" selection-start-column="12" selection-end-line="498" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/happen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2771">
+          <caret line="210" column="0" lean-forward="true" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
           <folding>
-            <element signature="method#getStatus#0;class#game#0" expanded="false" />
-            <element signature="method#setTimeTrack#0;class#game#0" expanded="false" />
-            <element signature="method#setSuite#0;class#game#0" expanded="false" />
-            <element signature="method#getSuiteLoad#0;class#game#0" expanded="false" />
-            <element signature="method#getSuiteFood#0;class#game#0" expanded="false" />
-            <element signature="method#AddCharacter#0;class#game#0" expanded="false" />
-            <element signature="method#FoodNeed#0;class#game#0" expanded="false" />
+            <element signature="method#e001#0;class#happen#0" expanded="false" />
           </folding>
         </state>
       </provider>
