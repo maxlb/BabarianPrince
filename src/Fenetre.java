@@ -14,7 +14,7 @@ public class Fenetre extends JFrame implements ActionListener {
     public Boolean isNo = false;
     public Integer resultDe;
     public Boolean doubleDe = false;
-    private Boolean aBouger = false;
+    public Boolean aBouger = false;
 
     private Box InfosTerrain;
         private JPanel PanelTerrain = new JPanel();
@@ -364,11 +364,13 @@ public class Fenetre extends JFrame implements ActionListener {
         if(arg8.getSource() == N){
             monPanneau.x--;
             monPanneau.repaint();
+            N.setEnabled(false);
             aBouger = true;
         }
         if(arg8.getSource() == S){
             monPanneau.x++;
             monPanneau.repaint();
+            S.setEnabled(false);
             aBouger = true;
         }
         if(arg8.getSource() == SE){
@@ -377,6 +379,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x++;
             }
             monPanneau.repaint();
+            SE.setEnabled(false);
             aBouger = true;
         }
         if(arg8.getSource() == NE){
@@ -385,6 +388,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x--;
             }
             monPanneau.repaint();
+            NE.setEnabled(false);
             aBouger = true;
         }
         if(arg8.getSource() == SW){
@@ -393,6 +397,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x++;
             }
             monPanneau.repaint();
+            SW.setEnabled(false);
             aBouger = true;
         }
         if(arg8.getSource() == NW){
@@ -401,6 +406,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 monPanneau.x--;
             }
             monPanneau.repaint();
+            NW.setEnabled(false);
             aBouger = true;
         }
         if(arg8.getSource() == Oui){
@@ -449,7 +455,7 @@ public class Fenetre extends JFrame implements ActionListener {
         Non.setEnabled(true);
         Oui.setEnabled(true);
 
-        while(Oui.isEnabled()){
+        while(repo.equals("")){
 
             if(isYes){
                 repo = "Oui";
@@ -459,6 +465,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 repo = "Non";
                 isNo = false;
             }
+            System.out.print("");
         }
         return repo;
     }
@@ -466,8 +473,9 @@ public class Fenetre extends JFrame implements ActionListener {
     public String estDeplace(){
         Story.setText(Story.getText() + "\nDéplacez-vous grâce aux boutons dédiés.");
         aBouger = false;
-        Boolean bouger = false;
+
         String loc = "";
+
         NW.setEnabled(true);
         SW.setEnabled(true);
         NE.setEnabled(true);
@@ -475,19 +483,21 @@ public class Fenetre extends JFrame implements ActionListener {
         S.setEnabled(true);
         N.setEnabled(true);
         verifBords();
+        System.out.print("ok");
 
-        while(!bouger){
+        while(loc.equals("")){
             if(aBouger){
-                loc = getLoc(monPanneau.x, monPanneau.y);
-                bouger = true;
                 NW.setEnabled(false);
                 SW.setEnabled(false);
                 NE.setEnabled(false);
                 SE.setEnabled(false);
                 S.setEnabled(false);
                 N.setEnabled(false);
+                loc = getLoc(monPanneau.x, monPanneau.y);
             }
+            System.out.print("");
         }
+
         return loc;
     }
 }

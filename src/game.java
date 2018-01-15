@@ -212,7 +212,7 @@ public class game {
                     fenetre.setStory(fenetre.getStory() + "\nVous avez pu acheter " + foodneed + " unité(s) de nourriture.");
                 }
                 else
-                    System.out.println("You're so broke my highness! You can't buy food");
+                    fenetre.setStory(fenetre.getStory() + "\nVous êtes trop pauvre pour acheter de la nourriture !");
             }
         }
     }//fin de food-purchase

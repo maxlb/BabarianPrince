@@ -40,8 +40,10 @@ class main {
 
 
             if(tour1Fini){
+                String newCase = maFenetre.estDeplace();
+                System.out.println(newCase);
+                caseActuelle = Init.GetTypeTerrain(newCase, happen.monTerrain, happen.mesMonum, happen.mesRoutes);
                 maFenetre.Story.setText("Nouvelle journée ! \n");
-                caseActuelle = Init.GetTypeTerrain(maFenetre.estDeplace(), happen.monTerrain, happen.mesMonum, happen.mesRoutes);
             }
             maFenetre.Typo.setText(caseActuelle.getType(caseActuelle.type));
             maFenetre.Route.setText(caseActuelle.getRoad());
