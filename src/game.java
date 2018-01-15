@@ -26,6 +26,7 @@ public class game {
         this.suite.add(myPrince); //le premier membre de la suite est le Prince lui-même !
         this.suiteLoad = 10;
         this.suiteFood = 1;
+        this.currentCase = new Hex("0000"); // Un objet doit toujours être initialisé ;)
     }
 
 
