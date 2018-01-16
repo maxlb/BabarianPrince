@@ -131,7 +131,7 @@ public class Hex {
             happen whathappen = new happen();
 
             int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
-            System.out.println(jete);
+
             switch (jete) {
                 case 1:
                     whathappen.e009(myGame, fenetre);

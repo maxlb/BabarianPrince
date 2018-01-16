@@ -2,7 +2,6 @@ import Personnages.SoloChar;
 import Personnages.Character;
 import Personnages.Prince;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class game {
     //Parameters
@@ -154,7 +153,7 @@ public class game {
 
     public Integer FoodNeed(Hex macase){
         int foodneed = 0;
-        if(macase.type==6 && macase.monument!=5)
+        if(macase.type == 6 && macase.monument != null && macase.monument != 5)
             foodneed = this.suiteFood*2;
             else
             foodneed = this.suiteFood;
@@ -202,11 +201,12 @@ public class game {
 
         if(currentCase.monument!= null && (currentCase.monument == 4 || currentCase.monument == 3) ) {
             fenetre.setStory(fenetre.getStory() + "\nVoulez vous acheter de la nourriture ?");
+
             String achat = fenetre.aRepondu();
 
             if(achat.equals("Oui"))
             {
-                if(this.getGold()>=foodneed){ //si le Prince a assez d'argent
+                if(this.getGold() >= foodneed){ //si le Prince a assez d'argent
                     this.setGold(this.getGold() - foodneed, fenetre);
                     this.setFood( this.getFood() + foodneed, fenetre);
                     fenetre.setStory(fenetre.getStory() + "\nVous avez pu acheter " + foodneed + " unité(s) de nourriture.");

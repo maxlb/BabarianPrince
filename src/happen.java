@@ -1,10 +1,8 @@
 import java.util.Map;
-import java.util.Scanner;
-
 import Personnages.BandChar;
 import Personnages.Prince;
 import Personnages.SoloChar;
-import util.de;
+
 
 public class happen {
 
@@ -61,7 +59,8 @@ public class happen {
                 "\nVous pouvez la contourner, mais cela consommera le reste\n" +
                 "de la journée, mettant fin à tout voyage pour aujourd'hui. \n" +
                 "Sinon, vous pouvez y aller. Si vous choisissez d'approcher\n" +
-                "la ferme, vous devez décider d'en faire une approche amicale, ou une attaque.\n" +
+                "la ferme, vous devez décider d'en faire une approche amicale,\n" +
+                "ou une attaque.\n" +
                 "Qu'allez vous faire ??");
 
         String reponse = maFenetre.aChoisi("Contourner", "Approcher amicalement", "Attaquer");
@@ -89,10 +88,10 @@ public class happen {
     }
 
     public void r231(game myGame, Prince myPrince, Fenetre fenetre){
-        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un prêtre local monté sur un âne avec \n" +
-                "une compétence de combat de 3, une endurance de 3, une richesse de 25. \n" +
-                "Il semble distant et peu disposé à la conversation, mais il peut avoir peur de \n" +
-                "vous...\n" +
+        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un prêtre local monté sur un âne avec\n" +
+                "une compétence de combat de 3, une endurance de 3, une richesse de 25.\n" +
+                "Il semble distant et peu disposé à la conversation, mais il peut avoir peur\n" +
+                "de vous...\n" +
                 "Vous pouvez le laisser passer, et donc mettre fin à cette rencontre,\n " +
                 "ou alors discuter avec lui ou l'attaquer !");
         SoloChar donkeyPriest =

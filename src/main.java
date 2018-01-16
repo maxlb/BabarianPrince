@@ -1,7 +1,4 @@
 import Personnages.Prince;
-import Personnages.SoloChar;
-
-import java.util.Scanner;
 
 class main {
 
@@ -20,7 +17,6 @@ class main {
 
         while(a){
             Boolean b = maFenetre.Begin;
-            System.out.print("");
             if(b){
                 caseActuelle = happen.e001(myGame, maFenetre);
                 a = false;
@@ -82,7 +78,7 @@ class main {
 
                 //DAILY ACTION : REST OR TRAVEL
 
-            /*System.out.println("Voulez vous rester sur cette case (Tapez R) ou changer de case (Taper T) ?");
+            /*Voulez vous rester sur cette case (Tapez R) ou changer de case (Taper T) ?
             Scanner sc = new Scanner(System.in);
             String reponse = sc.nextLine();
 

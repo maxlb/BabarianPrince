@@ -7,17 +7,17 @@ import java.awt.event.ActionListener;
 
 public class Fenetre extends JFrame implements ActionListener {
     private JLayeredPane container = new JLayeredPane();
-    private JPanel Infos = new JPanel();
-    public Boolean Begin = false;
 
-    public Boolean isYes = false;
-    public Boolean isNo = false;
-    public Boolean isChoisi = false;
-    public Integer resultDe;
-    public Boolean doubleDe = false;
-    public Boolean aBouger = false;
-    public Boolean deJete = false;
-    public String monChoix = "";
+    public volatile Boolean Begin = false;
+
+    public volatile Boolean isYes = false;
+    public volatile Boolean isNo = false;
+    public volatile Boolean isChoisi = false;
+    public volatile Integer resultDe;
+    public volatile Boolean doubleDe = false;
+    public volatile Boolean aBouger = false;
+    public volatile Boolean deJete = false;
+    public volatile String monChoix = "";
 
     private Box InfosTerrain;
         private JPanel PanelTerrain = new JPanel();
@@ -384,19 +384,19 @@ public class Fenetre extends JFrame implements ActionListener {
             }
             Dep.setEnabled(false);
         }
-        if(arg8.getSource() == N){
+        else if(arg8.getSource() == N){
             monPanneau.x--;
             monPanneau.repaint();
             N.setEnabled(false);
             aBouger = true;
         }
-        if(arg8.getSource() == S){
+        else if(arg8.getSource() == S){
             monPanneau.x++;
             monPanneau.repaint();
             S.setEnabled(false);
             aBouger = true;
         }
-        if(arg8.getSource() == SE){
+        else if(arg8.getSource() == SE){
             monPanneau.y++;
             if(monPanneau.y % 2 == 0) {
                 monPanneau.x++;
@@ -405,7 +405,7 @@ public class Fenetre extends JFrame implements ActionListener {
             SE.setEnabled(false);
             aBouger = true;
         }
-        if(arg8.getSource() == NE){
+        else if(arg8.getSource() == NE){
             monPanneau.y++;
             if(monPanneau.y % 2 != 0){
                 monPanneau.x--;
@@ -414,7 +414,7 @@ public class Fenetre extends JFrame implements ActionListener {
             NE.setEnabled(false);
             aBouger = true;
         }
-        if(arg8.getSource() == SW){
+        else if(arg8.getSource() == SW){
             monPanneau.y--;
             if(monPanneau.y % 2 == 0){
                 monPanneau.x++;
@@ -423,7 +423,7 @@ public class Fenetre extends JFrame implements ActionListener {
             SW.setEnabled(false);
             aBouger = true;
         }
-        if(arg8.getSource() == NW){
+        else if(arg8.getSource() == NW){
             monPanneau.y--;
             if(monPanneau.y % 2 != 0){
                 monPanneau.x--;
@@ -432,31 +432,31 @@ public class Fenetre extends JFrame implements ActionListener {
             NW.setEnabled(false);
             aBouger = true;
         }
-        if(arg8.getSource() == Oui){
+        else if(arg8.getSource() == Oui){
             isYes = true;
             Oui.setEnabled(false);
             Non.setEnabled(false);
         }
-        if(arg8.getSource() == Non){
+        else if(arg8.getSource() == Non){
             isNo = true;
             Non.setEnabled(false);
             Oui.setEnabled(false);
         }
-        if(arg8.getSource() == Choix1){
+        else if(arg8.getSource() == Choix1){
             isChoisi = true;
             monChoix = Choix1.getText();
             Choix1.setEnabled(false);
             Choix2.setEnabled(false);
             Choix3.setEnabled(false);
         }
-        if(arg8.getSource() == Choix2){
+        else if(arg8.getSource() == Choix2){
             isChoisi = true;
             monChoix = Choix2.getText();
             Choix1.setEnabled(false);
             Choix2.setEnabled(false);
             Choix3.setEnabled(false);
         }
-        if(arg8.getSource() == Choix3){
+        else if(arg8.getSource() == Choix3){
             isChoisi = true;
             monChoix = Choix3.getText();
             Choix1.setEnabled(false);
@@ -481,7 +481,6 @@ public class Fenetre extends JFrame implements ActionListener {
             if(deJete){
                 repo = resultDe;
             }
-            System.out.print("");
         }
         return repo;
     }
@@ -495,46 +494,45 @@ public class Fenetre extends JFrame implements ActionListener {
     }
 
     public String aRepondu(){
-        String repo = "";
-        Non.setEnabled(true);
+        Oui.setEnabled(false);
+        Non.setEnabled(false);
         Oui.setEnabled(true);
+        Non.setEnabled(true);
 
-        while(repo.equals("")){
+        while(!isYes && !isNo){
 
-            if(isYes){
-                repo = "Oui";
-                isYes = false;
-            }
-            if(isNo){
-                repo = "Non";
-                isNo = false;
-            }
-            System.out.print("");
         }
-        return repo;
+
+        if(isYes){
+            isYes = false;
+            return "Oui";
+        } else{
+            isNo = false;
+            return "Non";
+        }
     }
 
     public String aChoisi(String c1, String c2, String c3){
-        String repo = "";
+
         Choix1.setEnabled(true);
         Choix2.setEnabled(true);
 
         Choix1.setText(c1);
         Choix2.setText(c2);
+
         if(!c3.equals("")){
             Choix3.setEnabled(true);
             Choix3.setText(c3);
         }
 
+        isChoisi = false;
+        monChoix = "";
 
-        while(repo.equals("")){
-            if(isChoisi){
-                repo = monChoix;
-                isChoisi = false;
-            }
-            System.out.print("");
+        while(!isChoisi){
+
         }
-        return repo;
+
+        return monChoix;
     }
 
     public String estDeplace(){
@@ -562,7 +560,6 @@ public class Fenetre extends JFrame implements ActionListener {
                 N.setEnabled(false);
                 loc = getLoc(monPanneau.x, monPanneau.y);
             }
-            System.out.print("");
         }
 
         return loc;
