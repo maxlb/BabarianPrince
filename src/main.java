@@ -69,16 +69,18 @@ class main {
             //FOOD-hunting
             myGame.FoodHunt(myPrince, caseActuelle, maFenetre);
 
-            //FOOD-purchase meal
-            myGame.FoodPurchase(caseActuelle, foodneed, maFenetre);
+            // Si pas mort à la chasse
+            if(myGame.getStatus(myPrince)){
+                //FOOD-purchase meal
+                myGame.FoodPurchase(caseActuelle, foodneed, maFenetre);
 
-            //Est-on sur une case où on peut manger ??
-            myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
+                //Est-on sur une case où on peut manger ??
+                myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
 
-            //PURCHASE LODGING (if in a town, castle, or temple hex)
-            myGame.PurchaseLodging(caseActuelle);
+                //PURCHASE LODGING (if in a town, castle, or temple hex)
+                myGame.PurchaseLodging(caseActuelle);
 
-            //DAILY ACTION : REST OR TRAVEL
+                //DAILY ACTION : REST OR TRAVEL
 
             /*System.out.println("Voulez vous rester sur cette case (Tapez R) ou changer de case (Taper T) ?");
             Scanner sc = new Scanner(System.in);
@@ -97,18 +99,22 @@ class main {
 
             */
 
-            //FIN DE TOUR
-            myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
+                //FIN DE TOUR
+                myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
 
-            maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
-            maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la directions \nque vous souhaitez prendre.");
-            if(!tour1Fini){
-                tour1Fini = true;
+                maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
+                maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la directions \nque vous souhaitez prendre.");
+                if(!tour1Fini){
+                    tour1Fini = true;
+                }
             }
         }
 
-        //TEMPS ÉPUISÉ
-        maFenetre.setStory(maFenetre.getStory() + "\nLe temps imparti est épuisé. Vous avez perdu.");
+        if(myGame.getTimeTrack() <= 0){
+            //TEMPS ÉPUISÉ
+            maFenetre.setStory(maFenetre.getStory() + "\nLe temps imparti est épuisé. Vous avez perdu.");
+        }
+
     }
 
 }

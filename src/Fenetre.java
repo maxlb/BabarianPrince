@@ -12,9 +12,12 @@ public class Fenetre extends JFrame implements ActionListener {
 
     public Boolean isYes = false;
     public Boolean isNo = false;
+    public Boolean isChoisi = false;
     public Integer resultDe;
     public Boolean doubleDe = false;
     public Boolean aBouger = false;
+    public Boolean deJete = false;
+    public String monChoix = "";
 
     private Box InfosTerrain;
         private JPanel PanelTerrain = new JPanel();
@@ -74,8 +77,14 @@ public class Fenetre extends JFrame implements ActionListener {
             private JPanel Yesno = new JPanel();
                 public JButton Oui = new JButton("OUI");
                 public JButton Non = new JButton("NON");
+            private JPanel Choix = new JPanel();
+                public JButton Choix1 = new JButton("Choix 1");
+                public JButton Choix2 = new JButton("Choix 2");
+                public JButton Choix3 = new JButton("Choix 3");
+
 
     private JLayeredPane Affichage = new JLayeredPane();
+
 
         private JPanel PanelTitre = new JPanel();
         private JLabel StrStory = new JLabel("BARBARIAN PRINCE");
@@ -94,7 +103,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 "jusqu'à la frontière sud. \n\n" +
                 "Pour commencer le jeu, lancez les dés en cliquant sur le bouton \n " +
                 "ci-dessous !");
-
+    private JScrollPane jScrollPane = new JScrollPane(Story);
 
 
     private Panneau monPanneau;
@@ -103,7 +112,6 @@ public class Fenetre extends JFrame implements ActionListener {
     public Fenetre(int x, int y){
         monPanneau = new Panneau(x,y);
         Story.setEditable(false);
-        Story.setAutoscrolls(true);
 
         this.setTitle("Prince des Barbares");
         this.setSize(1200, 1000);
@@ -125,6 +133,9 @@ public class Fenetre extends JFrame implements ActionListener {
         Dep.addActionListener(this);
         Oui.addActionListener(this);
         Non.addActionListener(this);
+        Choix1.addActionListener(this);
+        Choix2.addActionListener(this);
+        Choix3.addActionListener(this);
 
         boutonsN.add(NW);
         boutonsN.add(N);
@@ -139,10 +150,18 @@ public class Fenetre extends JFrame implements ActionListener {
         Oui.setEnabled(false);
         Non.setEnabled(false);
 
+        Choix.add(Choix1);
+        Choix.add(Choix2);
+        Choix.add(Choix3);
+        Choix1.setEnabled(false);
+        Choix2.setEnabled(false);
+        Choix3.setEnabled(false);
+
         boutons.setLayout(new BoxLayout(boutons, BoxLayout.PAGE_AXIS));
         boutons.add(boutonsN);
         boutons.add(boutonsS);
         boutons.add(Yesno);
+        boutons.add(Choix);
 
         PanelDep.setLayout(new BoxLayout(PanelDep, BoxLayout.LINE_AXIS));
         PanelDep.add(Dep);
@@ -243,19 +262,21 @@ public class Fenetre extends JFrame implements ActionListener {
         StrStory.setForeground(Color.red);
         StrStory.setFont(new Font(" Calibri ",Font.BOLD,30));
 
-        Affichage.add(PanelTitre);
-        Affichage.add(Story);
         Story.setFont(new Font(" Calibri ",Font.PLAIN,12));
+        jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
 
         monPanneau.setPreferredSize(new Dimension(720,940));
         monPanneau.setBounds(10,10,720,940);
-        Affichage.setBounds(750,10,420,320);
-        commandes.setBounds(750,340,420,500);
+        PanelTitre.setBounds(750,10,420,50);
+        jScrollPane.setBounds(750,70,420,320);
+        commandes.setBounds(750,400,420,550);
 
 
         container.add(monPanneau);
         container.add(commandes);
-        container.add(Affichage);
+        container.add(PanelTitre);
+        container.add(jScrollPane);
 
         this.add(container);
         this.setVisible(true);
@@ -359,6 +380,7 @@ public class Fenetre extends JFrame implements ActionListener {
                 } else {
                     resultDe = de.randomDie();
                 }
+                deJete = true;
             }
             Dep.setEnabled(false);
         }
@@ -420,6 +442,27 @@ public class Fenetre extends JFrame implements ActionListener {
             Non.setEnabled(false);
             Oui.setEnabled(false);
         }
+        if(arg8.getSource() == Choix1){
+            isChoisi = true;
+            monChoix = Choix1.getText();
+            Choix1.setEnabled(false);
+            Choix2.setEnabled(false);
+            Choix3.setEnabled(false);
+        }
+        if(arg8.getSource() == Choix2){
+            isChoisi = true;
+            monChoix = Choix2.getText();
+            Choix1.setEnabled(false);
+            Choix2.setEnabled(false);
+            Choix3.setEnabled(false);
+        }
+        if(arg8.getSource() == Choix3){
+            isChoisi = true;
+            monChoix = Choix3.getText();
+            Choix1.setEnabled(false);
+            Choix2.setEnabled(false);
+            Choix3.setEnabled(false);
+        }
         Loc.setText(getLoc(monPanneau.x, monPanneau.y));
     }
 
@@ -429,18 +472,18 @@ public class Fenetre extends JFrame implements ActionListener {
         } else {
             doubleDe = false;
         }
-
+        deJete = false;
+        Integer repo = 0;
         Story.setText(Story.getText()+"\n Veuillez lancer le(s) dé(s) pour continuer.");
         Dep.setEnabled(true);
 
-        Boolean rep = true;
-        while(rep){
-            if(!Dep.isEnabled()){
-                rep = false;
+        while(repo == 0){
+            if(deJete){
+                repo = resultDe;
             }
+            System.out.print("");
         }
-
-        return resultDe;
+        return repo;
     }
 
     public void setStory(String story){
@@ -465,6 +508,29 @@ public class Fenetre extends JFrame implements ActionListener {
             if(isNo){
                 repo = "Non";
                 isNo = false;
+            }
+            System.out.print("");
+        }
+        return repo;
+    }
+
+    public String aChoisi(String c1, String c2, String c3){
+        String repo = "";
+        Choix1.setEnabled(true);
+        Choix2.setEnabled(true);
+
+        Choix1.setText(c1);
+        Choix2.setText(c2);
+        if(!c3.equals("")){
+            Choix3.setEnabled(true);
+            Choix3.setText(c3);
+        }
+
+
+        while(repo.equals("")){
+            if(isChoisi){
+                repo = monChoix;
+                isChoisi = false;
             }
             System.out.print("");
         }
