@@ -494,8 +494,6 @@ public class Fenetre extends JFrame implements ActionListener {
     }
 
     public String aRepondu(){
-        Oui.setEnabled(false);
-        Non.setEnabled(false);
         Oui.setEnabled(true);
         Non.setEnabled(true);
 

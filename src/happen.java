@@ -134,6 +134,7 @@ public class happen {
         }
         else if (reponse.equals("Discuter")){
             //talk
+            fenetre.setStory(fenetre.getStory() +"\nDiscution : ");
             r337(myGame, swordsman, fenetre);
         }
         else if (reponse.equals("Attaquer")){
@@ -177,7 +178,7 @@ public class happen {
         //A group of ghosts surprise you in combat (r220),
         // roll one die and add one (+1) for the number of ghosts,
         // each of which is combat value 4, endurance 2.
-
+        fenetre.setStory(fenetre.getStory() +"\nUn groupe de fantômes vous attaque par surprise !");
         int nbGhosts = fenetre.aLancerDe(1) +1;
 
         fenetre.setStory(fenetre.getStory() +"\nUn groupe de " + nbGhosts + " fantômes vous attaque par surprise !\n" +
