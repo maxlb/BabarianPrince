@@ -16,7 +16,7 @@ class main {
         Boolean tour1Fini = false;
 
         while(a){
-            Boolean b = maFenetre.Begin;
+            Boolean b = maFenetre.getBegin();
             if(b){
                 caseActuelle = happen.e001(myGame, maFenetre);
                 a = false;
@@ -27,25 +27,32 @@ class main {
         // JEU
         while (myGame.getStatus(myPrince)) //tant que le jeu est en cours
         {
-            maFenetre.Portage.setText(myGame.getSuiteLoad().toString());
-            maFenetre.Or.setText(myGame.getGold().toString());
-            maFenetre.Nourri.setText(myGame.getFood().toString());
-            maFenetre.Quete.setText(myGame.getTimeTrack().toString());
-            maFenetre.Non.setEnabled(false);
-            maFenetre.Oui.setEnabled(false);
-
+            maFenetre.setPortage(myGame.getSuiteLoad().toString());
+            maFenetre.setOr(myGame.getGold().toString());
+            maFenetre.setNourri(myGame.getFood().toString());
+            maFenetre.setQuete(myGame.getTimeTrack().toString());
+            maFenetre.setTypo(caseActuelle.getType(caseActuelle.type));
+            maFenetre.setRoute(caseActuelle.getRoad());
+            maFenetre.setVie(myPrince.getEndurance().toString());
+            maFenetre.setPoids(myPrince.getWealth().toString());
+            String suite = "";
+            for (int i = 0; i < myGame.getSuite().size() ; i++){
+                if(!suite.equals("")){
+                    suite = suite + ", ";
+                }
+                suite = suite + myGame.getSuite().get(i).getName();
+            }
+            maFenetre.setSuite(suite);
 
             if(tour1Fini){
                 String newCase = maFenetre.estDeplace();
                 caseActuelle = Init.GetTypeTerrain(newCase, happen.monTerrain, happen.mesMonum, happen.mesRoutes);
-                maFenetre.Story.setText("Nouvelle journée ! \n");
+                maFenetre.setStory("Nouvelle journée ! \n");
             }
-            maFenetre.Typo.setText(caseActuelle.getType(caseActuelle.type));
-            maFenetre.Route.setText(caseActuelle.getRoad());
             if(caseActuelle.monument != null){
-                maFenetre.Monu.setText(caseActuelle.getMonum(caseActuelle.monument));
+                maFenetre.setMonu(caseActuelle.getMonum(caseActuelle.monument));
             } else {
-                maFenetre.Monu.setText(caseActuelle.getMonum(8));
+                maFenetre.setMonu(caseActuelle.getMonum(8));
             }
 
             //TOUR

@@ -15,7 +15,7 @@ public class happen {
         //quelle case pour démarrer
         myGame.setCurrentCase("null");
         String str ="";
-        switch (fenetre.resultDe) {
+        switch (fenetre.getResultDe()) {
             case 1:
                 myGame.setCurrentCase("0101");
                 str = "dans Ogon, une petite ville du royaume.";
@@ -134,7 +134,6 @@ public class happen {
         }
         else if (reponse.equals("Discuter")){
             //talk
-            fenetre.setStory(fenetre.getStory() +"\nDiscution : ");
             r337(myGame, swordsman, fenetre);
         }
         else if (reponse.equals("Attaquer")){
@@ -179,10 +178,10 @@ public class happen {
         // roll one die and add one (+1) for the number of ghosts,
         // each of which is combat value 4, endurance 2.
         fenetre.setStory(fenetre.getStory() +"\nUn groupe de fantômes vous attaque par surprise !");
-        int nbGhosts = fenetre.aLancerDe(1) +1;
+        int nbGhosts = fenetre.aLancerDe(1) + 1;
 
         fenetre.setStory(fenetre.getStory() +"\nUn groupe de " + nbGhosts + " fantômes vous attaque par surprise !\n" +
-        "Chacun d'eux à une valeur de comba de 4 et un valeur d'endurence de 2");
+        "Chacun d'eux à une valeur de combat de 4 et un valeur d'endurence de 2");
 
         BandChar GhostsBand =
                 new BandChar("Terrible Fantôme",
@@ -216,6 +215,14 @@ public class happen {
             //le personnage se joint
             fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName()+ " rejoint votre suite !");
             myGame.AddCharacter(encounter, fenetre);
+            String suite = "";
+            for (int i = 0; i < myGame.getSuite().size() ; i++){
+                if(!suite.equals("")){
+                    suite = suite + ", ";
+                }
+                suite = suite + myGame.getSuite().get(i).getName();
+            }
+            fenetre.setSuite(suite);
         }
         else
             fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName() + " refuse votre offre.");

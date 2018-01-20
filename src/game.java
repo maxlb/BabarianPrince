@@ -12,7 +12,7 @@ public class game {
     private Integer TotalLoad;
     private Boolean Status; //true : jeu en cours / False : game over
     private String currentCase; //case actuelle du jeu
-    private ArrayList suite = new ArrayList(); //Liste des personnages présents dans la suite du prince
+    private ArrayList<Character> suite = new ArrayList(); //Liste des personnages présents dans la suite du prince
     private Integer suiteLoad; //capacité de portage de la suite
     private Integer suiteFood; //besoin en nourriture de la suite du Prince
 
@@ -38,7 +38,7 @@ public class game {
     }
     public void setGold(Integer gold, Fenetre fenetre) {
         Gold = gold;
-        fenetre.Or.setText(gold.toString());
+        fenetre.setOr(gold.toString());
     }
 
     //Food
@@ -47,7 +47,7 @@ public class game {
     }
     public void setFood(Integer food, Fenetre fenetre) {
         Food = food;
-        fenetre.Nourri.setText(food.toString());
+        fenetre.setNourri(food.toString());
     }
 
     // Total Load : chaque point Food vaut 1, 100 pièces ou moins vaut 1
@@ -85,7 +85,7 @@ public class game {
 
     public void setTimeTrack(Integer timeTrack, Fenetre fenetre) {
         this.timeTrack = timeTrack;
-        fenetre.Quete.setText(timeTrack.toString());
+        fenetre.setQuete(timeTrack.toString());
     }
 
     //Current Case
@@ -102,7 +102,7 @@ public class game {
 
     //SUITE DU PRINCE (TROUPE)
 
-    public ArrayList getSuite(){
+    public ArrayList<Character> getSuite(){
         return suite;
         }
 

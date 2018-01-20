@@ -624,6 +624,7 @@ public class Init {
         typeTerrain.put("0105", 4);
         typeTerrain.put("0104", 1);
         typeTerrain.put("0103", 5);
+        typeTerrain.put("0102", 1);
         typeTerrain.put("0101", 1);
 
         return typeTerrain;

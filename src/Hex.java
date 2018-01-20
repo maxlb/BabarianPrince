@@ -26,7 +26,7 @@ public class Hex {
     public Hex(String loc)
     {
         this.AbsOrd = loc;
-        this.road= 0;
+        this.road = 0;
     }
 
     public String getRoad(){
