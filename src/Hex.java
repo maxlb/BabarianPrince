@@ -2,7 +2,7 @@ import util.de;
 import Personnages.Prince;
 
 public class Hex {
-    //Paramètres
+
     /*
     Open CountrySide :  code 1
     FarmLand :          code 2
@@ -22,9 +22,16 @@ public class Hex {
 
 
     // Constructor
+
     public Hex(String loc)
     {
         this.setAbsOrd(loc);
+        //valeurs par défaut
+        this.event = 0;
+        this.hunt = true;
+        this.fodder = true;
+        this.type = 1;
+        this.monument = 0;
         this.road= 0;
     }
 
@@ -90,6 +97,8 @@ public class Hex {
         return str;
     }
 
+    public String getAbsOrd() { return AbsOrd; }
+
     public void setAbsOrd(String absOrd) { this.AbsOrd = absOrd; }
 
 
@@ -125,7 +134,7 @@ public class Hex {
             }
         }
 
-        else fenetre.setStory(fenetre.getStory() + "Ouf ! Il n'y a rien de vivant par ici.");
+        else fenetre.setStory(fenetre.getStory() + "\n Il n'y a pas âme qui vive par ici.");
 
     }
 

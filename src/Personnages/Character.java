@@ -1,7 +1,7 @@
 package Personnages;
 
 //Classe pour définir les personnages
-//
+
 public abstract class Character {
     private Integer combat; //indice de combativité
     private Integer initcombat; //indice de combativité initial
@@ -12,8 +12,6 @@ public abstract class Character {
     private Integer loads; //poids qu'il peut porter
     private String name;
     private Integer characterNumber; //nbre de personnages si meute ou bande
-
-
 
     //Name
     public String getName() { return name; }
@@ -75,10 +73,6 @@ public abstract class Character {
     public void Feed(){}
     public void Starve(){}
     public void Heal(){}
-
-
-
-
 
 }
 

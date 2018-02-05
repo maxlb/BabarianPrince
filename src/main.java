@@ -3,6 +3,7 @@ import Personnages.Prince;
 class main {
 
     public static void main(String[] args) {
+
         Fenetre maFenetre = new Fenetre(0,50);
 
         // Initialisation du jeu
@@ -18,6 +19,7 @@ class main {
         while(a){
             Boolean b = maFenetre.Begin;
             System.out.print("");
+
             if(b){
                 caseActuelle = happen.e001(myGame, maFenetre);
                 a = false;
@@ -66,19 +68,19 @@ class main {
             myGame.FoodHunt(myPrince, caseActuelle, maFenetre);
 
             //FOOD-purchase meal
-            myGame.FoodPurchase(caseActuelle, foodneed, maFenetre);
+            myGame.FoodPurchase(caseActuelle, foodneed, maFenetre, myPrince);
 
             //Est-on sur une case où on peut manger ??
             myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
 
             //PURCHASE LODGING (if in a town, castle, or temple hex)
-            myGame.PurchaseLodging(caseActuelle, maFenetre);
+            myGame.PurchaseLodging(caseActuelle, maFenetre, myPrince);
 
             //CHECK DU POIDS
-            myGame.CheckLoads(maFenetre);
+            myGame.CheckLoads(maFenetre, myPrince);
 
             //DAILY ACTION : REST OR TRAVEL
-            myGame.DailyAction(maFenetre, tour1Fini);
+            myGame.DailyAction(maFenetre, tour1Fini, myPrince);
 
 
             //FIN DE TOUR

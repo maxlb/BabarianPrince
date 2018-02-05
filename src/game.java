@@ -10,7 +10,7 @@ public class game {
     private Integer Food; //unités de nourriture disponible
     private Integer TotalLoad;
     private Boolean Status; //true : jeu en cours / False : game over
-    private Hex currentCase; //case actuelle du jeu
+    private Hex currentCase; //Case actuelle du jeu
     private ArrayList<NewCharacter> suite = new ArrayList<>(); //Liste des personnages présents dans la suite du prince
     private Integer suiteLoad; //capacité de portage de la suite
     private Integer suiteFood; //besoin en nourriture de la suite du Prince
@@ -23,7 +23,8 @@ public class game {
         this.Food = 5;
         this.TotalLoad = 1;
         this.Status = false;
-        this.suite.add(myPrince); //le premier membre de la suite est le Prince lui-même !
+        this.currentCase = new Hex("0000");
+        this.setSuite(myPrince); //le premier membre de la suite est le Prince lui-même !
         this.suiteLoad = 10;
         this.suiteFood = 1;
         this.currentCase = new Hex("0000"); // Un objet doit toujours être initialisé ;)
@@ -97,8 +98,6 @@ public class game {
     public Hex getCurrentCase() {
         return currentCase;
     }
-
-    //public void setCurrentCase(Hex currentCase) { this.currentCase = currentCase; }
 
     public void setCurrentCase(String loc) {
         this.currentCase.setAbsOrd(loc);
@@ -185,7 +184,7 @@ public class game {
 
         int newHunt = 0;
         //peut on chasser sur ce type de terrain ?
-        if (currentCase.type != null
+        if (this.getStatus(myPrince)
                 && (currentCase.type == 2 || currentCase.type == 1 || currentCase.type == 3 || currentCase.type == 4 || currentCase.type == 7))
         {
             fenetre.setStory(fenetre.getStory() + "\nÊtes-vous d'humeur à chasser votre Altesse ? ");
@@ -208,7 +207,7 @@ public class game {
 
 
     //FOOD-PURCHASE
-    public void FoodPurchase(Hex currentCase, int foodneed, Fenetre fenetre){
+    public void FoodPurchase(Hex currentCase, int foodneed, Fenetre fenetre, Prince myPrince){
 
         //if you are in a town, castle, or village
         // you can purchase food for each character in your party.
@@ -216,8 +215,8 @@ public class game {
         // Animals cost 1 gold piece per day to feed at the stables of the town/castle/village.
         // If you don't purchase food, you must eat stores, as hunting is prohibited in these hexes.
 
-        if(currentCase.monument!= null && (currentCase.monument == 4 || currentCase.monument == 3) ) {
-            fenetre.setStory(fenetre.getStory() + "\nVoulez vous acheter de la nourriture ?");
+        if(this.getStatus(myPrince) && currentCase.monument!= null && (currentCase.monument == 4 || currentCase.monument == 3) ) {
+            fenetre.setStory(fenetre.getStory() + " \nVoulez vous acheter de la nourriture ?");
             String achat = fenetre.aRepondu();
 
             if(achat.equals("Oui"))
@@ -225,30 +224,30 @@ public class game {
                 if(this.getGold()>=foodneed){ //si le Prince a assez d'argent
                     this.setGold(this.getGold() - foodneed, fenetre);
                     this.setFood( this.getFood() + foodneed, fenetre);
-                    fenetre.setStory(fenetre.getStory() + "\nVous avez pu acheter " + foodneed + " unité(s) de nourriture.");
+                    fenetre.setStory(fenetre.getStory() + " \nVous avez pu acheter " + foodneed + " unité(s) de nourriture.");
                 }
                 else
-                    fenetre.setStory(fenetre.getStory() + "\nVous êtes fauchés votre Altesse ! Vous ne pouvez pas acheter de nourriture pour le moment.");
+                    fenetre.setStory(fenetre.getStory() + " \nVous êtes fauchés votre Altesse ! Vous ne pouvez pas acheter de nourriture pour le moment.");
             }
         }
     }//fin de food-purchase
 
     //FOOD : se nourrir
     public void Food(Hex currentCase, Prince myPrince, int foodneed, Fenetre fenetre){
-        if(currentCase.fodder) {
+        if(this.getStatus(myPrince) && currentCase.fodder) {
             if (this.getFood() >= foodneed) { //il y a assez de nourriture pour tous
                 this.setFood(this.getFood() - foodneed, fenetre);
 
                 for (int i =0 ; i < this.suite.size(); i++){
                     this.suite.get(i).Feed();
                 }
-                fenetre.setStory(fenetre.getStory()+"\nVotre groupe se restaure de "+ foodneed +" nourriture(s) pour survivre.");
+                fenetre.setStory(fenetre.getStory()+" \nVotre groupe se restaure de "+ foodneed +" nourriture(s) pour survivre.");
 
             } else {
                 for (int i =0 ; i < this.suite.size(); i++){
                     this.suite.get(i).Starve();
                 }
-                fenetre.setStory(fenetre.getStory()+"\nVotre groupe n'a pas assez a manger, c'est la famine !");
+                fenetre.setStory(fenetre.getStory()+" \nVotre groupe n'a pas assez a manger, c'est la famine !");
             }
         }
     }//fin de la méthode Food
@@ -264,8 +263,8 @@ public class game {
     // a penurious leader! If a mount is without stables, roll one die for each mount,
     // a 4 or higher means thieves steal the mount during the night, it is permanently lost.
 
-    public void PurchaseLodging(Hex currentCase,Fenetre fenetre) {
-        if (currentCase.monument != null
+    public void PurchaseLodging(Hex currentCase,Fenetre fenetre, Prince myPrince) {
+        if (this.getStatus(myPrince) && currentCase.monument != null
                 && (currentCase.monument == 4 || currentCase.monument == 3 || currentCase.monument == 1)) {
             int cost = 1 + ((suite.size() - 1) / 2); //1 chambre pour le prince + 1 chambre pour 2 pour le reste de la suite
 
@@ -313,7 +312,8 @@ public class game {
 
     //DAILY ACTION : REST AND TRAVEL
 
-    public Hex DailyAction(Fenetre fenetre, Boolean tour1Fini) {
+    public Hex DailyAction(Fenetre fenetre, Boolean tour1Fini, Prince myPrince) {
+        if(this.getStatus(myPrince)){
         fenetre.setStory(fenetre.getStory() + "\nVoulez-vous rester sur cette case au prochain tour pour panser vos éventuelles plaies et vous reposer ou continuer à voyager ?");
         String reponse = fenetre.aRepondu();
 
@@ -324,7 +324,7 @@ public class game {
 
         else if(reponse.equals("L'aventure n'attend pas !")){
             fenetre.setStory(fenetre.getStory() + "\nSelectionnez la direction \nque vous souhaitez prendre.");
-            this.currentCase=this.Travel(fenetre);
+            this.currentCase = this.Travel(fenetre);
 
             }
         if(!tour1Fini){
@@ -332,8 +332,8 @@ public class game {
         return this.currentCase;
         }
 
-
-    return this.currentCase;
+    return this.currentCase;}
+        else return null;
     } //fin de DailyAction
 
 
@@ -351,7 +351,8 @@ public class game {
     }
 
     //CHECK LOADS
-    public void CheckLoads(Fenetre fenetre) {
+    public void CheckLoads(Fenetre fenetre, Prince myPrince) {
+        if(this.getStatus(myPrince)){
         int diff = this.getTotalLoad() - this.getSuiteLoad();
         while (diff < 0) {
             fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite. Vous devez abandonner des réserves de nourriture ou de l'or");
@@ -387,7 +388,7 @@ public class game {
 
 
         }
-    }
+    }}
 
 
 
