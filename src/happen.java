@@ -190,14 +190,78 @@ public class happen {
         this.r301a(myGame, myPrince, GhostsBand, fenetre);
     }
 
-    public void r235(game myGame,Fenetre fenetre){
-        fenetre.setStory(fenetre.getStory() +"\nChanceux, event non codé ;)");
-    }
+   /* public void r235(game myGame, Prince myPrince){
+        //
+        Integer endurance = myPrince.getEndurance();
+        Boolean froid = false;
+
+        int de = util.de.randomDie();
+        if (de==5 || de==6){
+            froid = true;
+            endurance--;
+            myPrince.setEndurance(endurance);
+        }
+        //Jour suivant
+        de = util.de.randomDie();
+        if (de>=4){
+            for(int i = 0 ; i < myGame.getSuite().size(); i++){
+                if ((myGame.getSuite().get(i).getMount())>1){
+                    int die = util.de.randomDie();
+                    if (die==5 || die==6){
+                        myGame.removeSuite(myGame.getSuite().get(i));
+                    }
+                }
+            }
+
+            if (!froid);
+            int die = util.de.randomDie();
+            endurance--;
+            myPrince.setEndurance(endurance);
+        }
+    } */
 
     public void r301(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
-        //FIGHT SOLO CHARACTER
-        fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
+        //FIGHT
+        // Récupération des indices de combat
+        Integer a = myPrince.getCombat();
+        Integer b = adversaire.getCombat();
+        Integer endurancePrince = myPrince.getEndurance();
+        Integer enduranceAdversaire = adversaire.getEndurance();
+
+        Boolean joueur = true;
+        while ((endurancePrince>0) && (enduranceAdversaire>0)){
+            fenetre.setStory(fenetre.getStory() +"\nVeuillez lancer le dé pour connaitre l'issue du combat");
+            int de = fenetre.aLancerDe(1);
+            Integer reste = (a - b + de);
+
+            if (endurancePrince <= 0)
+            { myGame.setStatus(false);
+                fenetre.setStory(fenetre.getStory() +"\nTU MEURS! GAME OVER");
+            }
+            if (enduranceAdversaire <=0) {
+                fenetre.setStory(fenetre.getStory() +"\nTU AS GAGNE! Quel guerrier!");
+                myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre);
+            } //le Prince récupère les units Gold du personnage tué (règle simplifiée)
+
+            if (joueur){
+                // Récupération de l'indice d'endurance de l'adversaire
+                Integer c = adversaire.getEndurance();
+
+                enduranceAdversaire = resteEndurance(reste, c);
+                adversaire.setEndurance(enduranceAdversaire);
+                joueur = false;
+            }
+            else {
+                // Récupération de l'indice d'endurance du prince
+                Integer c = myPrince.getEndurance();
+
+                endurancePrince = resteEndurance(reste, c);
+                myPrince.setEndurance(endurancePrince);
+                joueur = true;
+            }
+        }
     }
+
 
     public void r301a(game myGame, Prince myPrince, NewCharacter adversaires, Fenetre fenetre){
         //FIGHT BAND
@@ -229,5 +293,24 @@ public class happen {
 
     }
 
-
+    public Integer resteEndurance(Integer combat, Integer endurance){
+        Integer resteCombat = combat;
+        Integer resteEndurance = endurance;
+        if ((resteCombat==-1) || (resteCombat==3) || (resteCombat==8) || (resteCombat==11)){
+            resteEndurance = resteEndurance-1;
+        }
+        if ((resteCombat==10) || (resteCombat==12) || (resteCombat==13) || (resteCombat==17)){
+            resteEndurance = resteEndurance-2;
+        }
+        if (resteCombat==14){
+            resteEndurance = resteEndurance-3;
+        }
+        if ((resteCombat==16) || (resteCombat==18) || (resteCombat==19)){
+            resteEndurance = resteEndurance-5;
+        }
+        if (resteCombat==20){
+            resteEndurance = resteEndurance-6;
+        }
+        return resteEndurance;
+    }
 }
