@@ -52,6 +52,8 @@ public class happen {
         return Init.GetTypeTerrain(myGame.getCurrentCase().AbsOrd, monTerrain, mesMonum, mesRoutes);
     }
 
+
+    //Ferme
     public void e009(game myGame, Fenetre maFenetre){
 
         maFenetre.setStory(maFenetre.getStory() + "\nVous apercevez une petite ferme devant vous. " +
@@ -86,8 +88,9 @@ public class happen {
         }
     }
 
+    //PRÊTRE
     public void r231(game myGame, Prince myPrince, Fenetre fenetre){
-        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un prêtre local monté sur un âne avec\n" +
+        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un prêtre du coin monté sur un âne avec\n" +
                 "une compétence de combat de 3, une endurance de 3, une richesse de 25.\n" +
                 "Il semble distant et peu disposé à la conversation, mais il peut avoir peur\n" +
                 "de vous...\n" +
@@ -101,7 +104,7 @@ public class happen {
 
         if (reponse.equals("Laisser passer")){
             //Fin du tour
-            fenetre.setStory(fenetre.getStory() + "\nVous l'avez laisser passer");
+            fenetre.setStory(fenetre.getStory() + "\nVous l'avez laissé passer");
         }
         else if (reponse.equals("Discuter")){
             //talk
@@ -115,6 +118,7 @@ public class happen {
 
     }
 
+    //CHEVALIER
     public void r232(game myGame, Prince myPrince, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un chevalier. Il est monté sur un cheval \n" +
                 "avec la compétence de combat 6, l'endurance 6, et la richesse 7.\n" +
@@ -129,7 +133,7 @@ public class happen {
 
         if (reponse.equals("Esquiver")){
             //Fin du tour
-            fenetre.setStory(fenetre.getStory() +"\nVous avez fuis, espèce de lâche !");
+            fenetre.setStory(fenetre.getStory() +"\nVous avez fui, espèce de lâche !");
         }
         else if (reponse.equals("Discuter")){
             //talk
@@ -143,7 +147,7 @@ public class happen {
 
     public void r233(game myGame, Prince myPrince, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un marchand amical. \n" +
-                "\nVous pouvez le laisser, et donc mettre fin à cette rencontre, \n" +
+                "\nVous pouvez le laisser passer, et donc mettre fin à cette rencontre, \n" +
                 "ou alors discuter avec lui.");
 
         String reponse = fenetre.aChoisi("Laisser Passer", "Discuter", "");
@@ -187,9 +191,11 @@ public class happen {
                          0, 1, 0,
                         2, 4, nbGhosts);
         //fight !
-        this.r301a(myGame, myPrince, GhostsBand, fenetre);
+        this.r301(myGame, myPrince, GhostsBand, fenetre);
     }
 
+
+    //COMBAT
     public void r301(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
         //FIGHT
         // Récupération des indices de combat
@@ -211,7 +217,7 @@ public class happen {
             }
             if (endA <=0) {
                 fenetre.setStory(fenetre.getStory() +"\nVOUS AVEZ GAGNÉ ! Quel guerrier !");
-                myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre);
+                myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre); //On récupère l'or du personnage tué
             }
 
             if (tourJoueur){
@@ -232,11 +238,14 @@ public class happen {
         }
     }
 
-    public void r301a(game myGame, Prince myPrince, NewCharacter adversaires, Fenetre fenetre){
+    //A SUPPRIMER ?? ////////
+    /*public void r301a(game myGame, Prince myPrince, NewCharacter adversaires, Fenetre fenetre){
         //FIGHT BAND
         fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
-    }
+    }*/
 
+
+    //DISCUTER ET CONVAINCRE UN PERSONNAGE DE SE JOINDRE À LA SUITE
     public void r337(game myGame, NewCharacter encounter, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName() + " à l'air douteux.\n" +
                 "Vous essayez quand-même de le convaincre de rejoindre votre suite ...");
@@ -248,6 +257,7 @@ public class happen {
             //le personnage se joint
             fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName()+ " rejoint votre suite !");
             myGame.AddCharacter(encounter, fenetre);
+
             String suite = "";
             for (int i = 0; i < myGame.getSuite().size() ; i++){
                 if(!suite.equals("")){

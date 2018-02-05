@@ -95,7 +95,7 @@ class main {
                     //FIN DE TOUR
                     myGame.setTimeTrack(myGame.getTimeTrack() - 1, maFenetre);
                     maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
-                    maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la directions \nque vous souhaitez prendre.");
+                    maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la direction \nque vous souhaitez prendre.");
                     if (!tour1Fini) {
                         tour1Fini = true;
                     }
