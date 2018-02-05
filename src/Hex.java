@@ -145,10 +145,10 @@ public class Hex {
 
             switch (jete) {
                 case 1:
-                    whathappen.e009(myGame, fenetre);
+                    whathappen.r232(myGame, myPrince, fenetre);
                     break;
                 case 2:
-                    whathappen.r231(myGame, myPrince,fenetre);
+                    whathappen.r236(myGame, myPrince,fenetre);
                     break;
                 case 3:
                     whathappen.r232(myGame, myPrince, fenetre);

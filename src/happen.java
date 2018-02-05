@@ -88,6 +88,115 @@ public class happen {
         }
     }
 
+    void e019(game myGame, Prince myPrince, Fenetre fenetre ){
+        //You encounter a hermit monk meditating in the wilderness,
+        // with combat skill 3, endurance 6, wealth 0. He seems to be ignoring you.
+        // You can select one of the options below;
+
+        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un moine hermite qui médite.\n" +
+                "Il possède une compétence de combat de 3, une endurance de 6, mais aucune richesse.\n" +
+                "Il feint de vous ignorer…\n" +
+                "Vous pouvez l'ignorer ou alors discuter avec lui ou l'attaquer !");
+        NewCharacter hermitMonk =
+                new NewCharacter("Domi, le moine méditant",
+                        10, 2, 25, 3, 3,1);
+
+        String reponse = fenetre.aChoisi("Laisser passer", "Discuter", "Attaquer");
+
+        if (reponse.equals("Laisser passer")){
+            //Fin du tour
+            fenetre.setStory(fenetre.getStory() + "\nVous avez superbement ignoré le moine");
+        }
+        else if (reponse.equals("Discuter")){
+            //talk
+            r337(myGame, hermitMonk, fenetre);
+        }
+        else if (reponse.equals("Attaquer")){
+            //fight!
+            r301(myGame, myPrince, hermitMonk, fenetre);
+        }
+    }
+
+    void e023(game myGame, Prince myPrince, Fenetre fenetre ){
+        //You meet a Wizard with combat skill 4, endurance 4, and wealth 60.
+        // The wizard seems old, but still active and perhaps quite powerful.
+
+        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un vieux sorcier.\n" +
+                "Il possède une compétence de combat de 5, une endurance de 4, et 60 pièces d\n'or.\n" +
+                "Il semble faible et âgé mais surement encore puissant…\n" +
+                "Vous pouvez négocier votre passage, discuter avec lui ou l'attaquer !");
+        NewCharacter wizard =
+                new NewCharacter("Jean-Vincent le sorcier",
+                        10, 1, 60, 4, 4,1);
+
+        String reponse = fenetre.aChoisi("Négocier", "Discuter", "Attaquer");
+
+        if (reponse.equals("Laisser passer")){
+            //Fin du tour
+            r322(myGame, myPrince, fenetre, wizard, 10);
+        }
+        else if (reponse.equals("Discuter")){
+            //talk
+            r337(myGame, wizard, fenetre);
+        }
+        else if (reponse.equals("Attaquer")){
+            //fight!
+            r301(myGame, myPrince, wizard, fenetre);
+        }
+    }
+
+
+    //LAW ENFORCEMENTS OFFICERS
+    void e050(game myGame, Prince myPrince, Fenetre fenetre ){
+        /*You encounter local law enforcements officers.
+        First roll one die to see if they are mounted,
+        a 5 or higher roll means they are. Next roll one die to see how many you encounter,
+        add one (+1) to the roll if they are mounted, add three (+3) to the roll if they are on foot.
+        Each constable is combat skill 5, endurance 4, wealth 4.
+        Now select your option, and roll the die. Add two (+2) to the die roll if you have
+        visited the nearest town, castle, or temple before and did not leave it by an escape (r218).
+        If you escaped, you cannot add two because you are undoubtedly a "wanted" man. If you have never
+        visited the nearest town/ castle/temple before, you can add one (+1) to the die roll.
+         */
+
+        //ont ils une monture ?
+        int mount = util.de.randomDie();
+        if (mount>=5)
+            mount=2;
+        else mount=1;
+        //combien sont-ils ?
+        int nbAgents = util.de.randomDie();
+        if (mount>1)
+            nbAgents++;
+        else nbAgents+=3;
+
+        fenetre.setStory(fenetre.getStory() + "\n Voici des agents des forces de l\'ordre.\n" +
+                "Ils sont " + nbAgents);
+        if (mount>1)
+            {fenetre.setStory(fenetre.getStory() + "sur leur monture");}
+        fenetre.setStory(fenetre.getStory() + "\n Chacun d'eux a une force d'attaque de 5,\n" +
+                "une endurance de 4 et une richesse de 4\n"
+                + "Souhaitez vous tenter de négocier ? de fuir ? les attaquer ?");
+
+        NewCharacter lawOfficers =
+                new NewCharacter("les agents des forces de l\'ordre",
+                2, mount, 4, 4, 5, nbAgents);
+
+
+        String reponse = fenetre.aChoisi("Négocier", "Fuir", "Attaquer");
+
+        if (reponse.equals("Négocier")){
+            r322(myGame, myPrince, fenetre, lawOfficers, 10);
+        }
+        else if (reponse.equals("Fuir")){
+            r311(myGame, fenetre);
+        }
+        else if (reponse.equals("Attaquer")){
+            //fight!
+            r301(myGame, myPrince, lawOfficers, fenetre);
+        }
+    }
+
     //PRÊTRE
     public void r231(game myGame, Prince myPrince, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un prêtre du coin monté sur un âne avec\n" +
@@ -98,7 +207,7 @@ public class happen {
                 "ou alors discuter avec lui ou l'attaquer !");
         NewCharacter donkeyPriest =
                 new NewCharacter("Jose, le prêtre à l'âne",
-                        2, 10, 2, 25, 3,1);
+                        10, 2, 25, 3, 3,1);
 
         String reponse = fenetre.aChoisi("Laisser passer", "Discuter", "Attaquer");
 
@@ -194,6 +303,33 @@ public class happen {
         this.r301(myGame, myPrince, GhostsBand, fenetre);
     }
 
+    public void r236(game myGame, Prince myPrince, Fenetre fenetre){
+        int jete = util.de.randomDie();
+        switch (jete) {
+            case 1:
+                e009(myGame, fenetre);
+                break;
+            case 2:
+                e009(myGame,fenetre);
+                break;
+            case 3:
+                e050(myGame, myPrince, fenetre);
+                break;
+            case 4:
+                r231(myGame, myPrince, fenetre);
+                break;
+            case 5:
+                e019(myGame, myPrince, fenetre);
+                break;
+            case 6:
+                e023(myGame, myPrince, fenetre);
+                break;
+            default:break;
+        }
+
+
+    }
+
 
     //COMBAT
     public void r301(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
@@ -244,6 +380,72 @@ public class happen {
         fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }*/
 
+    //FUIR
+    public void r311(game myGame, Fenetre fenetre){
+        //Your party escapes to an adjacent hex (r218 : intégré directement dans cette règle) .
+        fenetre.setStory(fenetre.getStory() + "\nVotre troupe s’enfuit discrètement vers une case adjacente");
+       /* r218 : When your party escapes, you move randomly to one of the six adjacent hexes.
+       Roll one die to determine which direction to go:
+       1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW.
+       Your party is now in that hex for the rest of the day.
+       No new event occurs because you have entered that hex, but any events
+       still pending must be determined, and after all event effects are resolved,
+       you must eat for the day (r215).*/
+
+       int jete = util.de.randomDie();
+        switch (jete) {
+            case 1:
+                //N
+                break;
+            case 2:
+                //NE
+                break;
+            case 3:
+                //SE
+                break;
+            case 4:
+                //S
+                break;
+            case 5:
+                //SW
+                break;
+            case 6:
+                //NW
+                break;
+            default:break;
+        }
+
+           }
+
+
+    //NEGOCIER
+    public void r322(game myGame, Prince myPrince, Fenetre fenetre, NewCharacter adversaire, Integer amount){
+        /*Characters encountered have a nasty look, but if you pay the amount of gold
+        indicated they will pass your party and the event will end.
+        Otherwise, go to r330 and prepare to battle.
+         */
+
+        if (myGame.getGold()<amount){
+            fenetre.setStory(fenetre.getStory() + "\nVous être trop fauchés pour négocier votre Altesse");
+            r301(myGame, myPrince, adversaire, fenetre);
+        }
+
+        else {
+            fenetre.setStory(fenetre.getStory() + "\nVoulez-vous graisser la pate de votre rencontre " +
+                    "pour passer votre chemin tranquille ?\n" +
+                    amount + " pièces d'or sont réclamées");
+
+            String reponse = fenetre.aChoisi("Oui", "Non", "");
+
+            //oui
+            if (reponse.equals("Oui"))
+                myGame.setGold(myGame.getGold() - amount, fenetre);
+            else
+                //non
+                r301(myGame, myPrince, adversaire, fenetre);
+        }
+
+    }
 
     //DISCUTER ET CONVAINCRE UN PERSONNAGE DE SE JOINDRE À LA SUITE
     public void r337(game myGame, NewCharacter encounter, Fenetre fenetre){
