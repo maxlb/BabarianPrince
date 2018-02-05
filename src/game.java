@@ -353,8 +353,9 @@ public class game {
     //CHECK LOADS
     public void CheckLoads(Fenetre fenetre, Prince myPrince) {
         if(this.getStatus(myPrince)){
-        int diff = this.getTotalLoad() - this.getSuiteLoad();
+        int diff = this.getSuiteLoad() /*capacité de portage de la suite*/ - this.getTotalLoad()/*ce qu'il faut porter*/ ;
         while (diff < 0) {
+            fenetre.setStory(fenetre.getStory() + "\n" + this.getTotalLoad() + "\n" + this.getSuiteLoad() + "\n" + diff);
             fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite. Vous devez abandonner des réserves de nourriture ou de l'or");
             String abandon = fenetre.aRepondu();
 
