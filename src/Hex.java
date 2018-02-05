@@ -106,7 +106,7 @@ public class Hex {
 
     public void Event(game myGame, Prince myPrince, Fenetre fenetre){
         if(de.randomDice() > this.event){
-            fenetre.setStory(fenetre.getStory() + "\n UHOH ! Il y a quelqu'un ici !");
+            fenetre.setStory(fenetre.getStory() + "\nUHOH ! Il y a quelqu'un ici !");
             int typologie = this.type;
 
             switch (typologie) {
@@ -160,7 +160,7 @@ public class Hex {
                     whathappen.r234(myGame, myPrince, fenetre);
                     break;
                 case 6:
-                    whathappen.r235(myGame, fenetre);
+                    whathappen.r231(myGame, myPrince, fenetre);
                     break;
 
                 default:break;
@@ -188,7 +188,7 @@ public class Hex {
                 whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame, fenetre);
+                whathappen.r232(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -216,7 +216,7 @@ public class Hex {
                 whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame, fenetre);
+                whathappen.r231(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -244,7 +244,7 @@ public class Hex {
                 whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame, fenetre);
+                whathappen.r232(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -272,7 +272,7 @@ public class Hex {
                 whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame, fenetre);
+                whathappen.r231(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -300,7 +300,7 @@ public class Hex {
                 whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame, fenetre);
+                whathappen.r232(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -328,7 +328,7 @@ public class Hex {
                 whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame, fenetre);
+                whathappen.r231(myGame, myPrince, fenetre);
                 break;
 
             default:break;

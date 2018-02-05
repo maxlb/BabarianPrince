@@ -95,7 +95,7 @@ public class happen {
                 "ou alors discuter avec lui ou l'attaquer !");
         NewCharacter donkeyPriest =
                 new NewCharacter("Jose, le prêtre à l'âne",
-                        2, 10, 2, 25, 3,3);
+                        2, 10, 2, 25, 3,1);
 
         String reponse = fenetre.aChoisi("Laisser passer", "Discuter", "Attaquer");
 
@@ -123,7 +123,7 @@ public class happen {
                 "ou alors discuter avec lui ou l'attaquer !");
         NewCharacter swordsman =
                 new NewCharacter("Brutus le chevalier",
-                        3, 10, 2, 7, 6,6);
+                        3, 10, 2, 7, 6,1);
 
         String reponse = fenetre.aChoisi("Esquiver", "Discuter", "Attaquer");
 
@@ -190,78 +190,47 @@ public class happen {
         this.r301a(myGame, myPrince, GhostsBand, fenetre);
     }
 
-   /* public void r235(game myGame, Prince myPrince){
-        //
-        Integer endurance = myPrince.getEndurance();
-        Boolean froid = false;
-
-        int de = util.de.randomDie();
-        if (de==5 || de==6){
-            froid = true;
-            endurance--;
-            myPrince.setEndurance(endurance);
-        }
-        //Jour suivant
-        de = util.de.randomDie();
-        if (de>=4){
-            for(int i = 0 ; i < myGame.getSuite().size(); i++){
-                if ((myGame.getSuite().get(i).getMount())>1){
-                    int die = util.de.randomDie();
-                    if (die==5 || die==6){
-                        myGame.removeSuite(myGame.getSuite().get(i));
-                    }
-                }
-            }
-
-            if (!froid);
-            int die = util.de.randomDie();
-            endurance--;
-            myPrince.setEndurance(endurance);
-        }
-    } */
-
     public void r301(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
         //FIGHT
         // Récupération des indices de combat
-        Integer a = myPrince.getCombat();
-        Integer b = adversaire.getCombat();
-        Integer endurancePrince = myPrince.getEndurance();
-        Integer enduranceAdversaire = adversaire.getEndurance();
+        Integer combP = myPrince.getCombat();
+        Integer combA = adversaire.getCombat();
+        Integer endP = myPrince.getEndurance();
+        Integer endA = adversaire.getEndurance();
 
-        Boolean joueur = true;
-        while ((endurancePrince>0) && (enduranceAdversaire>0)){
-            fenetre.setStory(fenetre.getStory() +"\nVeuillez lancer le dé pour connaitre l'issue du combat");
-            int de = fenetre.aLancerDe(1);
-            Integer reste = (a - b + de);
+        fenetre.setStory(fenetre.getStory() +"\nTenez-vous prêt, le combat commence !");
+        fenetre.setStory(fenetre.getStory() +"\nVous avez " + combP + " points de combat et votre adversaire en a " + combA + " !");
+        fenetre.setStory(fenetre.getStory() +"\nVous avez " + endP + " points d'endurance et votre adversaire en a " + endA + " !");
 
-            if (endurancePrince <= 0)
-            { myGame.setStatus(false);
-                fenetre.setStory(fenetre.getStory() +"\nTU MEURS! GAME OVER");
+        Boolean tourJoueur = true;
+        while ((endP > 0) && (endA > 0)){
+            if (endP <= 0) {
+                fenetre.setStory(fenetre.getStory() +"\nVOUS ÊTES MORT ! GAME OVER");
+                myGame.setStatus(false);
+
             }
-            if (enduranceAdversaire <=0) {
-                fenetre.setStory(fenetre.getStory() +"\nTU AS GAGNE! Quel guerrier!");
+            if (endA <=0) {
+                fenetre.setStory(fenetre.getStory() +"\nVOUS AVEZ GAGNÉ ! Quel guerrier !");
                 myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre);
-            } //le Prince récupère les units Gold du personnage tué (règle simplifiée)
-
-            if (joueur){
-                // Récupération de l'indice d'endurance de l'adversaire
-                Integer c = adversaire.getEndurance();
-
-                enduranceAdversaire = resteEndurance(reste, c);
-                adversaire.setEndurance(enduranceAdversaire);
-                joueur = false;
             }
-            else {
-                // Récupération de l'indice d'endurance du prince
-                Integer c = myPrince.getEndurance();
 
-                endurancePrince = resteEndurance(reste, c);
-                myPrince.setEndurance(endurancePrince);
-                joueur = true;
+            if (tourJoueur){
+                int de = fenetre.aLancerDe(2);
+                Integer diff = dommagesCombat(combP - combA + de);
+                fenetre.setStory(fenetre.getStory() +"\nVous infligez " + diff + " de point(s) de dégat à votre adversaire.");
+                adversaire.setEndurance(endA - diff);
+                tourJoueur = false;
+            } else {
+                int de = util.de.randomDice();
+                Integer diff = dommagesCombat(combA - combP + de);
+                fenetre.setStory(fenetre.getStory() +"\nL'adversaire vous inflige " + diff + " de point(s) de dégat.");
+                myPrince.setEndurance(endP - diff);
+                tourJoueur = true;
             }
+
+            fenetre.setStory(fenetre.getStory() +"\nVous : " + endP + ", Lui : " + endA );
         }
     }
-
 
     public void r301a(game myGame, Prince myPrince, NewCharacter adversaires, Fenetre fenetre){
         //FIGHT BAND
@@ -293,24 +262,53 @@ public class happen {
 
     }
 
-    public Integer resteEndurance(Integer combat, Integer endurance){
-        Integer resteCombat = combat;
-        Integer resteEndurance = endurance;
-        if ((resteCombat==-1) || (resteCombat==3) || (resteCombat==8) || (resteCombat==11)){
-            resteEndurance = resteEndurance-1;
+    Integer dommagesCombat(Integer combat){
+        Integer dmg;
+        switch (combat){
+            case -1 :
+                dmg = 1;
+                break;
+            case 3 :
+                dmg = 1;
+                break;
+            case 8 :
+                dmg = 1;
+                break;
+            case 10 :
+                dmg = 2;
+                break;
+            case 11 :
+                dmg = 1;
+                break;
+            case 12 :
+                dmg = 2;
+                break;
+            case 13 :
+                dmg = 2;
+                break;
+            case 14 :
+                dmg = 3;
+                break;
+            case 16 :
+                dmg = 5;
+                break;
+            case 17 :
+                dmg = 2;
+                break;
+            case 18 :
+                dmg = - 5;
+                break;
+            case 19 :
+                dmg = - 5;
+                break;
+            case 20 :
+                dmg = - 6;
+                break;
+            default:
+                dmg = 0;
+                break;
         }
-        if ((resteCombat==10) || (resteCombat==12) || (resteCombat==13) || (resteCombat==17)){
-            resteEndurance = resteEndurance-2;
-        }
-        if (resteCombat==14){
-            resteEndurance = resteEndurance-3;
-        }
-        if ((resteCombat==16) || (resteCombat==18) || (resteCombat==19)){
-            resteEndurance = resteEndurance-5;
-        }
-        if (resteCombat==20){
-            resteEndurance = resteEndurance-6;
-        }
-        return resteEndurance;
+
+        return dmg;
     }
 }

@@ -655,14 +655,14 @@ public class Init {
         if (type != null) {
             switch (type) {
                 case 1: //Open Country Side
-                    maCase.event = 9;          //indice du score minimal pour lancer un event
+                    maCase.event = 5;          //indice du score minimal pour lancer un event
                     maCase.hunt = true;       // droit util.util chasser
                     maCase.fodder = true;     // droit util.util manger
                     maCase.type = 1;
                     break;
 
                 case 2: //Farmland
-                    maCase.event = 8;          //indice du score minimal pour lancer un event
+                    maCase.event = 3;          //indice du score minimal pour lancer un event
                     maCase.hunt = false;       // droit util.util chasser
                     maCase.fodder = false;     // droit util.util manger
                     maCase.type = 2;
@@ -676,28 +676,28 @@ public class Init {
                     break;
 
                 case 4: //Hills
-                    maCase.event = 10;          //indice du score minimal pour lancer un event
+                    maCase.event = 7;          //indice du score minimal pour lancer un event
                     maCase.hunt = true;       // droit util.util chasser
                     maCase.fodder = true;     // droit util.util manger
                     maCase.type = 4;
                     break;
 
                 case 5: //Mountains
-                    maCase.event = 9;          //indice du score minimal pour lancer un event
+                    maCase.event = 6;          //indice du score minimal pour lancer un event
                     maCase.hunt = false;       // droit util.util chasser
                     maCase.fodder = false;     // droit util.util manger
                     maCase.type = 5;
                     break;
 
                 case 6: //Desert
-                    maCase.event = 10;          //indice du score minimal pour lancer un event
+                    maCase.event = 3;          //indice du score minimal pour lancer un event
                     maCase.hunt = false;       // droit util.util chasser
                     maCase.fodder = false;     // droit util.util manger
                     maCase.type = 6;
                     break;
 
                 case 7: //Swamp
-                    maCase.event = 10;          //indice du score minimal pour lancer un event
+                    maCase.event = 8;          //indice du score minimal pour lancer un event
                     maCase.hunt = true;       // droit util.util chasser
                     maCase.fodder = false;     // droit util.util manger
                     maCase.type = 7;

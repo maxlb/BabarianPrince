@@ -70,8 +70,7 @@ public class game {
     L'endurance du prince est épuisée : */
 
     public Boolean getStatus(Prince myPrince) {
-        this.Status = (this.timeTrack <= 0 || this.Gold >= 500 || myPrince.getEndurance() <= 0);
-
+        this.Status = !(this.timeTrack <= 0 || this.Gold >= 500 || myPrince.getEndurance() <= 0);
         return Status;
     }
 
@@ -279,18 +278,20 @@ public class game {
                 } else // NO DO NOT PURCHASE
                 {
                     fenetre.setStory(fenetre.getStory() + "\nVous avez des oursins dans les poches votre Altesse !");
+                    if(this.suite.size() > 1 ){
+                        //jet de dé pour chaque perso de la suite pour voir s'il déserte
+                        for (int i = 0; i < this.suite.size(); i++) {
+                            int jete = util.de.randomDie();
+                            if (jete >= 5) {
+                                //le personnage déserte
+                                this.DeleteCharacter(this.suite.get(i));
+                                fenetre.setStory(fenetre.getStory() + "\n" + this.suite.get(i).getName() + "refuse catégoriquement de continuer à servir un tel avare !\n" +
+                                        "Il déserte !");
+                            }
 
-                    //jet de dé pour chaque perso de la suite pour voir s'il déserte
-                    for (int i = 0; i < this.suite.size(); i++) {
-                        int jete = util.de.randomDie();
-                        if (jete >= 5) {
-                            //le personnage déserte
-                            this.DeleteCharacter(this.suite.get(i));
-                            fenetre.setStory(fenetre.getStory() + "\n" + this.suite.get(i).getName() + "refuse catégoriquement de continuer à servir un tel avare !\n" +
-                                    "Il déserte !");
                         }
-
                     }
+
                 }
             } else { //il n'y a pas assez d'argent pour loger la suite
                 fenetre.setStory(fenetre.getStory() + "\nVous êtes fauchés comme les blés votre Altesse, pas d'auberge ce soir.");
