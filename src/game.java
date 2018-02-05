@@ -132,14 +132,16 @@ public class game {
     }
 
     public Integer getSuiteFood() {
+        int maFood = this.suite.size(); //une unité de food par personn
 
-        this.suiteFood = this.suite.size(); //une unité de food par personne
         // +1 si monture :
         for (int i =0 ; i < this.suite.size(); i++){
             if(this.suite.get(i).getMount()>1){
-                setSuiteFood( getSuiteFood() +1);
+                maFood++;
             }
         }
+        this.suiteFood = maFood;
+
         return suiteFood; }
 
     public void setSuiteFood(Integer suiteFood) {
@@ -313,7 +315,8 @@ public class game {
 
     public Hex DailyAction(Fenetre fenetre, Boolean tour1Fini, Prince myPrince) {
         if(this.getStatus(myPrince)){
-        fenetre.setStory(fenetre.getStory() + "\nVoulez-vous rester sur cette case au prochain tour pour panser vos éventuelles plaies et vous reposer ou continuer à voyager ?");
+        fenetre.setStory(fenetre.getStory() + "\nVoulez-vous rester sur cette case au prochain tour pour panser" +
+                "\nvos éventuelles plaies et vous reposer ou continuer à voyager ?");
         String reponse = fenetre.aRepondu();
 
         if(reponse.equals("Rester"))//REST
