@@ -4,15 +4,17 @@ import javax.swing.*;
 
 public class Panneau extends JPanel {
 
+
+
+    final static int cote=24; // Ceci définit la taille du côté d'un polygone
+    Polygon pol;
+    private int x;
+    private int y;
+
     public Panneau(int x, int y) {
         this.x = x;
         this.y = y;
     }
-
-    final static int cote=24; // Ceci définit la taille du côté d'un polygone
-    Polygon pol;
-    int x;
-    int y;
 
     public void paint(Graphics arg0) {
         ImagePanel monImage = new ImagePanel("map.jpg");
@@ -66,20 +68,36 @@ public class Panneau extends JPanel {
         }
     }
 
-
     public static Polygon getPolygon(int x,int y,int cote){// Forme le polygone
         int haut=cote/2;
         int larg=(int)(cote*(Math.sqrt(3)/2));
-        Polygon hex=new Polygon();
-        hex.addPoint(x,y+haut);// /
-        hex.addPoint(x+larg,y); // \
-        hex.addPoint(x+2*larg,y+haut);// |
-        hex.addPoint(x+2*larg,y+(int)(1.5*cote)); // /
-        hex.addPoint(x+larg,y+2*cote);// \
-        hex.addPoint(x,y+(int)(1.5*cote));// |
+        Polygon hex = new Polygon();
 
+        hex.addPoint(x,y+haut);
+        hex.addPoint(x+larg,y);
+        hex.addPoint(x+2*larg,y+haut);
+        hex.addPoint(x+2*larg,y+(int)(1.5*cote));
+        hex.addPoint(x+larg,y+2*cote);
+        hex.addPoint(x,y+(int)(1.5*cote));
 
         return hex;
+    }
+
+
+    int getXP() {
+        return this.x;
+    }
+
+    int getYP() {
+        return this.y;
+    }
+
+    void setXP(int x) {
+        this.x = x;
+    }
+
+    void setYP(int y) {
+        this.y = y;
     }
 
 }

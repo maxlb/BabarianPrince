@@ -1,7 +1,6 @@
 import Personnages.NewCharacter;
 import Personnages.Prince;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class game {
     //Parameters
@@ -38,7 +37,7 @@ public class game {
     }
     public void setGold(Integer gold, Fenetre fenetre) {
         Gold = gold;
-        fenetre.Or.setText(gold.toString());
+        fenetre.setOr(gold.toString());
     }
 
     //Food
@@ -47,7 +46,7 @@ public class game {
     }
     public void setFood(Integer food, Fenetre fenetre) {
         Food = food;
-        fenetre.Nourri.setText(food.toString());
+        fenetre.setNourri(food.toString());
     }
 
     // Total Load : chaque point Food vaut 1, 100 pièces ou moins vaut 1
@@ -71,10 +70,10 @@ public class game {
     L'endurance du prince est épuisée : */
 
     public Boolean getStatus(Prince myPrince) {
-        if (this.timeTrack<=0 || this.Gold>=500 || myPrince.getEndurance() <= 0)
-            this.Status=false;
+        if (this.timeTrack <= 0 || this.Gold >= 500 || myPrince.getEndurance() <= 0)
+            this.Status = false;
         else
-            this.Status=true;
+            this.Status = true;
         return Status;
     }
 
@@ -90,7 +89,7 @@ public class game {
 
     public void setTimeTrack(Integer timeTrack, Fenetre fenetre) {
         this.timeTrack = timeTrack;
-        fenetre.Quete.setText(timeTrack.toString());
+        fenetre.setQuete(timeTrack.toString());
     }
 
     //Current Case
@@ -171,7 +170,7 @@ public class game {
 
     public Integer FoodNeed(Hex macase){
         int foodneed = 0;
-        if(macase.type==6 && macase.monument!=5)
+        if(macase.type == 6 && macase.monument != null && macase.monument != 5)
             foodneed = this.getSuiteFood()*2;
             else
             foodneed = this.getSuiteFood();
@@ -221,7 +220,7 @@ public class game {
 
             if(achat.equals("Oui"))
             {
-                if(this.getGold()>=foodneed){ //si le Prince a assez d'argent
+                if(this.getGold() >= foodneed){ //si le Prince a assez d'argent
                     this.setGold(this.getGold() - foodneed, fenetre);
                     this.setFood( this.getFood() + foodneed, fenetre);
                     fenetre.setStory(fenetre.getStory() + " \nVous avez pu acheter " + foodneed + " unité(s) de nourriture.");

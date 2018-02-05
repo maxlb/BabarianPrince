@@ -1,9 +1,9 @@
 import java.util.Map;
-import java.util.Scanner;
 
 import Personnages.Prince;
 import Personnages.NewCharacter;
 import util.de;
+
 
 public class happen {
 
@@ -16,7 +16,7 @@ public class happen {
         //quelle case pour démarrer
         //myGame.setCurrentCase("null");
         String str ="";
-        switch (fenetre.resultDe) {
+        switch (fenetre.getResultDe()) {
             case 1:
                 myGame.setCurrentCase("0101");
                 str = "dans Ogon, une petite ville du royaume.";
@@ -56,165 +56,178 @@ public class happen {
 
     public void e009(game myGame, Fenetre maFenetre){
 
-        System.out.println("You spot a small farm ahead. You may detour around it,\n" +
-                "but that will consume the rest of the day, ending all travel\n" +
-                "for today. Alternately, you can go up to it. If you approach\n" +
-                "the farm, you must decide whether to make it a friendly approach,\n" +
-                "or a raid.\n"+
-                "What are you going to do ??\n"+
-                "Type D for detour, F for friendly or R for raid !");
-        Scanner sc = new Scanner(System.in);
-        String reponse = sc.nextLine();
+        maFenetre.setStory(maFenetre.getStory() + "\nVous apercevez une petite ferme devant vous. " +
+                "\nVous pouvez la contourner, mais cela consommera le reste\n" +
+                "de la journée, mettant fin à tout voyage pour aujourd'hui. \n" +
+                "Sinon, vous pouvez y aller. Si vous choisissez d'approcher\n" +
+                "la ferme, vous devez décider d'en faire une approche amicale,\n" +
+                "ou une attaque.\n" +
+                "Qu'allez vous faire ??");
 
-        if(reponse.equals("r") || reponse.equals("R"))
+        String reponse = maFenetre.aChoisi("Contourner", "Approcher amicalement", "Attaquer");
+
+        if(reponse.equals("Attaquer"))
         {
             //RAID
-            System.out.println("farmer and his family are quickly killed, \n" +
-                    "no combat is necessary, but you find he was poor and starving,\n " +
-                    "no food or money are gained.\n");
+            maFenetre.setStory(maFenetre.getStory() + "\nLe fermier et sa famille sont tués rapidement, \n" +
+                    "aucun combat n'est nécéssaire, mais comme ils \n" +
+                    "était pauvres et affamés, ni nourriture,\n" +
+                    "ni pièce d'or ne sont gagnées.\n");
         }
-        else if(reponse.equals("D") || reponse.equals("d")){
+        else if(reponse.equals("Contourner")){
             //DETOUR : fin du tour
         }
-        else if (reponse.equals("f") || reponse.equals("F")){
+        else if (reponse.equals("Approcher amicalement")){
             //FRIENDLY APPROACH
-            System.out.println("farmer had a ruined harvest, his family is now starving.\n " +
-                    "He begs the charity of 5 food units from you. If you don't have 5 food units,\n " +
-                    "there is no special event and the encounter ends.\n");
-            if(myGame.getFood()>=5)
+            maFenetre.setStory(maFenetre.getStory() + "\nLe fermier a eu une récolte ruinée, sa famille est maintenant affamée.\n" +
+                    "Il demande la charité, vous lui donnez alors 5 unités de nourriture. \n" +
+                    "Si vous n'avez pas 5 unités de nourriture, il n'y a pas d'événement" +
+                    "\nspécial et la rencontre se termine.\n");
+            if(myGame.getFood() >= 5)
                 myGame.setFood( myGame.getFood() - 5 , maFenetre);
         }
     }
 
     public void r231(game myGame, Prince myPrince, Fenetre fenetre){
-        System.out.println("You encounter a local Priest riding on a donkey\n" +
-                "with combat skill 3, " +
-                "endurance 3, wealth 25. He seems aloof and not disposed \n" +
-                "to conversation, but he may be afraid of you . . . You can let him pass,\n " +
-                "ending this encounter, or select one of the two options below:\n" +
-                "Type P for Pass, T for Talk or F for Fight!");
-        NewCharacter donkeyPriest =
-                new NewCharacter("Jose the donkey priest",
+        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un prêtre local monté sur un âne avec\n" +
+                "une compétence de combat de 3, une endurance de 3, une richesse de 25.\n" +
+                "Il semble distant et peu disposé à la conversation, mais il peut avoir peur\n" +
+                "de vous...\n" +
+                "Vous pouvez le laisser passer, et donc mettre fin à cette rencontre,\n " +
+                "ou alors discuter avec lui ou l'attaquer !");
+        SoloChar donkeyPriest =
+                new SoloChar("Jose, le prêtre à l'âne",
                         2, 10, 2, 25, 3,3);
-        Scanner sc = new Scanner(System.in);
-        String reponse = sc.nextLine();
 
-        if (reponse.equals("p") || reponse.equals("P")){
+        String reponse = fenetre.aChoisi("Laisser passer", "Discuter", "Attaquer");
+
+        if (reponse.equals("Laisser passer")){
             //Fin du tour
-            System.out.println("You let him pass");
+            fenetre.setStory(fenetre.getStory() + "\nVous l'avez laisser passer");
         }
-        else if (reponse.equals("t") || reponse.equals("T")){
+        else if (reponse.equals("Discuter")){
             //talk
             r337(myGame, donkeyPriest, fenetre);
         }
-        else if (reponse.equals("f") || reponse.equals("F")){
+        else if (reponse.equals("Attaquer")){
             //fight!
-            r301(myGame, myPrince, donkeyPriest);
+            r301(myGame, myPrince, donkeyPriest, fenetre);
         }
 
 
     }
 
     public void r232(game myGame, Prince myPrince, Fenetre fenetre){
-        System.out.println("You meet a swordsman adventurer.\n " +
-                "He is mounted on a horse with combat skill 6, \n" +
-                "endurance 6, and wealth 7. Sitting there on his horse\n" +
-                " he takes an active interest in your party. Your options are:\n" +
-                "Talk (type t), evade (type e) or fight (type f)");
-        NewCharacter swordsman =
-                new NewCharacter("Brutus the swodsman adventurer",
+        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un chevalier. Il est monté sur un cheval \n" +
+                "avec la compétence de combat 6, l'endurance 6, et la richesse 7.\n" +
+                "Assis là sur son cheval, il est intéressé pour rejoindre votre suite. " +
+                "\nVous pouvez l'esquiver, et donc mettre fin à cette rencontre,\n" +
+                "ou alors discuter avec lui ou l'attaquer !");
+        SoloChar swordsman =
+                new SoloChar("Brutus le chevalier",
                         3, 10, 2, 7, 6,6);
-        Scanner sc = new Scanner(System.in);
-        String reponse = sc.nextLine();
 
-        if (reponse.equals("e") || reponse.equals("E")){
+        String reponse = fenetre.aChoisi("Esquiver", "Discuter", "Attaquer");
+
+        if (reponse.equals("Esquiver")){
             //Fin du tour
-            System.out.println("You evade, you coward!");
+            fenetre.setStory(fenetre.getStory() +"\nVous avez fuis, espèce de lâche !");
         }
-        else if (reponse.equals("t") || reponse.equals("T")){
+        else if (reponse.equals("Discuter")){
             //talk
             r337(myGame, swordsman, fenetre);
         }
-        else if (reponse.equals("f") || reponse.equals("F")){
+        else if (reponse.equals("Attaquer")){
             //fight!
-            r301(myGame, myPrince, swordsman);
+            r301(myGame, myPrince, swordsman, fenetre);
         }
     }
 
     public void r233(game myGame, Prince myPrince, Fenetre fenetre){
-        System.out.println("You meet a friendly merchant.\n " +
-                "You can either pass by and ignore him, ending this encounter,\n " +
-                "or you can stop to chat and barter.\n" +
-                "Stop (type S), Pass (Type P)\n");
-        Scanner sc = new Scanner(System.in);
-        String reponse = sc.nextLine();
+        fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un marchand amical. \n" +
+                "\nVous pouvez le laisser, et donc mettre fin à cette rencontre, \n" +
+                "ou alors discuter avec lui.");
 
-        if (reponse.equals("p") || reponse.equals("P")){
+        String reponse = fenetre.aChoisi("Laisser Passer", "Discuter", "");
+
+        if (reponse.equals("Laisser Passer")){
             //Fin du tour
-            System.out.println("Prudence…");
+            fenetre.setStory(fenetre.getStory() +"\nPrudence…");
         }
-        else if (reponse.equals("s") || reponse.equals("S")){
+        else if (reponse.equals("Discuter")){
             if(myGame.getGold() <= 50) {
-                System.out.println("You are too poor to buy anything your highness !");}
+                fenetre.setStory(fenetre.getStory() +"\nVous êtes trop pauvre pour acheter quoi que ce soit !");}
             else {
-                System.out.println("Merchant has pegasus mount for sale, 50 gold.\n" +
-                "Do you buy it ?\n");
+                fenetre.setStory(fenetre.getStory() +"\nLe marchand a un pégase à vendre, 50 pièces d'or.\n" +
+                "Voulez vous l'acheter ?");
                 String achatPegasus = fenetre.aRepondu();
 
                 if(achatPegasus.equals("Oui")){
                     myPrince.setMount(3);
                     myGame.setGold( myGame.getGold() - 50, fenetre);
-                    System.out.println("You now ride a pegasus !");
+                    fenetre.setStory(fenetre.getStory() +"\nVous montez maintenant un pégase !");
                 }
 
-                else System.out.println("I'm too manly to ride a pegasus!");
+                else fenetre.setStory(fenetre.getStory() +"\nJe suis trop viril pour monter un pégase !");
             }
         }
     }
 
-    public void r234(game myGame, Prince myPrince){
+    public void r234(game myGame, Prince myPrince, Fenetre fenetre){
         //Simplifié avec juste l'event e032 Ghosts
         //A group of ghosts surprise you in combat (r220),
         // roll one die and add one (+1) for the number of ghosts,
         // each of which is combat value 4, endurance 2.
+        fenetre.setStory(fenetre.getStory() +"\nUn groupe de fantômes vous attaque par surprise !");
+        int nbGhosts = fenetre.aLancerDe(1) + 1;
 
-        int nbGhosts = de.randomDie() +1;
-        System.out.println(" A group of " + nbGhosts + " ghosts surprise you in combat\n" +
-        "each of which is combat value 4, endurance 2");
+        fenetre.setStory(fenetre.getStory() +"\nUn groupe de " + nbGhosts + " fantômes vous attaque par surprise !\n" +
+        "Chacun d'eux à une valeur de combat de 4 et un valeur d'endurence de 2");
 
         NewCharacter GhostsBand =
                 new NewCharacter("Terrible Ghosts",
                          0, 1, 0,
                         2, 4, nbGhosts);
         //fight !
-        this.r301a(myGame, myPrince, GhostsBand);
+        this.r301a(myGame, myPrince, GhostsBand, fenetre);
     }
 
-    public void r235(game myGame){
-        //
+    public void r235(game myGame,Fenetre fenetre){
+        fenetre.setStory(fenetre.getStory() +"\nChanceux, event non codé ;)");
     }
 
     public void r301(game myGame, Prince myPrince, NewCharacter adversaire){
         //FIGHT SOLO CHARACTER
+        fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }
 
     public void r301a(game myGame, Prince myPrince, NewCharacter adversaires){
         //FIGHT BAND
+        fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }
 
     public void r337(game myGame, NewCharacter encounter, Fenetre fenetre){
-        System.out.println(encounter.getName() + " encountered look unsavory, " +
-                "but willing to talk - you try to convince them to join " +
-                "your party…");
-        int jete = de.randomDie();
+        fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName() + " à l'air douteux.\n" +
+                "Vous essayez quand-même de le convaincre de rejoindre votre suite ...");
 
-        if(jete<=3){
+
+        int jete = fenetre.aLancerDe(1);
+
+        if(jete <= 3){
             //le personnage se joint
-            System.out.println(encounter.getName()+ " is joining your party!");
+            fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName()+ " rejoint votre suite !");
             myGame.AddCharacter(encounter, fenetre);
+            String suite = "";
+            for (int i = 0; i < myGame.getSuite().size() ; i++){
+                if(!suite.equals("")){
+                    suite = suite + ", ";
+                }
+                suite = suite + myGame.getSuite().get(i).getName();
+            }
+            fenetre.setSuite(suite);
         }
         else
-            System.out.println(encounter.getName() + " turn down your offer.");
+            fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName() + " refuse votre offre.");
 
     }
 

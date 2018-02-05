@@ -72,25 +72,25 @@ public class Hex {
         String str = "";
         switch(tp){
             case 1:
-                str = "Open CountrySide";
+                str = "Campagne";
                 break;
             case 2:
-                str = "FarmLand";
+                str = "Champs";
                 break;
             case 3:
-                str = "Forest";
+                str = "Forêt";
                 break;
             case 4:
-                str = "Hills";
+                str = "Collines";
                 break;
             case 5:
-                str = "Mountains";
+                str = "Montagnes";
                 break;
             case 6:
-                str = "Desert";
+                str = "Désert";
                 break;
             case 7:
-                str = "Swamp";
+                str = "Marais";
             default:
                 break;
         }
@@ -140,6 +140,7 @@ public class Hex {
 
     public void EventCountrySide(game myGame, Prince myPrince, Fenetre fenetre){
             happen whathappen = new happen();
+
             int jete = fenetre.aLancerDe(1); //lancer de dé pour déterminer l'événement
 
             switch (jete) {
@@ -156,10 +157,10 @@ public class Hex {
                     whathappen.r233(myGame, myPrince, fenetre);
                     break;
                 case 5:
-                    whathappen.r234(myGame, myPrince);
+                    whathappen.r234(myGame, myPrince, fenetre);
                     break;
                 case 6:
-                    whathappen.r235(myGame);
+                    whathappen.r235(myGame, fenetre);
                     break;
 
                 default:break;
@@ -184,10 +185,10 @@ public class Hex {
                 whathappen.r233(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince);
+                whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, fenetre);
                 break;
 
             default:break;
@@ -212,10 +213,10 @@ public class Hex {
                 whathappen.r233(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince);
+                whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, fenetre);
                 break;
 
             default:break;
@@ -240,10 +241,10 @@ public class Hex {
                 whathappen.r233(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince);
+                whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, fenetre);
                 break;
 
             default:break;
@@ -268,10 +269,10 @@ public class Hex {
                 whathappen.r233(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince);
+                whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, fenetre);
                 break;
 
             default:break;
@@ -296,10 +297,10 @@ public class Hex {
                 whathappen.r233(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince);
+                whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, fenetre);
                 break;
 
             default:break;
@@ -324,10 +325,10 @@ public class Hex {
                 whathappen.r233(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince);
+                whathappen.r234(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r235(myGame);
+                whathappen.r235(myGame, fenetre);
                 break;
 
             default:break;

@@ -17,9 +17,7 @@ class main {
         Boolean tour1Fini = false;
 
         while(a){
-            Boolean b = maFenetre.Begin;
-            System.out.print("");
-
+            Boolean b = maFenetre.getBegin();
             if(b){
                 caseActuelle = happen.e001(myGame, maFenetre);
                 a = false;
@@ -30,24 +28,32 @@ class main {
         // JEU
         while (myGame.getStatus(myPrince)) //tant que le jeu est en cours
         {
-            maFenetre.Portage.setText(myGame.getSuiteLoad().toString());
-            maFenetre.Or.setText(myGame.getGold().toString());
-            maFenetre.Nourri.setText(myGame.getFood().toString());
-            maFenetre.Quete.setText(myGame.getTimeTrack().toString());
-            maFenetre.Non.setEnabled(false);
-            maFenetre.Oui.setEnabled(false);
-
+            maFenetre.setPortage(myGame.getSuiteLoad().toString());
+            maFenetre.setOr(myGame.getGold().toString());
+            maFenetre.setNourri(myGame.getFood().toString());
+            maFenetre.setQuete(myGame.getTimeTrack().toString());
+            maFenetre.setTypo(caseActuelle.getType(caseActuelle.type));
+            maFenetre.setRoute(caseActuelle.getRoad());
+            maFenetre.setVie(myPrince.getEndurance().toString());
+            maFenetre.setPoids(myPrince.getWealth().toString());
+            String suite = "";
+            for (int i = 0; i < myGame.getSuite().size() ; i++){
+                if(!suite.equals("")){
+                    suite = suite + ", ";
+                }
+                suite = suite + myGame.getSuite().get(i).getName();
+            }
+            maFenetre.setSuite(suite);
 
             if(tour1Fini){
-                maFenetre.Story.setText("Nouvelle journée ! \n");
-                caseActuelle = Init.GetTypeTerrain(maFenetre.estDeplace(), happen.monTerrain, happen.mesMonum, happen.mesRoutes);
+                String newCase = maFenetre.estDeplace();
+                caseActuelle = Init.GetTypeTerrain(newCase, happen.monTerrain, happen.mesMonum, happen.mesRoutes);
+                maFenetre.setStory("Nouvelle journée ! \n");
             }
-            maFenetre.Typo.setText(caseActuelle.getType(caseActuelle.type));
-            maFenetre.Route.setText(caseActuelle.getRoad());
             if(caseActuelle.monument != null){
-                maFenetre.Monu.setText(caseActuelle.getMonum(caseActuelle.monument));
+                maFenetre.setMonu(caseActuelle.getMonum(caseActuelle.monument));
             } else {
-                maFenetre.Monu.setText(caseActuelle.getMonum(8));
+                maFenetre.setMonu(caseActuelle.getMonum(8));
             }
 
             //TOUR
@@ -67,13 +73,14 @@ class main {
             //FOOD-hunting
             myGame.FoodHunt(myPrince, caseActuelle, maFenetre);
 
-            //FOOD-purchase meal
+            // Si pas mort à la chasse
+            if(myGame.getStatus(myPrince)){
+                //FOOD-purchase meal
             myGame.FoodPurchase(caseActuelle, foodneed, maFenetre, myPrince);
 
-            //Est-on sur une case où on peut manger ??
-            myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
+                //Est-on sur une case où on peut manger ??
+                myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
 
-            //PURCHASE LODGING (if in a town, castle, or temple hex)
             myGame.PurchaseLodging(caseActuelle, maFenetre, myPrince);
 
             //CHECK DU POIDS
@@ -86,11 +93,18 @@ class main {
             //FIN DE TOUR
             myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
             maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
-
+                maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la directions \nque vous souhaitez prendre.");
+                if(!tour1Fini){
+                    tour1Fini = true;
+                }
+            }
         }
 
-        //TEMPS ÉPUISÉ
-        maFenetre.setStory(maFenetre.getStory() + "\nLe temps imparti est épuisé. Vous avez perdu.");
+        if(myGame.getTimeTrack() <= 0){
+            //TEMPS ÉPUISÉ
+            maFenetre.setStory(maFenetre.getStory() + "\nLe temps imparti est épuisé. Vous avez perdu.");
+        }
+
     }
 
 }
