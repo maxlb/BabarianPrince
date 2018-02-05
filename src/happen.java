@@ -95,8 +95,8 @@ public class happen {
                 "de vous...\n" +
                 "Vous pouvez le laisser passer, et donc mettre fin à cette rencontre,\n " +
                 "ou alors discuter avec lui ou l'attaquer !");
-        SoloChar donkeyPriest =
-                new SoloChar("Jose, le prêtre à l'âne",
+        NewCharacter donkeyPriest =
+                new NewCharacter("Jose, le prêtre à l'âne",
                         2, 10, 2, 25, 3,3);
 
         String reponse = fenetre.aChoisi("Laisser passer", "Discuter", "Attaquer");
@@ -123,8 +123,8 @@ public class happen {
                 "Assis là sur son cheval, il est intéressé pour rejoindre votre suite. " +
                 "\nVous pouvez l'esquiver, et donc mettre fin à cette rencontre,\n" +
                 "ou alors discuter avec lui ou l'attaquer !");
-        SoloChar swordsman =
-                new SoloChar("Brutus le chevalier",
+        NewCharacter swordsman =
+                new NewCharacter("Brutus le chevalier",
                         3, 10, 2, 7, 6,6);
 
         String reponse = fenetre.aChoisi("Esquiver", "Discuter", "Attaquer");
@@ -196,12 +196,12 @@ public class happen {
         fenetre.setStory(fenetre.getStory() +"\nChanceux, event non codé ;)");
     }
 
-    public void r301(game myGame, Prince myPrince, NewCharacter adversaire){
+    public void r301(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
         //FIGHT SOLO CHARACTER
         fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }
 
-    public void r301a(game myGame, Prince myPrince, NewCharacter adversaires){
+    public void r301a(game myGame, Prince myPrince, NewCharacter adversaires, Fenetre fenetre){
         //FIGHT BAND
         fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }
