@@ -16,7 +16,7 @@ public class game {
 
     //Constructors
     // Au début du jeu, il reste 70 tours, on a 2 pièces d'or (donc 1 load à porter)
-    public game(Prince myPrince){
+    game(Prince myPrince){
         this.timeTrack = 70;
         this.Gold = 2;
         this.Food = 5;
@@ -32,7 +32,7 @@ public class game {
 
     //Gold
 
-    public Integer getGold() {
+    Integer getGold() {
         return Gold;
     }
     public void setGold(Integer gold, Fenetre fenetre) {
@@ -70,10 +70,8 @@ public class game {
     L'endurance du prince est épuisée : */
 
     public Boolean getStatus(Prince myPrince) {
-        if (this.timeTrack <= 0 || this.Gold >= 500 || myPrince.getEndurance() <= 0)
-            this.Status = false;
-        else
-            this.Status = true;
+        this.Status = (this.timeTrack <= 0 || this.Gold >= 500 || myPrince.getEndurance() <= 0);
+
         return Status;
     }
 

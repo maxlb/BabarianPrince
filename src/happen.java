@@ -1,8 +1,6 @@
 import java.util.Map;
-
 import Personnages.Prince;
 import Personnages.NewCharacter;
-import util.de;
 
 
 public class happen {
