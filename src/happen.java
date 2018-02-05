@@ -1,7 +1,8 @@
 import java.util.Map;
-import Personnages.BandChar;
+
 import Personnages.Prince;
-import Personnages.SoloChar;
+import Personnages.NewCharacter;
+import util.de;
 
 
 public class happen {
@@ -13,7 +14,7 @@ public class happen {
     public static Hex e001(game myGame, Fenetre fenetre){
 
         //quelle case pour démarrer
-        myGame.setCurrentCase("null");
+        //myGame.setCurrentCase("null");
         String str ="";
         switch (fenetre.getResultDe()) {
             case 1:
@@ -26,7 +27,7 @@ public class happen {
                 break;
             case 3:
                 myGame.setCurrentCase("0901");
-                str = "dans les ruines du donjon de Jakor";
+                str = "dans les ruines du Donjon de Jakor";
                 break;
             case 4:
                 myGame.setCurrentCase("1301");
@@ -43,14 +44,14 @@ public class happen {
         }
         fenetre.setStory("La première journée ...\n" +
                         "Alors que le pauvre Ogab fait face à la colère des gardes royaux \n" +
-                        "pour rentrer à la maison, vous vous trouvez \n" +
+                        "vous vous trouvez " +
                         str + "\n\n" +
-                        "Maintenant, à l'aube, vous poussez les chariots marchands dans un fossé, \n" +
-                        "époussetez vos vêtements, desserrez votre ceinture d'épée et \n" +
-                        "vous vous préparez à commencer le premier jour de votre aventure !");
+                        "À l'aube, vous poussez les chariots marchands dans un fossé, \n" +
+                        "époussetez vos vêtements, vérifiez votre épée et \n" +
+                        "vous vous préparez à affronter le premier jour de votre aventure !");
 
         //retourne la HEX sur laquelle on se positionne
-        return Init.GetTypeTerrain(myGame.getCurrentCase(), monTerrain, mesMonum, mesRoutes);
+        return Init.GetTypeTerrain(myGame.getCurrentCase().AbsOrd, monTerrain, mesMonum, mesRoutes);
     }
 
     public void e009(game myGame, Fenetre maFenetre){
@@ -94,8 +95,8 @@ public class happen {
                 "de vous...\n" +
                 "Vous pouvez le laisser passer, et donc mettre fin à cette rencontre,\n " +
                 "ou alors discuter avec lui ou l'attaquer !");
-        SoloChar donkeyPriest =
-                new SoloChar("Jose, le prêtre à l'âne",
+        NewCharacter donkeyPriest =
+                new NewCharacter("Jose, le prêtre à l'âne",
                         2, 10, 2, 25, 3,3);
 
         String reponse = fenetre.aChoisi("Laisser passer", "Discuter", "Attaquer");
@@ -122,8 +123,8 @@ public class happen {
                 "Assis là sur son cheval, il est intéressé pour rejoindre votre suite. " +
                 "\nVous pouvez l'esquiver, et donc mettre fin à cette rencontre,\n" +
                 "ou alors discuter avec lui ou l'attaquer !");
-        SoloChar swordsman =
-                new SoloChar("Brutus le chevalier",
+        NewCharacter swordsman =
+                new NewCharacter("Brutus le chevalier",
                         3, 10, 2, 7, 6,6);
 
         String reponse = fenetre.aChoisi("Esquiver", "Discuter", "Attaquer");
@@ -183,9 +184,9 @@ public class happen {
         fenetre.setStory(fenetre.getStory() +"\nUn groupe de " + nbGhosts + " fantômes vous attaque par surprise !\n" +
         "Chacun d'eux à une valeur de combat de 4 et un valeur d'endurence de 2");
 
-        BandChar GhostsBand =
-                new BandChar("Terrible Fantôme",
-                        4, 0, 1, 0,
+        NewCharacter GhostsBand =
+                new NewCharacter("Terrible Ghosts",
+                         0, 1, 0,
                         2, 4, nbGhosts);
         //fight !
         this.r301a(myGame, myPrince, GhostsBand, fenetre);
@@ -195,16 +196,17 @@ public class happen {
         fenetre.setStory(fenetre.getStory() +"\nChanceux, event non codé ;)");
     }
 
-    public void r301(game myGame, Prince myPrince, SoloChar adversaire, Fenetre fenetre){
+    public void r301(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
         //FIGHT SOLO CHARACTER
         fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }
 
-    public void r301a(game myGame, Prince myPrince, BandChar adversaires, Fenetre fenetre){
+    public void r301a(game myGame, Prince myPrince, NewCharacter adversaires, Fenetre fenetre){
+        //FIGHT BAND
         fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }
 
-    public void r337(game myGame, SoloChar encounter, Fenetre fenetre){
+    public void r337(game myGame, NewCharacter encounter, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName() + " à l'air douteux.\n" +
                 "Vous essayez quand-même de le convaincre de rejoindre votre suite ...");
 

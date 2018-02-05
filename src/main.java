@@ -3,6 +3,7 @@ import Personnages.Prince;
 class main {
 
     public static void main(String[] args) {
+
         Fenetre maFenetre = new Fenetre(0,50);
 
         // Initialisation du jeu
@@ -60,14 +61,14 @@ class main {
             //EVENT : se passe-t-il quelque chose sur cette case ?
             caseActuelle.Event(myGame, myPrince, maFenetre);
 
-            //After all events (if any) are resolved for your daily action,
-            // you must then eat your main (evening) meal, as described in the food rules (r215),
-            // and if in a town, castle, or temple hex, you must also purchase lodging (r217).
+            /*After all events (if any) are resolved for your daily action,
+             you must then eat your main (evening) meal, as described in the food rules (r215),
+            and if in a town, castle, or temple hex, you must also purchase lodging (r217).*/
 
             //FOOD
             //calcul du besoin de nourriture
             Integer foodneed = myGame.FoodNeed(caseActuelle);
-            maFenetre.setStory(maFenetre.getStory()+"\nVotre groupe à besoin de "+ foodneed.toString() +" unité(s) de nourriture.");
+            maFenetre.setStory(maFenetre.getStory()+"\nVotre groupe à besoin de "+ foodneed.toString() +" unité(s) de nourriture aujourd'hui.");
 
             //FOOD-hunting
             myGame.FoodHunt(myPrince, caseActuelle, maFenetre);
@@ -75,37 +76,23 @@ class main {
             // Si pas mort à la chasse
             if(myGame.getStatus(myPrince)){
                 //FOOD-purchase meal
-                myGame.FoodPurchase(caseActuelle, foodneed, maFenetre);
+            myGame.FoodPurchase(caseActuelle, foodneed, maFenetre, myPrince);
 
                 //Est-on sur une case où on peut manger ??
                 myGame.Food(caseActuelle, myPrince, foodneed, maFenetre);
 
-                //PURCHASE LODGING (if in a town, castle, or temple hex)
-                myGame.PurchaseLodging(caseActuelle);
+            myGame.PurchaseLodging(caseActuelle, maFenetre, myPrince);
 
-                //DAILY ACTION : REST OR TRAVEL
+            //CHECK DU POIDS
+            myGame.CheckLoads(maFenetre, myPrince);
 
-            /*Voulez vous rester sur cette case (Tapez R) ou changer de case (Taper T) ?
-            Scanner sc = new Scanner(System.in);
-            String reponse = sc.nextLine();
-
-                //REST : on reste sur cette case et on guérit
-            if(reponse.equals("R") || reponse.equals("r")){
-                //
-            }
+            //DAILY ACTION : REST OR TRAVEL
+            myGame.DailyAction(maFenetre, tour1Fini, myPrince);
 
 
-                //TRAVEL : on souhaite changer de case
-            else if(reponse.equals("T") || reponse.equals("t")){
-                // changement de caseActuelle
-            }
-
-            */
-
-                //FIN DE TOUR
-                myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
-
-                maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
+            //FIN DE TOUR
+            myGame.setTimeTrack(myGame.getTimeTrack()-1, maFenetre);
+            maFenetre.setStory(maFenetre.getStory() + "\nFin de la journée, profitez de la nuit pour dormir.");
                 maFenetre.setStory(maFenetre.getStory() + "\nPour démarrer une nouvelle journée, selectionnez la directions \nque vous souhaitez prendre.");
                 if(!tour1Fini){
                     tour1Fini = true;

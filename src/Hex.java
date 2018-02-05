@@ -2,7 +2,7 @@ import util.de;
 import Personnages.Prince;
 
 public class Hex {
-    //Paramètres
+
     /*
     Open CountrySide :  code 1
     FarmLand :          code 2
@@ -18,15 +18,21 @@ public class Hex {
     Integer road;       //route sur cette case si 0 : non, si 1 : route
     Integer type;       // typologie du terrain
     Integer monument;   // id du monument
-
     String AbsOrd;      // id de la case
 
 
     // Constructor
+
     public Hex(String loc)
     {
-        this.AbsOrd = loc;
-        this.road = 0;
+        this.setAbsOrd(loc);
+        //valeurs par défaut
+        this.event = 0;
+        this.hunt = true;
+        this.fodder = true;
+        this.type = 1;
+        this.monument = 0;
+        this.road= 0;
     }
 
     public String getRoad(){
@@ -91,6 +97,11 @@ public class Hex {
         return str;
     }
 
+    public String getAbsOrd() { return AbsOrd; }
+
+    public void setAbsOrd(String absOrd) { this.AbsOrd = absOrd; }
+
+
     //EVENEMENT
 
     public void Event(game myGame, Prince myPrince, Fenetre fenetre){
@@ -123,7 +134,7 @@ public class Hex {
             }
         }
 
-        else fenetre.setStory(fenetre.getStory() + "\nOuf ! Il n'y a rien de vivant par ici.");
+        else fenetre.setStory(fenetre.getStory() + "\n Il n'y a pas âme qui vive par ici.");
 
     }
 
