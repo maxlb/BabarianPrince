@@ -484,41 +484,38 @@ public class happen {
             case -1 :
                 dmg = 1;
                 break;
+            case 1 :
+                dmg = 1;
+                break;
             case 3 :
                 dmg = 1;
                 break;
-            case 8 :
+            case 5 :
+                dmg = 2;
+                break;
+            case 7 :
                 dmg = 1;
                 break;
-            case 10 :
+            case 9 :
                 dmg = 2;
                 break;
             case 11 :
-                dmg = 1;
-                break;
-            case 12 :
                 dmg = 2;
                 break;
             case 13 :
-                dmg = 2;
-                break;
-            case 14 :
                 dmg = 3;
                 break;
-            case 16 :
+            case 15 :
                 dmg = 5;
                 break;
             case 17 :
                 dmg = 2;
                 break;
-            case 18 :
-                dmg = - 5;
-                break;
             case 19 :
-                dmg = - 5;
+                dmg = 5;
                 break;
             case 20 :
-                dmg = - 6;
+                dmg = 6;
                 break;
             default:
                 dmg = 0;
