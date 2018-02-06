@@ -1,4 +1,3 @@
-import com.sun.deploy.security.ruleset.Rule;
 import util.de;
 import javax.swing.*;
 import java.awt.*;
@@ -251,7 +250,7 @@ public class Fenetre extends JFrame implements ActionListener {
 
         JPanel panelSuite = new JPanel();
         panelSuite.setLayout(new FlowLayout(FlowLayout.LEFT));
-        JLabel strSuite = new JLabel("   - Equipe : ");
+        JLabel strSuite = new JLabel("   - Équipe : ");
         panelSuite.add(strSuite);
         panelSuite.add(suite);
         suite.setForeground(Color.red);

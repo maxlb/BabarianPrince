@@ -268,13 +268,13 @@ public class game {
 
             if (this.Gold >= cost) //il y a assez d'argent pour loger toute la suite
             {
-                fenetre.setStory(fenetre.getStory() + "\nVoulez-vous chercher un gîte pour vous et votre suite ce soir votre Altesse ?");
+                fenetre.setStory(fenetre.getStory() + "\nVoulez-vous chercher un gîte pour vous et votre suite ce soir ?");
                 String lodging = fenetre.aRepondu();
 
                 if (lodging.equals("Oui"))//YES PURCHASE
                 {
                     this.setGold(this.getGold() - cost, fenetre);
-                    fenetre.setStory(fenetre.getStory() + "\nToute votre troupe va dormir ce soir dans une charmante auberge ! Merci votre Altesse !");
+                    fenetre.setStory(fenetre.getStory() + "\nToute votre troupe va dormir ce soir dans une charmante auberge !\nMerci votre Altesse !");
                 } else // NO DO NOT PURCHASE
                 {
                     fenetre.setStory(fenetre.getStory() + "\nVous avez des oursins dans les poches votre Altesse !");

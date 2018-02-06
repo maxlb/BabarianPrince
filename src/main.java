@@ -46,6 +46,10 @@ class main {
             }
             maFenetre.setSuite(suite);
 
+            if(myGame.getGold() >= 500){
+                myGame.setStatus(false);
+            }
+
             if (tour1Fini) {
                 String newCase = maFenetre.estDeplace();
                 caseActuelle = Init.GetTypeTerrain(newCase, happen.monTerrain, happen.mesMonum, happen.mesRoutes);
@@ -107,6 +111,11 @@ class main {
         if(myGame.getTimeTrack() <= 0){
             //TEMPS ÉPUISÉ
             maFenetre.setStory(maFenetre.getStory() + "\nLe temps imparti est épuisé. Vous avez perdu.");
+        }
+
+        if(myGame.getGold() >= 500){
+            //PARTIE GAGNÉE
+            maFenetre.setStory(maFenetre.getStory() + "\nBRAVO ! Vous avez pû récupérer les 500 pièces d'or nécéssaires !\n VOTRE ROYAUME EST SAUVÉ !!!.");
         }
 
     }
