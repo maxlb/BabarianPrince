@@ -346,16 +346,6 @@ public class happen {
 
         Boolean tourJoueur = true;
         while ((endP > 0) && (endA > 0)){
-            if (endP <= 0) {
-                fenetre.setStory(fenetre.getStory() +"\nVOUS ÊTES MORT ! GAME OVER");
-                myGame.setStatus(false);
-
-            }
-            if (endA <=0) {
-                fenetre.setStory(fenetre.getStory() +"\nVOUS AVEZ GAGNÉ ! Quel guerrier !");
-                myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre); //On récupère l'or du personnage tué
-            }
-
             if (tourJoueur){
                 int de = fenetre.aLancerDe(2);
                 Integer diff = dommagesCombat(combP - combA + de);
@@ -369,8 +359,19 @@ public class happen {
                 myPrince.setEndurance(endP - diff);
                 tourJoueur = true;
             }
-
+            endP = myPrince.getEndurance();
+            endA = adversaire.getEndurance();
             fenetre.setStory(fenetre.getStory() +"\nVous : " + endP + ", Lui : " + endA );
+        }
+
+        if (endP <= 0) {
+            fenetre.setStory(fenetre.getStory() +"\nVOUS ÊTES MORT ! GAME OVER");
+            myGame.setStatus(false);
+
+        }
+        if (endA <=0) {
+            fenetre.setStory(fenetre.getStory() +"\nVOUS AVEZ GAGNÉ ! Quel guerrier !");
+            myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre); //On récupère l'or du personnage tué
         }
     }
 
