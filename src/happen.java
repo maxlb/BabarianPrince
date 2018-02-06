@@ -88,6 +88,7 @@ public class happen {
         }
     }
 
+    //MOINE QUI MEDITE
     void e019(game myGame, Prince myPrince, Fenetre fenetre ){
         //You encounter a hermit monk meditating in the wilderness,
         // with combat skill 3, endurance 6, wealth 0. He seems to be ignoring you.
@@ -117,6 +118,7 @@ public class happen {
         }
     }
 
+    //SORCIER
     void e023(game myGame, Prince myPrince, Fenetre fenetre ){
         //You meet a Wizard with combat skill 4, endurance 4, and wealth 60.
         // The wizard seems old, but still active and perhaps quite powerful.
@@ -236,7 +238,7 @@ public class happen {
                 "ou alors discuter avec lui ou l'attaquer !");
         NewCharacter swordsman =
                 new NewCharacter("Brutus le chevalier",
-                        3, 10, 2, 7, 6,1);
+                        10, 2, 7, 6, 6,1);
 
         String reponse = fenetre.aChoisi("Esquiver", "Discuter", "Attaquer");
 
@@ -284,6 +286,7 @@ public class happen {
         }
     }
 
+    //ATTAQUE DE FANTOMES
     public void r234(game myGame, Prince myPrince, Fenetre fenetre){
         //Simplifié avec juste l'event e032 Ghosts
         //A group of ghosts surprise you in combat (r220),
