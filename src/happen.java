@@ -365,6 +365,7 @@ public class happen {
             endP = myPrince.getEndurance();
             endA = adversaire.getEndurance();
             fenetre.setStory(fenetre.getStory() +"\nVous : " + endP + ", Lui : " + endA );
+            fenetre.setVie(endA.toString());
         }
 
         if (endP <= 0) {
