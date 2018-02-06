@@ -238,7 +238,7 @@ public class happen {
                 "ou alors discuter avec lui ou l'attaquer !");
         NewCharacter swordsman =
                 new NewCharacter("Brutus le chevalier",
-                        3, 10, 2, 7, 6,1);
+                        10, 2, 7, 6, 6,1);
 
         String reponse = fenetre.aChoisi("Esquiver", "Discuter", "Attaquer");
 
