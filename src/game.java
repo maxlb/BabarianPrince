@@ -1,52 +1,52 @@
-import Personnages.SoloChar;
-import Personnages.Character;
+import Personnages.NewCharacter;
 import Personnages.Prince;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class game {
     //Parameters
     private Integer timeTrack;
     private Integer Gold;
     private Integer Food; //unités de nourriture disponible
-    private Integer Endurance; //vie
     private Integer TotalLoad;
     private Boolean Status; //true : jeu en cours / False : game over
-    private String currentCase; //case actuelle du jeu
-    private ArrayList suite = new ArrayList(); //Liste des personnages présents dans la suite du prince
+    private Hex currentCase; //Case actuelle du jeu
+    private ArrayList<NewCharacter> suite = new ArrayList<>(); //Liste des personnages présents dans la suite du prince
     private Integer suiteLoad; //capacité de portage de la suite
     private Integer suiteFood; //besoin en nourriture de la suite du Prince
 
     //Constructors
     // Au début du jeu, il reste 70 tours, on a 2 pièces d'or (donc 1 load à porter)
-    public game(Prince myPrince){
+    game(Prince myPrince){
         this.timeTrack = 70;
         this.Gold = 2;
         this.Food = 5;
-        this.Endurance = myPrince.getEndurance();
         this.TotalLoad = 1;
         this.Status = false;
-        this.suite.add(myPrince); //le premier membre de la suite est le Prince lui-même !
+        this.currentCase = new Hex("0000");
+        this.setSuite(myPrince); //le premier membre de la suite est le Prince lui-même !
         this.suiteLoad = 10;
         this.suiteFood = 1;
+        this.currentCase = new Hex("0000"); // Un objet doit toujours être initialisé ;)
     }
 
 
     //Gold
 
-    public Integer getGold() {
+    Integer getGold() {
         return Gold;
     }
-    public void setGold(Integer gold) {
+    public void setGold(Integer gold, Fenetre fenetre) {
         Gold = gold;
+        fenetre.setOr(gold.toString());
     }
 
     //Food
     public Integer getFood() {
         return Food;
     }
-    public void setFood(Integer food) {
+    public void setFood(Integer food, Fenetre fenetre) {
         Food = food;
+        fenetre.setNourri(food.toString());
     }
 
     // Total Load : chaque point Food vaut 1, 100 pièces ou moins vaut 1
@@ -58,17 +58,19 @@ public class game {
             this.TotalLoad= this.Food + goldLoad;
         return TotalLoad;
     }
+    public void setTotalLoad(Integer totalLoad) {
+        TotalLoad = totalLoad;
+    }
 
-    //Status
-    // Le jeu est terminé si
-    // Le temps est écoulé : timeTrack <= 0
-    // Le prince a récolté 50 pièces d'or : Gold >=500
-    // L'endurance du prince est épuisée :
-    public Boolean getStatus() {
-        if (this.timeTrack<=0 || this.Gold>=500 || this.Endurance<=0)
-            this.Status=false;
-        else
-            this.Status=true;
+    /*
+    GAME STATUS
+    Le jeu est terminé si
+    Le temps est écoulé : timeTrack <= 0
+    Le prince a récolté 50 pièces d'or : Gold >=500
+    L'endurance du prince est épuisée : */
+
+    public Boolean getStatus(Prince myPrince) {
+        this.Status = !(this.timeTrack <= 0 || this.Gold >= 500 || myPrince.getEndurance() <= 0);
         return Status;
     }
 
@@ -82,35 +84,38 @@ public class game {
         return timeTrack;
     }
 
-    public void setTimeTrack(Integer timeTrack) {
+    public void setTimeTrack(Integer timeTrack, Fenetre fenetre) {
         this.timeTrack = timeTrack;
+        fenetre.setQuete(timeTrack.toString());
     }
 
     //Current Case
 
-    public String getCurrentCase() {
+    public Hex getCurrentCase() {
         return currentCase;
     }
 
-    public void setCurrentCase(String currentCase) {
-        this.currentCase = currentCase;
+    public void setCurrentCase(String loc) {
+        this.currentCase.setAbsOrd(loc);
     }
-
-
 
     //SUITE DU PRINCE (TROUPE)
 
-    public ArrayList getSuite(){
+    public ArrayList<NewCharacter> getSuite(){
         return suite;
-        }
+    }
 
-    public void setSuite(Character newCharacter){
+    public void setSuite(NewCharacter newCharacter) {
         //ajout d'un personnage dans la suite du prince
         this.suite.add(newCharacter);
     }
 
     public Integer getSuiteLoad(){
-        // à calculer en fonction de la suite
+        this.suiteLoad=0;
+        // on additionne la capacité de portage de chaque personnage de la suite
+        for (int i =0 ; i < this.suite.size(); i++){
+            setSuiteLoad(this.suiteLoad + this.suite.get(i).getLoads());
+        }
         return suiteLoad;
     }
 
@@ -118,10 +123,23 @@ public class game {
         this.suiteLoad= newLoad;
     }
 
-    public Integer getSuiteFood() {
-        suiteFood = this.suite.size(); //1 unité par personne
-        return suiteFood;
+    public void removeSuite(NewCharacter personnage) {
+        //suppression d'un personnage dans la suite du prince
+        this.suite.remove(personnage);
     }
+
+    public Integer getSuiteFood() {
+        int maFood = this.suite.size(); //une unité de food par personn
+
+        // +1 si monture :
+        for (int i =0 ; i < this.suite.size(); i++){
+            if(this.suite.get(i).getMount()>1){
+                maFood++;
+            }
+        }
+        this.suiteFood = maFood;
+
+        return suiteFood; }
 
     public void setSuiteFood(Integer suiteFood) {
         this.suiteFood = suiteFood;
@@ -129,20 +147,20 @@ public class game {
 
 
     //AJOUT D'UN PERSONNAGE DANS LA SUITE
-    public void AddCharacter(SoloChar newCharacter){
-
-        this.setGold( this.getGold() + newCharacter.getWealth());
+    public void AddCharacter(NewCharacter newCharacter, Fenetre fenetre){
+        this.setGold( this.getGold() + newCharacter.getWealth(), fenetre);
         this.setSuiteLoad( this.getSuiteLoad() + newCharacter.getLoads() ) ;
         this.setSuite(newCharacter);
-        if (newCharacter.getMount()==1)
-            this.setSuiteFood( this.getSuiteFood() + 1);
-        else
-            this.setSuiteFood( this.getSuiteFood() +2);
+        this.setSuiteFood(this.getSuiteFood());
     }
 
 
-
-
+    //SUPPRESSION D'UN PERSONNAGE DANS LA SUITE
+    public void DeleteCharacter(NewCharacter perso) {
+        this.suite.remove(perso);
+        this.setSuiteLoad(this.getSuiteLoad() - perso.getLoads());
+        this.setSuiteFood(this.getSuiteFood());
+    }
 
     //Calcul en besoin de nourriture par tour
     // 1 food unit par personne (avec ou sans monture) (règle simplifiée)
@@ -151,42 +169,35 @@ public class game {
 
     public Integer FoodNeed(Hex macase){
         int foodneed = 0;
-        if(macase.type==6 && macase.monument!=5)
-            foodneed = this.suiteFood*2;
+        if(macase.type == 6 && macase.monument != null && macase.monument != 5)
+            foodneed = this.getSuiteFood()*2;
             else
-            foodneed = this.suiteFood;
-    System.out.println("Available food: " + this.getFood());
-    System.out.println("Food need for you and your party: " + foodneed);
-    return foodneed;
+            foodneed = this.getSuiteFood();
+        return foodneed;
     }
 
 
     //FOOD-HUNT
-    public void FoodHunt(Personnages.Prince myPrince, Hex currentCase) {
+    public void FoodHunt(Personnages.Prince myPrince, Hex currentCase, Fenetre fenetre) {
 
         int newHunt = 0;
         //peut on chasser sur ce type de terrain ?
-        if (currentCase.type != null
+        if (this.getStatus(myPrince)
                 && (currentCase.type == 2 || currentCase.type == 1 || currentCase.type == 3 || currentCase.type == 4 || currentCase.type == 7))
         {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Are you in the mood for hunting ? Type \"Y\" for Yes, \"N\" for No");
-            String chasse = sc.nextLine();
+            fenetre.setStory(fenetre.getStory() + "\nÊtes-vous d'humeur à chasser votre Altesse ? ");
+            String chasse = fenetre.aRepondu();
 
-            if (chasse.equals("Y") || chasse.equals("y"))
+            if (chasse.equals("Oui"))
             {
                 newHunt = myPrince.Hunt();
-                this.Endurance = myPrince.getEndurance();
 
-                if (newHunt == -1)
-                    { //le Prince est tué dans la chasse => perdu
-                    this.Endurance = 0;
+                if (newHunt == -1) { //le Prince est tué dans la chasse => perdu
                     this.setStatus(false);
-                    System.out.println("YOU DIE ! \n GAME OVER");
-                }
-                else {
-                    this.setFood(this.getFood() + newHunt);
-                    System.out.println("You hunted " + newHunt + " food unit(s)");
+                    fenetre.setStory(fenetre.getStory() + "\nUn sanglier sans vergogne a foncé sur vous, vous êtes mort. \n GAME OVER");
+                } else {
+                    this.setFood(this.getFood() + newHunt, fenetre);
+                    fenetre.setStory(fenetre.getStory() + "\nBravo ! Vous avez récupéré " + newHunt + " unité(s) de nourriture");
                 }
             }
         }
@@ -194,7 +205,7 @@ public class game {
 
 
     //FOOD-PURCHASE
-    public void FoodPurchase(Hex currentCase, int foodneed){
+    public void FoodPurchase(Hex currentCase, int foodneed, Fenetre fenetre, Prince myPrince){
 
         //if you are in a town, castle, or village
         // you can purchase food for each character in your party.
@@ -202,33 +213,40 @@ public class game {
         // Animals cost 1 gold piece per day to feed at the stables of the town/castle/village.
         // If you don't purchase food, you must eat stores, as hunting is prohibited in these hexes.
 
-        if(currentCase.monument!= null && (currentCase.monument==4 || currentCase.monument==3) ) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Do you want to purchase food? Type Y for Yes, N for No");
-            String achat = sc.nextLine();
+        if(this.getStatus(myPrince) && currentCase.monument!= null && (currentCase.monument == 4 || currentCase.monument == 3) ) {
+            fenetre.setStory(fenetre.getStory() + " \nVoulez vous acheter de la nourriture ?");
+            String achat = fenetre.aRepondu();
 
-            if(achat.equals("Y") || achat.equals("y"))
+            if(achat.equals("Oui"))
             {
-                if(this.getGold()>=foodneed){ //si le Prince a assez d'argent
-                    this.setGold(this.getGold() - foodneed);
-                    this.setFood( this.getFood() + foodneed);
-                    System.out.println("You bought " + foodneed + " food unit(s)\n"+
-                    "You now have " + this.getGold() + " gold unit and " + this.Food + " food unit");
+                if(this.getGold() >= foodneed){ //si le Prince a assez d'argent
+                    this.setGold(this.getGold() - foodneed, fenetre);
+                    this.setFood( this.getFood() + foodneed, fenetre);
+                    fenetre.setStory(fenetre.getStory() + " \nVous avez pu acheter " + foodneed + " unité(s) de nourriture.");
                 }
                 else
-                    System.out.println("You're so broke my highness! You can't buy food");
+                    fenetre.setStory(fenetre.getStory() + " \nVous êtes fauchés votre Altesse ! Vous ne pouvez pas acheter de nourriture pour le moment.");
             }
         }
     }//fin de food-purchase
 
     //FOOD : se nourrir
-    public void Food(Hex currentCase, Prince myPrince, int foodneed){
-        if(currentCase.fodder) {
+    public void Food(Hex currentCase, Prince myPrince, int foodneed, Fenetre fenetre){
+        if(this.getStatus(myPrince) && currentCase.fodder) {
             if (this.getFood() >= foodneed) { //il y a assez de nourriture pour tous
-                this.setFood(this.getFood() - foodneed);
-                myPrince.Feed();
-                //!!!! à rajouter le festin de la troupe (boucle)
-            } else myPrince.Starve(); //!!!! à rajouter la famine de la troupe (boucle)
+                this.setFood(this.getFood() - foodneed, fenetre);
+
+                for (int i =0 ; i < this.suite.size(); i++){
+                    this.suite.get(i).Feed();
+                }
+                fenetre.setStory(fenetre.getStory()+" \nVotre groupe se restaure de "+ foodneed +" nourriture(s) pour survivre.");
+
+            } else {
+                for (int i =0 ; i < this.suite.size(); i++){
+                    this.suite.get(i).Starve();
+                }
+                fenetre.setStory(fenetre.getStory()+" \nVotre groupe n'a pas assez a manger, c'est la famine !");
+            }
         }
     }//fin de la méthode Food
 
@@ -243,19 +261,135 @@ public class game {
     // a penurious leader! If a mount is without stables, roll one die for each mount,
     // a 4 or higher means thieves steal the mount during the night, it is permanently lost.
 
-    public void PurchaseLodging(Hex currentCase){
-        if(currentCase.monument!= null
-                && (currentCase.monument==4 || currentCase.monument==3 || currentCase.monument==1 )){
+    public void PurchaseLodging(Hex currentCase,Fenetre fenetre, Prince myPrince) {
+        if (this.getStatus(myPrince) && currentCase.monument != null
+                && (currentCase.monument == 4 || currentCase.monument == 3 || currentCase.monument == 1)) {
+            int cost = 1 + ((suite.size() - 1) / 2); //1 chambre pour le prince + 1 chambre pour 2 pour le reste de la suite
 
+            if (this.Gold >= cost) //il y a assez d'argent pour loger toute la suite
+            {
+                fenetre.setStory(fenetre.getStory() + "\nVoulez-vous chercher un gîte pour vous et votre suite ce soir ?");
+                String lodging = fenetre.aRepondu();
+
+                if (lodging.equals("Oui"))//YES PURCHASE
+                {
+                    this.setGold(this.getGold() - cost, fenetre);
+                    fenetre.setStory(fenetre.getStory() + "\nToute votre troupe va dormir ce soir dans une charmante auberge !\nMerci votre Altesse !");
+                } else // NO DO NOT PURCHASE
+                {
+                    fenetre.setStory(fenetre.getStory() + "\nVous avez des oursins dans les poches votre Altesse !");
+                    if(this.suite.size() > 1 ){
+                        //jet de dé pour chaque perso de la suite pour voir s'il déserte
+                        for (int i = 0; i < this.suite.size(); i++) {
+                            int jete = util.de.randomDie();
+                            if (jete >= 5) {
+                                //le personnage déserte
+                                this.DeleteCharacter(this.suite.get(i));
+                                fenetre.setStory(fenetre.getStory() + "\n" + this.suite.get(i).getName() + "refuse catégoriquement de continuer à servir un tel avare !\n" +
+                                        "Il déserte !");
+                            }
+
+                        }
+                    }
+
+                }
+            } else { //il n'y a pas assez d'argent pour loger la suite
+                fenetre.setStory(fenetre.getStory() + "\nVous êtes fauchés comme les blés votre Altesse, pas d'auberge ce soir.");
+
+                //jet de dé pour chaque perso de la suite pour voir s'il déserte
+                for (int i = 0; i < this.suite.size(); i++) {
+                    int jete = util.de.randomDie();
+                    if (jete >= 5) {
+                        //le personnage déserte
+                        this.DeleteCharacter(this.suite.get(i));
+                        fenetre.setStory(fenetre.getStory() + "\n" + this.suite.get(i).getName() + "refuse catégoriquement de continuer à servir un Prince ruiné !\n" +
+                                "Il déserte !");
+                    }
+                }
+            }
+        }
+    }//fin du purchaselodging
+
+    //DAILY ACTION : REST AND TRAVEL
+
+    public Hex DailyAction(Fenetre fenetre, Boolean tour1Fini, Prince myPrince) {
+        if(this.getStatus(myPrince)){
+        fenetre.setStory(fenetre.getStory() + "\nVoulez-vous rester sur cette case au prochain tour pour panser" +
+                "\nvos éventuelles plaies et vous reposer ou continuer à voyager ?");
+        String reponse = fenetre.aRepondu();
+
+        if(reponse.equals("Rester"))//REST
+        {   this.Rest(fenetre);
+            //case inchangée
+        }
+
+        else if(reponse.equals("L'aventure n'attend pas !")){
+            fenetre.setStory(fenetre.getStory() + "\nSelectionnez la direction \nque vous souhaitez prendre.");
+            this.currentCase = this.Travel(fenetre);
+
+            }
+        if(!tour1Fini){
+            tour1Fini = true;
+        return this.currentCase;
+        }
+
+    return this.currentCase;}
+        else return null;
+    } //fin de DailyAction
+
+
+    //REST
+    public void Rest(Fenetre fenetre){
+        for (int i = 0; i < this.suite.size(); i++)
+            this.suite.get(i).Heal(); //chaque personnage de la suite se repose et guérit
+        fenetre.setStory(fenetre.getStory() + "\nVous et votre suite vous reposez à cet endroit. Quelle charmante journée !");
+    }
+    //TRAVEL
+    public Hex Travel(Fenetre fenetre){
+        //À VÉRIFIER !!
+        Hex newHex = new Hex(fenetre.estDeplace());
+        return newHex;
+    }
+
+    //CHECK LOADS
+    public void CheckLoads(Fenetre fenetre, Prince myPrince) {
+        if(this.getStatus(myPrince)){
+        int diff = this.getSuiteLoad() /*capacité de portage de la suite*/ - this.getTotalLoad()/*ce qu'il faut porter*/ ;
+        while (diff < 0) {
+            fenetre.setStory(fenetre.getStory() + "\n" + this.getTotalLoad() + "\n" + this.getSuiteLoad() + "\n" + diff);
+            fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite. Vous devez abandonner des réserves de nourriture ou de l'or");
+            String abandon = fenetre.aRepondu();
+
+            if (abandon.equals("Abandonner de la nourriture"))//FOOD
+            {
+                if (this.getFood() < 0) {
+                    fenetre.setStory(fenetre.getStory() + "\nPauvre fou ! Vous n'avez pas même de nourriture à abandonner");
+                } else {
+                    this.setFood(this.getFood() - diff, fenetre);
+                    this.setTotalLoad(this.getTotalLoad());
+                    fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
+                }
+            } else//GOLD
+            {
+                if (this.getGold() <= 0)
+                    fenetre.setStory(fenetre.getStory() + "\nPauvre Prince ruiné, vous n'avez pas d'or à abandonner");
+
+                else {//de 1 à 100 pièces d'or = 1 loads
+                    int goldLoad = this.Gold / 100;
+                    int newGoldLoad = goldLoad - diff;
+                    if (newGoldLoad <= 0)
+                        this.setGold(0, fenetre);
+                    else {
+                        this.setGold(100 * newGoldLoad, fenetre);
+                    }
+                    fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé de quelques pièces. Vous avez maintenant " + this.getGold() + " pièce(s) d'or)");
+                }
+
+            }
 
 
         }
-
-
-    }//fin de purchase lodging
-
-
-
+    }}
 
 
 

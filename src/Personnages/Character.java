@@ -1,8 +1,7 @@
 package Personnages;
-
 //Classe pour définir les personnages
-//
-public class Character {
+
+public abstract class Character {
     private Integer combat; //indice de combativité
     private Integer initcombat; //indice de combativité initial
     private Integer endurance; //indice d'endurance
@@ -10,15 +9,14 @@ public class Character {
     private Integer wealth; //indice de richesse
     private Integer mount; //monture : 1: à pied, 2: sur monture, 3: sur monture ailée
     private Integer loads; //poids qu'il peut porter
-    private Integer identifiant;
     private String name;
-
+    private Integer characterNumber; //nbre de personnages si meute ou bande
 
     //Name
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    //Indice de combat actuel
+    //Indice de combat
     public Integer getCombat() {
         return combat;
     }
@@ -54,30 +52,30 @@ public class Character {
         this.mount = mount;
     }
 
-    //Identifiant
-    public Integer getIdentifiant() {
-        return identifiant;
-    }
-    public void setIdentifiant(Integer identifiant) {
-        this.identifiant = identifiant;
-    }
-
     //Loads
     public Integer getLoads() {
         return loads;
     }
 
-    public void setLoads(Integer mount) { //ATTENTION, Loads est fonction util.util la monture !
+    public void setLoads(Integer mount) { //ATTENTION, Loads est fonction de la monture !
         if (mount<2)
-            this.loads = 10; //capacité util.util 10 sans monture
+            this.loads = 10; //capacité de 10 sans monture
         else
-            this.loads = 40; //capacité util.util 40 avec monture
+            this.loads = 40; //capacité de 40 avec monture
     }
 
+    //Number
+    public Integer getCharacterNumber() { return characterNumber;}
+    public void setCharacterNumber(Integer characterNumber) { this.characterNumber = characterNumber; }
 
-
+    //Feed, Starve, Heal
+    public void Feed(){}
+    public void Starve(){}
+    public void Heal(){}
 
 }
+
+
 
 
 
