@@ -59,9 +59,9 @@ public abstract class Character {
 
     public void setLoads(Integer mount) { //ATTENTION, Loads est fonction de la monture !
         if (mount<2)
-            this.loads = 10; //capacité util.util 10 sans monture
+            this.loads = 10; //capacité de 10 sans monture
         else
-            this.loads = 40; //capacité util.util 40 avec monture
+            this.loads = 40; //capacité de 40 avec monture
     }
 
     //Number
