@@ -558,8 +558,6 @@ public class Fenetre extends JFrame implements ActionListener {
         return loc;
     }
 
-
-
     Boolean getaBouger() {
         return aBouger;
     }

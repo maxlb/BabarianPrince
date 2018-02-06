@@ -37,6 +37,7 @@ class main {
             maFenetre.setVie(myPrince.getEndurance().toString());
             maFenetre.setPoids(myPrince.getWealth().toString());
             String suite = "";
+
             for (int i = 0; i < myGame.getSuite().size(); i++) {
                 if (!suite.equals("")) {
                     suite = suite + ", ";
