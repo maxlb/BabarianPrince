@@ -1,3 +1,4 @@
+import com.sun.deploy.security.ruleset.Rule;
 import util.de;
 import javax.swing.*;
 import java.awt.*;
@@ -76,6 +77,7 @@ public class Fenetre extends JFrame implements ActionListener {
      * Plateau de jeu
      */
     private Panneau monPanneau;
+
 
 
     Fenetre(int x, int y){

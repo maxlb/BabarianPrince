@@ -18,7 +18,6 @@
       <change beforePath="$PROJECT_DIR$/src/Hex.java" afterPath="$PROJECT_DIR$/src/Hex.java" />
       <change beforePath="$PROJECT_DIR$/src/happen.java" afterPath="$PROJECT_DIR$/src/happen.java" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,19 +130,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
+              <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
+              <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Personnages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -172,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -228,6 +221,12 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -262,11 +261,19 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="main" />
+      <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BarbarianPrince" />
+      <envs />
     </configuration>
     <recent_temporary>
       <list size="1">
@@ -291,8 +298,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1928" y="-732" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
