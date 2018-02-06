@@ -229,22 +229,22 @@ public class Hex {
 
         switch (jete) {
             case 1:
-                whathappen.encounterFarm(myGame, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 2:
                 whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 3:
-                whathappen.encounterChevalier(myGame, myPrince, fenetre);
-                break;
-            case 4:
-                whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
-                break;
-            case 5:
                 whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
+            case 4:
+                whathappen.ghostsAttack(myGame, myPrince, fenetre);
+                break;
+            case 5:
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
+                break;
             case 6:
-                whathappen.encounterChevalier(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
 
             default:break;
