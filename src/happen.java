@@ -391,10 +391,7 @@ public class happen {
        /* r218 : When your party escapes, you move randomly to one of the six adjacent hexes.
        Roll one die to determine which direction to go:
        1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW.
-       Your party is now in that hex for the rest of the day.
-       No new event occurs because you have entered that hex, but any events
-       still pending must be determined, and after all event effects are resolved,
-       you must eat for the day (r215).*/
+       */
 
        int jete = util.de.randomDie();
         switch (jete) {
@@ -418,7 +415,6 @@ public class happen {
                 break;
             default:break;
         }
-
            }
 
 
@@ -430,7 +426,7 @@ public class happen {
          */
 
         if (myGame.getGold()<amount){
-            fenetre.setStory(fenetre.getStory() + "\nVous être trop fauchés pour négocier votre Altesse");
+            fenetre.setStory(fenetre.getStory() + "\nVous être trop fauchés pour négocier votre Altesse. Vous êtes attaqués !");
             r301(myGame, myPrince, adversaire, fenetre);
         }
 
