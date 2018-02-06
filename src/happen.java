@@ -175,8 +175,8 @@ public class happen {
         fenetre.setStory(fenetre.getStory() + "\n Voici des agents des forces de l\'ordre.\n" +
                 "Ils sont " + nbAgents);
         if (mount>1)
-            {fenetre.setStory(fenetre.getStory() + "sur leur monture");}
-        fenetre.setStory(fenetre.getStory() + "\n Chacun d'eux a une force d'attaque de 5,\n" +
+            {fenetre.setStory(fenetre.getStory() + " sur leur monture");}
+        fenetre.setStory(fenetre.getStory() + "\nChacun d'eux a une force d'attaque de 5,\n" +
                 "une endurance de 4 et une richesse de 4\n"
                 + "Souhaitez vous tenter de négocier ? de fuir ? les attaquer ?");
 
@@ -512,13 +512,13 @@ public class happen {
                 dmg = 2;
                 break;
             case 18 :
-                dmg = - 5;
+                dmg = 5;
                 break;
             case 19 :
-                dmg = - 5;
+                dmg = 5;
                 break;
             case 20 :
-                dmg = - 6;
+                dmg = 6;
                 break;
             default:
                 dmg = 0;
