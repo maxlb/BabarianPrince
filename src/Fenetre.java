@@ -55,6 +55,7 @@ public class Fenetre extends JFrame implements ActionListener {
     /*
      * Zone d'histoire
      */
+    private JScrollPane jScrollPane;
     private JTextArea Story = new JTextArea("BIENVENUE AU \"PRINCE BARBARE\" ! \n\n" +
                 "Des événements maléfiques ont dépassés votre royaume du Nord. Votre \n" +
                 "père, le vieux roi, est mort assassiné par ses rivaux au trône. \n" +
@@ -128,10 +129,9 @@ public class Fenetre extends JFrame implements ActionListener {
         Story.setEditable(false);
         Story.setFont(new Font(" Calibri ",Font.PLAIN,12));
 
-        JScrollPane jScrollPane = new JScrollPane(Story);
-        jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        jScrollPane = new JScrollPane(Story);
         jScrollPane.setBounds(750,70,420,320);
-
+        jScrollPane.getVerticalScrollBar().setValue(jScrollPane.getHorizontalScrollBar().getMaximum());
         container.add(jScrollPane);
 
 
@@ -596,6 +596,7 @@ public class Fenetre extends JFrame implements ActionListener {
     }
 
     String getStory(){
+
         return this.Story.getText();
     }
 
@@ -681,6 +682,11 @@ public class Fenetre extends JFrame implements ActionListener {
 
     void setStory(String story) {
         Story.setText(story);
+        updateScroll();
+    }
+
+    private void updateScroll(){
+        jScrollPane.getVerticalScrollBar().setValue(jScrollPane.getVerticalScrollBar().getMaximum());
     }
 
     void setChoix1(String choix) {
