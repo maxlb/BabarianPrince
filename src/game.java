@@ -363,17 +363,16 @@ public class game {
             if (abandon.equals("Abandonner de la nourriture"))//FOOD
             {
                 if (this.getFood() < 0) {
-                    System.out.println("Pauvre fou ! Vous n'avez pas même de nourriture à abandonner");
+                    fenetre.setStory(fenetre.getStory() + "\nPauvre fou ! Vous n'avez pas même de nourriture à abandonner");
                 } else {
                     this.setFood(this.getFood() - diff, fenetre);
                     this.setTotalLoad(this.getTotalLoad());
-                    System.out.println
-                            ("Vous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
+                    fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
                 }
             } else//GOLD
             {
                 if (this.getGold() <= 0)
-                    System.out.println("Pauvre Prince ruiné, vous n'avez pas d'or à abandonner");
+                    fenetre.setStory(fenetre.getStory() + "\nPauvre Prince ruiné, vous n'avez pas d'or à abandonner");
 
                 else {//de 1 à 100 pièces d'or = 1 loads
                     int goldLoad = this.Gold / 100;
@@ -383,7 +382,7 @@ public class game {
                     else {
                         this.setGold(100 * newGoldLoad, fenetre);
                     }
-                    System.out.println("Vous voilà allégé de quelques pièces. Vous avez maintenant " + this.getGold() + " pièce(s) d'or)");
+                    fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé de quelques pièces. Vous avez maintenant " + this.getGold() + " pièce(s) d'or)");
                 }
 
             }

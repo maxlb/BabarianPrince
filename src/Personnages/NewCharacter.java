@@ -52,7 +52,6 @@ public class NewCharacter extends Character {
         //Total his combat skill and half (Vz) his current endurance (his endurance minus wounds),
         // round fractions down, and then subtract from that the roll of two dice.
         // The result is the number of food units gained by hunting.
-        System.out.println("lalala");
         int de = util.de.randomDice();
         int hunt = ((this.getCombat() + (this.getEndurance() / 2)) - de);
         //If the dice roll was "12" exactly, the hunter himself was hurt,
