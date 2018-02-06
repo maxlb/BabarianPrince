@@ -365,6 +365,7 @@ public class happen {
             endP = myPrince.getEndurance();
             endA = adversaire.getEndurance();
             fenetre.setStory(fenetre.getStory() +"\nVous : " + endP + ", Lui : " + endA );
+            fenetre.setVie(endA.toString());
         }
 
         if (endP <= 0) {
@@ -378,11 +379,89 @@ public class happen {
         }
     }
 
-    //A SUPPRIMER ?? ////////
-    /*public void r301a(game myGame, Prince myPrince, NewCharacter adversaires, Fenetre fenetre){
-        //FIGHT BAND
-        fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
-    }*/
+
+
+
+
+
+
+
+
+    public void r301a(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
+        //FIGHT
+        // Récupération des indices de combat
+        Integer combA = adversaire.getCombat();
+        Integer endP = myPrince.getEndurance();
+        Integer endA = adversaire.getEndurance();
+
+        Integer endL = myGame.getSuite().get(myGame.getSuite().size()-1).getEndurance();
+        Integer combL = myGame.getSuite().get(myGame.getSuite().size()-1).getCombat();
+
+
+        fenetre.setStory(fenetre.getStory() +"\nTenez-vous prêt, le combat commence !");
+        fenetre.setStory(fenetre.getStory() +"\nVotre allié à " + combL + " points de combat et vos adversaire en on " + combA + " !");
+        fenetre.setStory(fenetre.getStory() +"\nVotre allié à " + endL + " points d'endurance et vos adversaire en on " + endA + " !");
+
+        Boolean tourJoueur = true;
+        while ((endP > 0) && (endA > 0)){
+            endP = myPrince.getEndurance();
+              if (endL <= 0) {
+                fenetre.setStory(fenetre.getStory() +"\nUN ALLIE EST MORT, PLACE AU SUIVANT");
+                NewCharacter toDelete = myGame.getSuite().get(myGame.getSuite().size()-1);
+                myGame.removeSuite(toDelete);
+
+                  String suite = "";
+                  for (int i = 0; i < myGame.getSuite().size(); i++) {
+                      if (!suite.equals("")) {
+                          suite = suite + ", ";
+                      }
+                      suite = suite + myGame.getSuite().get(i).getName();
+                  }
+                  fenetre.setSuite(suite);
+
+                endL = myGame.getSuite().get(myGame.getSuite().size()-1).getEndurance();
+                combL = myGame.getSuite().get(myGame.getSuite().size()-1).getCombat();
+              }
+
+            if (tourJoueur){
+                int de = fenetre.aLancerDe(2);
+                Integer diff = dommagesCombat(combL - combA + de);
+                fenetre.setStory(fenetre.getStory() +"\nVous infligez " + diff + " de point(s) de dégat à votre adversaire.");
+                adversaire.setEndurance(endA - diff);
+                tourJoueur = false;
+
+            } else {
+                int de = util.de.randomDice();
+                Integer diff = dommagesCombat(combA - combL + de);
+                fenetre.setStory(fenetre.getStory() + "\nL'adversaire vous inflige " + diff + " de point(s) de dégat.");
+                myGame.getSuite().get(myGame.getSuite().size() - 1).setEndurance((endL - diff));
+                tourJoueur = true;
+            }
+
+            endL = myGame.getSuite().get(myGame.getSuite().size()-1).getEndurance();
+            endA = adversaire.getEndurance();
+            fenetre.setStory(fenetre.getStory() +"\nVous : " + endP + ", Lui : " + endA );
+
+        }
+
+
+        if (endP <= 0) {
+            fenetre.setStory(fenetre.getStory() +"\nVOUS ÊTES MORT ! GAME OVER");
+            myGame.setStatus(false);
+
+        }
+
+        if (endA <=0) {
+            fenetre.setStory(fenetre.getStory() +"\nVOUS AVEZ GAGNÉ ! Quel guerrier !");
+            myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre); //On récupère l'or du personnage tué
+        }
+    }
+
+
+
+
+
+
 
     //FUIR
     public void r311(game myGame, Fenetre fenetre){

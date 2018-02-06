@@ -9,10 +9,13 @@
       <change beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Fenetre.java" afterPath="$PROJECT_DIR$/src/Fenetre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Personnages/Character.java" afterPath="$PROJECT_DIR$/src/Personnages/Character.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/happen.java" afterPath="$PROJECT_DIR$/src/happen.java" />
+<<<<<<< HEAD
+=======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
 >>>>>>> Julie
+<<<<<<< HEAD
 =======
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Hex.class" />
@@ -29,6 +32,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
 >>>>>>> Stashed changes
+=======
+>>>>>>> Julie
+>>>>>>> Julie
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +52,21 @@
     <favorites_list name="BabarianPrince" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    <leaf>
+      <file leaf-file-name="happen.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/happen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="367" column="44" lean-forward="false" selection-start-line="367" selection-start-column="44" selection-end-line="367" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#499#526#0" expanded="false" />
+=======
+>>>>>>> Julie
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="NewCharacter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
@@ -77,12 +97,17 @@
                 <element signature="method#e001#0;class#happen#0" expanded="false" />
                 <element signature="e#499#526#0" expanded="false" />
                 <element signature="method#e009#0;class#happen#0" expanded="false" />
+>>>>>>> Julie
                 <element signature="method#r232#0;class#happen#0" expanded="false" />
                 <element signature="method#r233#0;class#happen#0" expanded="false" />
                 <element signature="method#r234#0;class#happen#0" expanded="false" />
                 <element signature="method#r236#0;class#happen#0" expanded="false" />
+<<<<<<< HEAD
+                <element signature="method#r322#0;class#happen#0" expanded="false" />
+=======
                 <element signature="method#r337#0;class#happen#0" expanded="false" />
                 <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
+<<<<<<< HEAD
 =======
             <state relative-caret-position="612">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
@@ -104,11 +129,16 @@
                 <element signature="e#1725#1726#0" expanded="false" />
                 <element signature="e#1753#1754#0" expanded="false" />
 >>>>>>> Stashed changes
+=======
+>>>>>>> Julie
+>>>>>>> Julie
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
       <file leaf-file-name="Hex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hex.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -127,11 +157,15 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> Julie
+>>>>>>> Julie
       <file leaf-file-name="Fenetre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-978">
+            <state relative-caret-position="-513">
               <caret line="559" column="0" lean-forward="false" selection-start-line="559" selection-start-column="0" selection-end-line="559" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -154,6 +188,8 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
       <file leaf-file-name="Init.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Init.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -252,7 +288,11 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> Julie
+>>>>>>> Julie
       <file leaf-file-name="game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -404,7 +444,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
         <option value="$PROJECT_DIR$/src/Personnages/Character.java" />
+>>>>>>> Julie
         <option value="$PROJECT_DIR$/src/Panneau.java" />
         <option value="$PROJECT_DIR$/src/Personnages/Prince.java" />
         <option value="$PROJECT_DIR$/src/Hex.java" />
@@ -414,6 +458,10 @@
         <option value="$PROJECT_DIR$/src/game.java" />
         <option value="$PROJECT_DIR$/src/Fenetre.java" />
         <option value="$PROJECT_DIR$/src/main.java" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/Personnages/Character.java" />
+=======
+>>>>>>> Julie
 >>>>>>> Julie
         <option value="$PROJECT_DIR$/src/happen.java" />
         <option value="$PROJECT_DIR$/src/game.java" />
@@ -813,7 +861,7 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -947,6 +995,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#499#526#0" expanded="false" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <element signature="method#r322#0;class#happen#0" expanded="false" />
             <element signature="method#r337#0;class#happen#0" expanded="false" />
@@ -958,6 +1007,13 @@
             <element signature="method#r236#0;class#happen#0" expanded="false" />
             <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
 >>>>>>> Stashed changes
+=======
+            <element signature="method#r232#0;class#happen#0" expanded="false" />
+            <element signature="method#r233#0;class#happen#0" expanded="false" />
+            <element signature="method#r234#0;class#happen#0" expanded="false" />
+            <element signature="method#r236#0;class#happen#0" expanded="false" />
+            <element signature="method#r322#0;class#happen#0" expanded="false" />
+>>>>>>> Julie
           </folding>
         </state>
       </provider>
@@ -1021,6 +1077,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#499#526#0" expanded="false" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <element signature="method#r322#0;class#happen#0" expanded="false" />
             <element signature="method#r337#0;class#happen#0" expanded="false" />
@@ -1032,6 +1089,13 @@
             <element signature="method#r236#0;class#happen#0" expanded="false" />
             <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
 >>>>>>> Stashed changes
+=======
+            <element signature="method#r232#0;class#happen#0" expanded="false" />
+            <element signature="method#r233#0;class#happen#0" expanded="false" />
+            <element signature="method#r234#0;class#happen#0" expanded="false" />
+            <element signature="method#r236#0;class#happen#0" expanded="false" />
+            <element signature="method#r322#0;class#happen#0" expanded="false" />
+>>>>>>> Julie
           </folding>
         </state>
       </provider>
@@ -1112,6 +1176,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#499#526#0" expanded="false" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <element signature="method#r322#0;class#happen#0" expanded="false" />
             <element signature="method#r337#0;class#happen#0" expanded="false" />
@@ -1123,6 +1188,13 @@
             <element signature="method#r236#0;class#happen#0" expanded="false" />
             <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
 >>>>>>> Stashed changes
+=======
+            <element signature="method#r232#0;class#happen#0" expanded="false" />
+            <element signature="method#r233#0;class#happen#0" expanded="false" />
+            <element signature="method#r234#0;class#happen#0" expanded="false" />
+            <element signature="method#r236#0;class#happen#0" expanded="false" />
+            <element signature="method#r322#0;class#happen#0" expanded="false" />
+>>>>>>> Julie
           </folding>
         </state>
       </provider>
@@ -1257,6 +1329,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#499#526#0" expanded="false" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <element signature="method#r322#0;class#happen#0" expanded="false" />
             <element signature="method#r337#0;class#happen#0" expanded="false" />
@@ -1268,6 +1341,13 @@
             <element signature="method#r236#0;class#happen#0" expanded="false" />
             <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
 >>>>>>> Stashed changes
+=======
+            <element signature="method#r232#0;class#happen#0" expanded="false" />
+            <element signature="method#r233#0;class#happen#0" expanded="false" />
+            <element signature="method#r234#0;class#happen#0" expanded="false" />
+            <element signature="method#r236#0;class#happen#0" expanded="false" />
+            <element signature="method#r322#0;class#happen#0" expanded="false" />
+>>>>>>> Julie
           </folding>
         </state>
       </provider>
@@ -1329,8 +1409,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
+    <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="170">
 <<<<<<< Updated upstream
           <caret line="10" column="67" lean-forward="false" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
@@ -1343,18 +1424,47 @@
     </entry>
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/Personnages/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+=======
+        <state relative-caret-position="1001">
+          <caret line="278" column="17" lean-forward="true" selection-start-line="278" selection-start-column="17" selection-end-line="278" selection-end-column="17" />
           <folding>
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1604#1605#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#setSuite#0;class#game#0" expanded="false" />
+            <element signature="method#getSuiteFood#0;class#game#0" expanded="false" />
+            <element signature="method#AddCharacter#0;class#game#0" expanded="false" />
+            <element signature="method#DeleteCharacter#0;class#game#0" expanded="false" />
+            <element signature="method#FoodNeed#0;class#game#0" expanded="false" />
+            <element signature="method#FoodHunt#0;class#game#0" expanded="false" />
+            <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
+            <element signature="method#Food#0;class#game#0" expanded="false" />
+            <element signature="method#DailyAction#0;class#game#0" expanded="false" />
+            <element signature="method#Rest#0;class#game#0" expanded="false" />
+            <element signature="method#Travel#0;class#game#0" expanded="false" />
+            <element signature="method#CheckLoads#0;class#game#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
+    <entry file="file://$PROJECT_DIR$/src/BoutonPanel.java">
+>>>>>>> Julie
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnages/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="255">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <element signature="e#1172#1173#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#1575#1576#0" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="169">
           <caret line="57" column="64" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="64" />
@@ -1377,10 +1487,14 @@
             <element signature="method#DisableMove#0;class#Fenetre#0" expanded="false" />
             <element signature="method#EnableChoix#0;class#Fenetre#0" expanded="false" />
             <element signature="method#DisableChoix#0;class#Fenetre#0" expanded="false" />
+>>>>>>> Julie
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+=======
     <entry file="file://$PROJECT_DIR$/src/Hex.java">
 <<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
@@ -1388,9 +1502,10 @@
           <caret line="107" column="41" lean-forward="true" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
           <folding />
 =======
+>>>>>>> Julie
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1805">
-          <caret line="107" column="41" lean-forward="true" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
+        <state relative-caret-position="-663">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1431,16 +1546,56 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/main.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Hex.java">
+>>>>>>> Julie
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-1805">
+          <caret line="107" column="41" lean-forward="true" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
+=======
         <state relative-caret-position="-663">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+>>>>>>> Julie
 >>>>>>> Julie
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-513">
+          <caret line="559" column="0" lean-forward="false" selection-start-line="559" selection-start-column="0" selection-end-line="559" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Fenetre#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#aLancerDe#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#aRepondu#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#aChoisi#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#estDeplace#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#EnableOuiNon#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#DisableOuiNon#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#EnableMove#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#DisableMove#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#EnableChoix#0;class#Fenetre#0" expanded="false" />
+            <element signature="method#DisableChoix#0;class#Fenetre#0" expanded="false" />
+          </folding>
+=======
     <entry file="file://$PROJECT_DIR$/src/Init.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1529,6 +1684,7 @@
           <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
 >>>>>>> Stashed changes
           <folding />
+>>>>>>> Julie
         </state>
       </provider>
     </entry>
@@ -1536,12 +1692,17 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
 <<<<<<< HEAD
+        <state relative-caret-position="435">
+          <caret line="367" column="44" lean-forward="false" selection-start-line="367" selection-start-column="44" selection-end-line="367" selection-end-column="44" />
+=======
+<<<<<<< HEAD
         <state relative-caret-position="3698">
           <caret line="363" column="13" lean-forward="false" selection-start-line="363" selection-start-column="13" selection-end-line="363" selection-end-column="13" />
 =======
         <state relative-caret-position="416">
           <caret line="520" column="22" lean-forward="true" selection-start-line="520" selection-start-column="22" selection-end-line="520" selection-end-column="22" />
 >>>>>>> Julie
+<<<<<<< HEAD
 =======
         <state relative-caret-position="229">
           <caret line="360" column="13" selection-start-line="360" selection-start-column="13" selection-end-line="360" selection-end-column="13" />
@@ -1560,6 +1721,17 @@
             <element signature="method#r236#0;class#happen#0" expanded="false" />
             <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
 >>>>>>> Stashed changes
+=======
+>>>>>>> Julie
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#499#526#0" expanded="false" />
+            <element signature="method#r232#0;class#happen#0" expanded="false" />
+            <element signature="method#r233#0;class#happen#0" expanded="false" />
+            <element signature="method#r234#0;class#happen#0" expanded="false" />
+            <element signature="method#r236#0;class#happen#0" expanded="false" />
+            <element signature="method#r322#0;class#happen#0" expanded="false" />
+>>>>>>> Julie
           </folding>
         </state>
       </provider>

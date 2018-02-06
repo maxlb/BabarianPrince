@@ -1,5 +1,4 @@
 package Personnages;
-
 //Classe pour définir les personnages
 
 public abstract class Character {
