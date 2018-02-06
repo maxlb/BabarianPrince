@@ -53,8 +53,8 @@ public class happen {
     }
 
 
-    //Ferme
-    public void e009(game myGame, Fenetre maFenetre){
+    //Ferme e009
+    public void encounterFarm(game myGame, Fenetre maFenetre){
 
         maFenetre.setStory(maFenetre.getStory() + "\nVous apercevez une petite ferme devant vous. " +
                 "\nVous pouvez la contourner, mais cela consommera le reste\n" +
@@ -88,8 +88,8 @@ public class happen {
         }
     }
 
-    //MOINE QUI MEDITE
-    void e019(game myGame, Prince myPrince, Fenetre fenetre ){
+    //MOINE QUI MEDITE e019
+    void encounterMeditatingMonk(game myGame, Prince myPrince, Fenetre fenetre ){
         //You encounter a hermit monk meditating in the wilderness,
         // with combat skill 3, endurance 6, wealth 0. He seems to be ignoring you.
         // You can select one of the options below;
@@ -110,16 +110,16 @@ public class happen {
         }
         else if (reponse.equals("Discuter")){
             //talk
-            r337(myGame, hermitMonk, fenetre);
+            tchat(myGame, hermitMonk, fenetre);
         }
         else if (reponse.equals("Attaquer")){
             //fight!
-            r301(myGame, myPrince, hermitMonk, fenetre);
+            fight(myGame, myPrince, hermitMonk, fenetre);
         }
     }
 
-    //SORCIER
-    void e023(game myGame, Prince myPrince, Fenetre fenetre ){
+    //SORCIER e023
+    void encounterWizard(game myGame, Prince myPrince, Fenetre fenetre ){
         //You meet a Wizard with combat skill 4, endurance 4, and wealth 60.
         // The wizard seems old, but still active and perhaps quite powerful.
 
@@ -134,22 +134,21 @@ public class happen {
         String reponse = fenetre.aChoisi("Négocier", "Discuter", "Attaquer");
 
         if (reponse.equals("Laisser passer")){
-            //Fin du tour
-            r322(myGame, myPrince, fenetre, wizard, 10);
+            negociate(myGame, myPrince, fenetre, wizard, 10);
         }
         else if (reponse.equals("Discuter")){
             //talk
-            r337(myGame, wizard, fenetre);
+            tchat(myGame, wizard, fenetre);
         }
         else if (reponse.equals("Attaquer")){
             //fight!
-            r301(myGame, myPrince, wizard, fenetre);
+            fight(myGame, myPrince, wizard, fenetre);
         }
     }
 
 
-    //LAW ENFORCEMENTS OFFICERS
-    void e050(game myGame, Prince myPrince, Fenetre fenetre ){
+    //LAW ENFORCEMENTS OFFICERS e050
+    void encounterEnforcementsOfficers(game myGame, Prince myPrince, Fenetre fenetre ){
         /*You encounter local law enforcements officers.
         First roll one die to see if they are mounted,
         a 5 or higher roll means they are. Next roll one die to see how many you encounter,
@@ -188,19 +187,19 @@ public class happen {
         String reponse = fenetre.aChoisi("Négocier", "Fuir", "Attaquer");
 
         if (reponse.equals("Négocier")){
-            r322(myGame, myPrince, fenetre, lawOfficers, 10);
+            negociate(myGame, myPrince, fenetre, lawOfficers, 10);
         }
         else if (reponse.equals("Fuir")){
-            r311(myGame, fenetre);
+            escape(myGame, fenetre);
         }
         else if (reponse.equals("Attaquer")){
             //fight!
-            r301(myGame, myPrince, lawOfficers, fenetre);
+            fight(myGame, myPrince, lawOfficers, fenetre);
         }
     }
 
-    //PRÊTRE
-    public void r231(game myGame, Prince myPrince, Fenetre fenetre){
+    //PRÊTRE r231
+    public void encounterPriest(game myGame, Prince myPrince, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un prêtre du coin monté sur un âne avec\n" +
                 "une compétence de combat de 3, une endurance de 3, une richesse de 25.\n" +
                 "Il semble distant et peu disposé à la conversation, mais il peut avoir peur\n" +
@@ -219,18 +218,18 @@ public class happen {
         }
         else if (reponse.equals("Discuter")){
             //talk
-            r337(myGame, donkeyPriest, fenetre);
+            tchat(myGame, donkeyPriest, fenetre);
         }
         else if (reponse.equals("Attaquer")){
             //fight!
-            r301(myGame, myPrince, donkeyPriest, fenetre);
+            fight(myGame, myPrince, donkeyPriest, fenetre);
         }
 
 
     }
 
-    //CHEVALIER
-    public void r232(game myGame, Prince myPrince, Fenetre fenetre){
+    //CHEVALIER r232
+    public void encounterChevalier(game myGame, Prince myPrince, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un chevalier. Il est monté sur un cheval \n" +
                 "avec la compétence de combat 6, l'endurance 6, et la richesse 7.\n" +
                 "Assis là sur son cheval, il est intéressé pour rejoindre votre suite. " +
@@ -248,15 +247,16 @@ public class happen {
         }
         else if (reponse.equals("Discuter")){
             //talk
-            r337(myGame, swordsman, fenetre);
+            tchat(myGame, swordsman, fenetre);
         }
         else if (reponse.equals("Attaquer")){
             //fight!
-            r301(myGame, myPrince, swordsman, fenetre);
+            fight(myGame, myPrince, swordsman, fenetre);
         }
     }
 
-    public void r233(game myGame, Prince myPrince, Fenetre fenetre){
+    //FRIENDLY MARCHAND R233
+    public void encounterFriendlyMarchand(game myGame, Prince myPrince, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un marchand amical. \n" +
                 "\nVous pouvez le laisser passer, et donc mettre fin à cette rencontre, \n" +
                 "ou alors discuter avec lui.");
@@ -286,8 +286,8 @@ public class happen {
         }
     }
 
-    //ATTAQUE DE FANTOMES
-    public void r234(game myGame, Prince myPrince, Fenetre fenetre){
+    //ATTAQUE DE FANTOMES r234
+    public void ghostsAttack(game myGame, Prince myPrince, Fenetre fenetre){
         //Simplifié avec juste l'event e032 Ghosts
         //A group of ghosts surprise you in combat (r220),
         // roll one die and add one (+1) for the number of ghosts,
@@ -303,29 +303,29 @@ public class happen {
                          0, 1, 0,
                         2, 4, nbGhosts);
         //fight !
-        this.r301(myGame, myPrince, GhostsBand, fenetre);
+        this.fight(myGame, myPrince, GhostsBand, fenetre);
     }
 
     public void r236(game myGame, Prince myPrince, Fenetre fenetre){
         int jete = util.de.randomDie();
         switch (jete) {
             case 1:
-                e009(myGame, fenetre);
+                encounterFarm(myGame, fenetre);
                 break;
             case 2:
-                e009(myGame,fenetre);
+                encounterFarm(myGame,fenetre);
                 break;
             case 3:
-                e050(myGame, myPrince, fenetre);
+                encounterEnforcementsOfficers(myGame, myPrince, fenetre);
                 break;
             case 4:
-                r231(myGame, myPrince, fenetre);
+                encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 5:
-                e019(myGame, myPrince, fenetre);
+                encounterMeditatingMonk(myGame, myPrince, fenetre);
                 break;
             case 6:
-                e023(myGame, myPrince, fenetre);
+                encounterWizard(myGame, myPrince, fenetre);
                 break;
             default:break;
         }
@@ -334,8 +334,8 @@ public class happen {
     }
 
 
-    //COMBAT
-    public void r301(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
+    //COMBAT R301
+    public void fight(game myGame, Prince myPrince, NewCharacter adversaire, Fenetre fenetre){
         //FIGHT
         // Récupération des indices de combat
         Integer combP = myPrince.getCombat();
@@ -385,8 +385,8 @@ public class happen {
         fenetre.setStory(fenetre.getStory() + "\nChanceux ! Combat non codé ;)");
     }*/
 
-    //FUIR
-    public void r311(game myGame, Fenetre fenetre){
+    //FUIR R311
+    public void escape(game myGame, Fenetre fenetre){
         //Your party escapes to an adjacent hex (r218 : intégré directement dans cette règle) .
         fenetre.setStory(fenetre.getStory() + "\nVotre troupe s’enfuit discrètement vers une case adjacente");
        /* r218 : When your party escapes, you move randomly to one of the six adjacent hexes.
@@ -419,8 +419,8 @@ public class happen {
            }
 
 
-    //NEGOCIER
-    public void r322(game myGame, Prince myPrince, Fenetre fenetre, NewCharacter adversaire, Integer amount){
+    //NEGOCIER R322
+    public void negociate(game myGame, Prince myPrince, Fenetre fenetre, NewCharacter adversaire, Integer amount){
         /*Characters encountered have a nasty look, but if you pay the amount of gold
         indicated they will pass your party and the event will end.
         Otherwise, go to r330 and prepare to battle.
@@ -428,7 +428,7 @@ public class happen {
 
         if (myGame.getGold()<amount){
             fenetre.setStory(fenetre.getStory() + "\nVous être trop fauchés pour négocier votre Altesse. Vous êtes attaqués !");
-            r301(myGame, myPrince, adversaire, fenetre);
+            fight(myGame, myPrince, adversaire, fenetre);
         }
 
         else {
@@ -443,13 +443,13 @@ public class happen {
                 myGame.setGold(myGame.getGold() - amount, fenetre);
             else
                 //non
-                r301(myGame, myPrince, adversaire, fenetre);
+                fight(myGame, myPrince, adversaire, fenetre);
         }
 
     }
 
-    //DISCUTER ET CONVAINCRE UN PERSONNAGE DE SE JOINDRE À LA SUITE
-    public void r337(game myGame, NewCharacter encounter, Fenetre fenetre){
+    //DISCUTER ET CONVAINCRE UN PERSONNAGE DE SE JOINDRE À LA SUITE R337
+    public void tchat(game myGame, NewCharacter encounter, Fenetre fenetre){
         fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName() + " à l'air douteux.\n" +
                 "Vous essayez quand-même de le convaincre de rejoindre votre suite ...");
 

@@ -47,7 +47,7 @@ public class Hex {
         String str = "";
         switch(tp){
             case 1:
-                    str = "Temple";
+                str = "Temple";
                 break;
             case 2:
                 str = "Ruins";
@@ -145,22 +145,22 @@ public class Hex {
 
             switch (jete) {
                 case 1:
-                    whathappen.r232(myGame, myPrince, fenetre);
+                    whathappen.encounterChevalier(myGame, myPrince, fenetre);
                     break;
                 case 2:
                     whathappen.r236(myGame, myPrince,fenetre);
                     break;
                 case 3:
-                    whathappen.r232(myGame, myPrince, fenetre);
+                    whathappen.encounterChevalier(myGame, myPrince, fenetre);
                     break;
                 case 4:
-                    whathappen.r233(myGame, myPrince, fenetre);
+                    whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
                     break;
                 case 5:
-                    whathappen.r234(myGame, myPrince, fenetre);
+                    whathappen.ghostsAttack(myGame, myPrince, fenetre);
                     break;
                 case 6:
-                    whathappen.r231(myGame, myPrince, fenetre);
+                    whathappen.encounterPriest(myGame, myPrince, fenetre);
                     break;
 
                 default:break;
@@ -173,22 +173,22 @@ public class Hex {
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame,fenetre);
+                whathappen.encounterFarm(myGame,fenetre);
                 break;
             case 2:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 3:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
             case 4:
-                whathappen.r233(myGame, myPrince, fenetre);
+                whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince, fenetre);
+                whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -201,22 +201,22 @@ public class Hex {
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame,fenetre);
+                whathappen.encounterFarm(myGame,fenetre);
                 break;
             case 2:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 3:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
             case 4:
-                whathappen.r233(myGame, myPrince, fenetre);
+                whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince, fenetre);
+                whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -229,22 +229,22 @@ public class Hex {
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame, fenetre);
+                whathappen.encounterFarm(myGame, fenetre);
                 break;
             case 2:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 3:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
             case 4:
-                whathappen.r233(myGame, myPrince, fenetre);
+                whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince, fenetre);
+                whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -257,22 +257,22 @@ public class Hex {
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame, fenetre);
+                whathappen.encounterFarm(myGame, fenetre);
                 break;
             case 2:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 3:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
             case 4:
-                whathappen.r233(myGame, myPrince, fenetre);
+                whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince, fenetre);
+                whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -285,22 +285,22 @@ public class Hex {
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame, fenetre);
+                whathappen.encounterFarm(myGame, fenetre);
                 break;
             case 2:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 3:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
             case 4:
-                whathappen.r233(myGame, myPrince, fenetre);
+                whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince, fenetre);
+                whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -313,22 +313,22 @@ public class Hex {
 
         switch (jete) {
             case 1:
-                whathappen.e009(myGame,fenetre);
+                whathappen.encounterFarm(myGame,fenetre);
                 break;
             case 2:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 3:
-                whathappen.r232(myGame, myPrince, fenetre);
+                whathappen.encounterChevalier(myGame, myPrince, fenetre);
                 break;
             case 4:
-                whathappen.r233(myGame, myPrince, fenetre);
+                whathappen.encounterFriendlyMarchand(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.r234(myGame, myPrince, fenetre);
+                whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.r231(myGame, myPrince, fenetre);
+                whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
 
             default:break;
