@@ -439,7 +439,7 @@ public class happen {
                     "pour passer votre chemin tranquille ?\n" +
                     amount + " pièces d'or sont réclamées");
 
-            String reponse = fenetre.aChoisi("Oui", "Non", "");
+            String reponse = fenetre.aRepondu();
 
             //oui
             if (reponse.equals("Oui"))
