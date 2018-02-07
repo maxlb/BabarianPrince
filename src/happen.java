@@ -527,13 +527,14 @@ class happen {
             fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName()+ " rejoint votre suite !");
             myGame.AddCharacter(encounter, fenetre);
 
-            StringBuilder suite = new StringBuilder();
-            for (int i = 0; i < myGame.getSuite().size() ; i++){
-                if(!suite.toString().equals("")){
-                    suite.append(", ");
-                }
+            StringBuilder suite = new StringBuilder("<html>");
+            for (int i = 0; i < myGame.getSuite().size(); i++) {
                 suite.append(myGame.getSuite().get(i).getName());
+                if (i < myGame.getSuite().size() - 1) {
+                    suite.append(",<br>");
+                }
             }
+            suite.append("</html>");
             fenetre.setSuite(suite.toString());
         }
         else

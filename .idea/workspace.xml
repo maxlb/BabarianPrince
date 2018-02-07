@@ -3,12 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="7008603d-072f-4c60-aefc-462b98f6870a" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" />
       <change beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" />
       <change beforePath="$PROJECT_DIR$/src/Personnages/NewCharacter.java" afterPath="$PROJECT_DIR$/src/Personnages/NewCharacter.java" />
       <change beforePath="$PROJECT_DIR$/src/happen.java" afterPath="$PROJECT_DIR$/src/happen.java" />
 =======
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Fenetre.java" afterPath="$PROJECT_DIR$/src/Fenetre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/happen.java" afterPath="$PROJECT_DIR$/src/happen.java" />
+>>>>>>> master
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java" afterPath="$PROJECT_DIR$/src/main.java" />
 >>>>>>> master
     </list>
@@ -21,6 +28,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="happen.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/happen.java">
@@ -68,11 +76,19 @@
             <state relative-caret-position="765">
               <caret line="117" column="150" lean-forward="false" selection-start-line="117" selection-start-column="150" selection-end-line="117" selection-end-column="150" />
 >>>>>>> master
+=======
+      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="47" selection-end-column="49" />
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="Hex.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hex.java">
@@ -81,14 +97,41 @@
               <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
               <folding />
 =======
+=======
+      <file leaf-file-name="happen.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/happen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="529" column="61" lean-forward="true" selection-start-line="529" selection-start-column="61" selection-end-line="529" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#e001#0;class#happen#0" expanded="false" />
+                <element signature="method#encounterFarm#0;class#happen#0" expanded="false" />
+                <element signature="method#encounterMeditatingMonk#0;class#happen#0" expanded="false" />
+                <element signature="method#encounterWizard#0;class#happen#0" expanded="false" />
+                <element signature="method#encounterEnforcementsOfficers#0;class#happen#0" expanded="false" />
+                <element signature="method#encounterPriest#0;class#happen#0" expanded="false" />
+                <element signature="method#encounterChevalier#0;class#happen#0" expanded="false" />
+                <element signature="method#encounterFriendlyMarchand#0;class#happen#0" expanded="false" />
+                <element signature="method#ghostsAttack#0;class#happen#0" expanded="false" />
+                <element signature="method#r236#0;class#happen#0" expanded="false" />
+                <element signature="method#fight#0;class#happen#0" expanded="false" />
+                <element signature="method#escape#0;class#happen#0" expanded="false" />
+                <element signature="method#negociate#0;class#happen#0" expanded="false" />
+                <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> master
       <file leaf-file-name="Fenetre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="456" column="29" lean-forward="true" selection-start-line="456" selection-start-column="29" selection-end-line="456" selection-end-column="29" />
+            <state relative-caret-position="370">
+              <caret line="251" column="62" lean-forward="true" selection-start-line="251" selection-start-column="62" selection-end-line="251" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Fenetre#0;class#Fenetre#0" expanded="false" />
                 <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
                 <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
                 <element signature="method#aLancerDe#0;class#Fenetre#0" expanded="false" />
@@ -124,6 +167,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Hex.java" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/Personnages/NewCharacter.java" />
+>>>>>>> master
         <option value="$PROJECT_DIR$/src/game.java" />
         <option value="$PROJECT_DIR$/src/Fenetre.java" />
 <<<<<<< HEAD
@@ -131,6 +178,10 @@
         <option value="$PROJECT_DIR$/src/happen.java" />
 =======
         <option value="$PROJECT_DIR$/src/main.java" />
+<<<<<<< HEAD
+>>>>>>> master
+=======
+        <option value="$PROJECT_DIR$/src/happen.java" />
 >>>>>>> master
       </list>
     </option>
@@ -364,7 +415,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -511,11 +562,14 @@
           <folding>
             <element signature="imports" expanded="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
             <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#Fenetre#0" expanded="false" />
 =======
             <element signature="method#Fenetre#0;class#Fenetre#0" expanded="false" />
+=======
+>>>>>>> master
             <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
             <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
 >>>>>>> master
@@ -572,6 +626,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/happen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -598,6 +653,8 @@
       </provider>
     </entry>
 >>>>>>> master
+=======
+>>>>>>> master
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -620,11 +677,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="456" column="29" lean-forward="true" selection-start-line="456" selection-start-column="29" selection-end-line="456" selection-end-column="29" />
+        <state relative-caret-position="370">
+          <caret line="251" column="62" lean-forward="true" selection-start-line="251" selection-start-column="62" selection-end-line="251" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#Fenetre#0;class#Fenetre#0" expanded="false" />
             <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
             <element signature="method#verifBords#0;class#Fenetre#0" expanded="false" />
             <element signature="method#aLancerDe#0;class#Fenetre#0" expanded="false" />
@@ -652,13 +708,19 @@
 =======
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="765">
           <caret line="117" column="150" lean-forward="false" selection-start-line="117" selection-start-column="150" selection-end-line="117" selection-end-column="150" />
+>>>>>>> master
+=======
+        <state relative-caret-position="357">
+          <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="47" selection-end-column="49" />
 >>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -680,6 +742,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="347" column="17" lean-forward="true" selection-start-line="347" selection-start-column="17" selection-end-line="347" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/happen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="529" column="61" lean-forward="true" selection-start-line="529" selection-start-column="61" selection-end-line="529" selection-end-column="61" />
+>>>>>>> master
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#e001#0;class#happen#0" expanded="false" />
@@ -689,15 +757,27 @@
             <element signature="method#encounterEnforcementsOfficers#0;class#happen#0" expanded="false" />
             <element signature="method#encounterPriest#0;class#happen#0" expanded="false" />
             <element signature="method#encounterChevalier#0;class#happen#0" expanded="false" />
+<<<<<<< HEAD
             <element signature="method#r236#0;class#happen#0" expanded="false" />
             <element signature="method#escape#0;class#happen#0" expanded="false" />
             <element signature="method#negociate#0;class#happen#0" expanded="false" />
             <element signature="method#tchat#0;class#happen#0" expanded="false" />
+=======
+            <element signature="method#encounterFriendlyMarchand#0;class#happen#0" expanded="false" />
+            <element signature="method#ghostsAttack#0;class#happen#0" expanded="false" />
+            <element signature="method#r236#0;class#happen#0" expanded="false" />
+            <element signature="method#fight#0;class#happen#0" expanded="false" />
+            <element signature="method#escape#0;class#happen#0" expanded="false" />
+            <element signature="method#negociate#0;class#happen#0" expanded="false" />
+>>>>>>> master
             <element signature="method#dommagesCombat#0;class#happen#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+>>>>>>> master
 =======
 >>>>>>> master
   </component>
