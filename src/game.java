@@ -369,7 +369,7 @@ public class game {
                     if (this.getFood() < 0) {
                     fenetre.setStory(fenetre.getStory() + "\nPauvre fou ! Vous n'avez pas même de nourriture à abandonner");
                     } else {
-                        this.setFood(this.getFood() - diff, fenetre);
+                        this.setFood(this.getFood() + diff, fenetre);
                         this.setTotalLoad(this.getTotalLoad());
                         fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
                     }

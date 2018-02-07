@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7008603d-072f-4c60-aefc-462b98f6870a" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Personnages/NewCharacter.java" afterPath="$PROJECT_DIR$/src/Personnages/NewCharacter.java" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Fenetre.java" afterPath="$PROJECT_DIR$/src/Fenetre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/happen.java" afterPath="$PROJECT_DIR$/src/happen.java" />
+=======
+    <list default="true" id="7cc6fbbd-212b-423a-8c59-79d36850ea89" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/BoutonPanel.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/BoutonPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Hex.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Hex.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/ImagePanel.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/ImagePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Init.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Init.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Panneau.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Panneau.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/Character.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/Character.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/NewCharacter.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/NewCharacter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/Prince.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Personnages/Prince.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/main.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/util/de.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/util/de.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
+>>>>>>> Stashed changes
+>>>>>>> master
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +45,68 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="264">
               <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="47" selection-end-column="49" />
+=======
+            <state relative-caret-position="-854">
+              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding>
+                <marker date="1517991253009" expanded="true" signature="2273:2347" ph="//..." />
+                <marker date="1517991253009" expanded="true" signature="2787:2842" ph="//..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Hex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2812">
+              <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4935">
+              <caret line="374" column="58" lean-forward="true" selection-start-line="374" selection-start-column="58" selection-end-line="374" selection-end-column="58" />
+              <folding>
+                <element signature="e#1701#1702#0" expanded="true" />
+                <element signature="e#1746#1747#0" expanded="true" />
+                <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Personnages/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+>>>>>>> Stashed changes
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewCharacter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="40" column="46" lean-forward="false" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+              <folding>
+                <marker date="1517991253010" expanded="true" signature="705:906" ph="{...}" />
+                <marker date="1517991253010" expanded="true" signature="1288:1452" ph="{...}" />
+                <marker date="1517991253010" expanded="true" signature="1487:1598" ph="{...}" />
+                <marker date="1517991253010" expanded="true" signature="1633:2615" ph="{...}" />
+                <marker date="1517991253010" expanded="true" signature="1643:1885" ph="//..." />
+                <marker date="1517991253010" expanded="true" signature="2007:2263" ph="//..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -27,11 +114,15 @@
       <file leaf-file-name="happen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/happen.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="124">
               <caret line="348" column="94" lean-forward="false" selection-start-line="348" selection-start-column="94" selection-end-line="348" selection-end-column="94" />
+=======
+            <state relative-caret-position="3507">
+              <caret line="489" column="0" lean-forward="false" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#e001#0;class#happen#0" expanded="false" />
                 <element signature="method#encounterFarm#0;class#happen#0" expanded="false" />
                 <element signature="method#encounterMeditatingMonk#0;class#happen#0" expanded="false" />
                 <element signature="method#encounterWizard#0;class#happen#0" expanded="false" />
@@ -40,6 +131,7 @@
                 <element signature="method#encounterChevalier#0;class#happen#0" expanded="false" />
                 <element signature="method#encounterFriendlyMarchand#0;class#happen#0" expanded="false" />
                 <element signature="method#ghostsAttack#0;class#happen#0" expanded="false" />
+<<<<<<< Updated upstream
                 <element signature="method#r236#0;class#happen#0" expanded="false" />
                 <element signature="method#fight#0;class#happen#0" expanded="false" />
                 <element signature="method#escape#0;class#happen#0" expanded="false" />
@@ -56,6 +148,7 @@
             <state relative-caret-position="729">
               <caret line="365" column="0" lean-forward="true" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
               <folding>
+<<<<<<< HEAD
                 <element signature="e#1701#1702#0" expanded="true" />
                 <element signature="e#1746#1747#0" expanded="true" />
                 <element signature="e#2076#2077#0" expanded="true" />
@@ -74,6 +167,12 @@
                 <element signature="e#3638#3639#0" expanded="true" />
                 <element signature="e#4202#4203#0" expanded="true" />
                 <element signature="e#4244#4245#0" expanded="true" />
+=======
+                <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
+=======
+                <marker date="1517991253009" expanded="false" signature="22963:23951" ph="{...}" />
+>>>>>>> Stashed changes
+>>>>>>> master
               </folding>
             </state>
           </provider>
@@ -97,8 +196,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/Fenetre.java" />
         <option value="$PROJECT_DIR$/src/happen.java" />
+=======
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/game.java" />
         <option value="$PROJECT_DIR$/src/Personnages/NewCharacter.java" />
       </list>
@@ -119,38 +221,49 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
+              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
+              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
               <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
+              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="BarbarianPrince" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BarbarianPrince" type="462c0819:PsiDirectoryNode" />
+              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Personnages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BabarianPrince" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BabarianPrince" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -269,30 +382,27 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -310,6 +420,7 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+<<<<<<< Updated upstream
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Personnages/Character.java</url>
           <line>25</line>
@@ -320,24 +431,22 @@
           <url>file://$PROJECT_DIR$/src/Fenetre.java</url>
           <line>572</line>
           <properties class="Fenetre" method="getStory">
+=======
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Fenetre.java</url>
+          <line>606</line>
+          <properties class="Fenetre">
+>>>>>>> Stashed changes
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -367,7 +476,6 @@
           <caret line="485" column="30" lean-forward="true" selection-start-line="485" selection-start-column="30" selection-end-line="485" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#e001#0;class#happen#0" expanded="false" />
             <element signature="method#encounterFarm#0;class#happen#0" expanded="false" />
             <element signature="method#encounterMeditatingMonk#0;class#happen#0" expanded="false" />
             <element signature="method#encounterWizard#0;class#happen#0" expanded="false" />
@@ -376,6 +484,7 @@
             <element signature="method#encounterChevalier#0;class#happen#0" expanded="false" />
             <element signature="method#encounterFriendlyMarchand#0;class#happen#0" expanded="false" />
             <element signature="method#ghostsAttack#0;class#happen#0" expanded="false" />
+            <marker date="1517991253009" expanded="false" signature="22963:23951" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -385,8 +494,14 @@
         <state relative-caret-position="-1722">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#1437#1438#0" expanded="true" />
             <element signature="e#1464#1465#0" expanded="true" />
+=======
+            <element signature="e#1437#1438#0" expanded="false" />
+            <element signature="e#1464#1465#0" expanded="false" />
+            <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -395,7 +510,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2058">
           <caret line="98" column="142" lean-forward="true" selection-start-line="98" selection-start-column="142" selection-end-line="98" selection-end-column="142" />
-          <folding />
+          <folding>
+            <marker date="1517991253009" expanded="true" signature="2273:2347" ph="//..." />
+            <marker date="1517991253009" expanded="true" signature="2787:2842" ph="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -404,6 +522,7 @@
         <state relative-caret-position="63">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
+<<<<<<< Updated upstream
             <element signature="imports" expanded="true" />
             <element signature="method#Fenetre#0;class#Fenetre#0" expanded="false" />
             <element signature="method#getLoc#0;class#Fenetre#0" expanded="false" />
@@ -480,6 +599,89 @@
             <element signature="e#19243#19244#0" expanded="true" />
             <element signature="e#19266#19267#0" expanded="true" />
             <element signature="e#19303#19304#0" expanded="true" />
+=======
+            <element signature="imports" expanded="false" />
+            <marker date="1517993206247" expanded="false" signature="10955:11300" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="11331:12177" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="15369:15730" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="16127:16529" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="16554:16911" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="16937:16948" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="16963:16969" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="16993:17004" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17017:17023" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17048:17059" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17075:17081" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17106:17117" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17131:17137" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17164:17175" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17191:17197" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17218:17229" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17241:17247" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17269:17280" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17293:17299" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17326:17337" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17353:17359" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17385:17396" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17412:17418" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17441:17486" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="17508:17519" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17579:17585" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17623:17634" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17657:17663" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17697:17708" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17722:17728" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17764:17775" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17793:17799" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17835:17846" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17867:17873" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17913:17924" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17949:17955" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17990:18001" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18021:18027" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18055:18066" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18076:18082" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18112:18123" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18135:18141" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18180:18191" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18216:18222" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18253:18264" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18283:18289" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18324:18335" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18358:18364" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18391:18402" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18417:18423" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18456:18467" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18493:18499" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18532:18543" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18564:18570" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18607:18618" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18643:18649" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18682:18693" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18714:18720" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18753:18764" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18790:18796" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18827:18838" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18857:18863" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18892:18903" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18925:18931" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19202:19213" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="19235:19241" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19275:19286" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="19308:19314" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19348:19359" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="19381:19387" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19413:19480" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="19507:19576" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="19599:19800" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="19824:20009" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="20044:20237" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="20263:20372" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="20393:20403" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="20424:20430" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="20452:20462" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="20484:20490" ph=" }" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -491,29 +693,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/java/awt/event/ActionListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Personnages/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/java/awt/event/ActionListener.class" />
     <entry file="file://$PROJECT_DIR$/src/Personnages/Prince.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -522,7 +702,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2812">
+          <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-854">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <marker date="1517991253009" expanded="true" signature="2273:2347" ph="//..." />
+            <marker date="1517991253009" expanded="true" signature="2787:2842" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/Personnages/Prince.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="46" lean-forward="false" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <folding>
+            <marker date="1517991253010" expanded="true" signature="705:906" ph="{...}" />
+            <marker date="1517991253010" expanded="true" signature="1288:1452" ph="{...}" />
+            <marker date="1517991253010" expanded="true" signature="1487:1598" ph="{...}" />
+            <marker date="1517991253010" expanded="true" signature="1633:2615" ph="{...}" />
+            <marker date="1517991253010" expanded="true" signature="1643:1885" ph="//..." />
+            <marker date="1517991253010" expanded="true" signature="2007:2263" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnages/Character.java">
+>>>>>>> Stashed changes
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> master
     <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
+<<<<<<< Updated upstream
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
           <caret line="443" column="41" lean-forward="true" selection-start-line="443" selection-start-column="41" selection-end-line="443" selection-end-column="41" />
@@ -612,16 +850,108 @@
         <state relative-caret-position="264">
           <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="47" selection-end-column="49" />
           <folding />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="464" column="53" lean-forward="true" selection-start-line="464" selection-start-column="53" selection-end-line="464" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1517993206247" expanded="false" signature="10955:11300" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="11331:12177" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="15369:15730" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="16127:16529" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="16554:16911" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="16937:16948" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="16963:16969" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="16993:17004" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17017:17023" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17048:17059" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17075:17081" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17106:17117" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17131:17137" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17164:17175" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17191:17197" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17218:17229" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17241:17247" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17269:17280" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17293:17299" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17326:17337" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17353:17359" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17385:17396" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17412:17418" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17441:17486" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="17508:17519" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17579:17585" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17623:17634" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17657:17663" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17697:17708" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17722:17728" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17764:17775" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17793:17799" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17835:17846" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17867:17873" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17913:17924" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="17949:17955" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="17990:18001" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18021:18027" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18055:18066" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18076:18082" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18112:18123" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18135:18141" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18180:18191" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18216:18222" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18253:18264" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18283:18289" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18324:18335" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18358:18364" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18391:18402" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18417:18423" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18456:18467" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18493:18499" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18532:18543" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18564:18570" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18607:18618" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18643:18649" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18682:18693" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18714:18720" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18753:18764" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18790:18796" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18827:18838" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18857:18863" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="18892:18903" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="18925:18931" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19202:19213" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="19235:19241" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19275:19286" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="19308:19314" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19348:19359" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="19381:19387" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="19413:19480" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="19507:19576" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="19599:19800" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="19824:20009" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="20044:20237" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="20263:20372" ph="{...}" />
+            <marker date="1517993206247" expanded="false" signature="20393:20403" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="20424:20430" ph=" }" />
+            <marker date="1517993206247" expanded="false" signature="20452:20462" ph=" { " />
+            <marker date="1517993206247" expanded="false" signature="20484:20490" ph=" }" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/happen.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="124">
           <caret line="348" column="94" lean-forward="false" selection-start-line="348" selection-start-column="94" selection-end-line="348" selection-end-column="94" />
+=======
+        <state relative-caret-position="3507">
+          <caret line="489" column="0" lean-forward="false" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#e001#0;class#happen#0" expanded="false" />
             <element signature="method#encounterFarm#0;class#happen#0" expanded="false" />
             <element signature="method#encounterMeditatingMonk#0;class#happen#0" expanded="false" />
             <element signature="method#encounterWizard#0;class#happen#0" expanded="false" />
@@ -630,17 +960,22 @@
             <element signature="method#encounterChevalier#0;class#happen#0" expanded="false" />
             <element signature="method#encounterFriendlyMarchand#0;class#happen#0" expanded="false" />
             <element signature="method#ghostsAttack#0;class#happen#0" expanded="false" />
+<<<<<<< Updated upstream
             <element signature="method#r236#0;class#happen#0" expanded="false" />
             <element signature="method#fight#0;class#happen#0" expanded="false" />
             <element signature="method#escape#0;class#happen#0" expanded="false" />
             <marker date="1517992600371" expanded="false" signature="20842:21838" ph="{...}" />
             <marker date="1517992600371" expanded="false" signature="23038:24026" ph="{...}" />
+=======
+            <marker date="1517991253009" expanded="false" signature="22963:23951" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="729">
           <caret line="365" column="0" lean-forward="true" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
           <folding>
@@ -662,6 +997,20 @@
             <element signature="e#3638#3639#0" expanded="true" />
             <element signature="e#4202#4203#0" expanded="true" />
             <element signature="e#4244#4245#0" expanded="true" />
+=======
+<<<<<<< Updated upstream
+        <state relative-caret-position="-2">
+          <caret line="361" column="0" lean-forward="true" selection-start-line="361" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
+          <folding>
+=======
+        <state relative-caret-position="4935">
+          <caret line="374" column="58" lean-forward="true" selection-start-line="374" selection-start-column="58" selection-end-line="374" selection-end-column="58" />
+          <folding>
+            <element signature="e#1701#1702#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+>>>>>>> Stashed changes
+            <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
+>>>>>>> master
           </folding>
         </state>
       </provider>
@@ -674,5 +1023,80 @@
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>BarbarianPrince</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
