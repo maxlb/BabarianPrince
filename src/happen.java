@@ -306,7 +306,7 @@ class happen {
         fenetre.setStory(fenetre.getStory() +"\nUn groupe de fantômes vous attaque par surprise !");
         int nbGhosts = fenetre.aLancerDe(1) + 1;
 
-        fenetre.setStory(fenetre.getStory() +"\nUn groupe de " + nbGhosts + " fantômes vous attaque par surprise !\n" +
+        fenetre.setStory(fenetre.getStory() +"\nUn groupe de " + nbGhosts + " fantômes vous attaque par surprise !" +
         "Chacun d'eux à une valeur de combat de 4 et un valeur d'endurence de 2");
 
         NewCharacter GhostsBand =
@@ -429,7 +429,7 @@ class happen {
             endL = myGame.getSuite().get(myGame.getSuite().size()-1).getEndurance();
             endA = adversaire.getEndurance();
             if(tourJoueur){
-                fenetre.setStory(fenetre.getStory() + "\nSCORE : "+ myGame.getSuite().get(myGame.getSuite().size()-1).getName() + " : " + endL + " VS " + adversaire.getName() + " : " + endA );
+                fenetre.setStory(fenetre.getStory() + "\nSCORE : "+ myGame.getSuite().get(myGame.getSuite().size()-1).getName() + " : " + endL + " VS " + adversaire.getName() + " : " + endA + "\n" );
             }
             endP = myPrince.getEndurance();
             fenetre.setVie(endP.toString());
@@ -534,13 +534,14 @@ class happen {
             fenetre.setStory(fenetre.getStory() + "\n" + encounter.getName()+ " rejoint votre suite !");
             myGame.AddCharacter(encounter, fenetre);
 
-            StringBuilder suite = new StringBuilder();
-            for (int i = 0; i < myGame.getSuite().size() ; i++){
-                if(!suite.toString().equals("")){
-                    suite.append(", ");
-                }
+            StringBuilder suite = new StringBuilder("<html>");
+            for (int i = 0; i < myGame.getSuite().size(); i++) {
                 suite.append(myGame.getSuite().get(i).getName());
+                if (i < myGame.getSuite().size() - 1) {
+                    suite.append(",<br>");
+                }
             }
+            suite.append("</html>");
             fenetre.setSuite(suite.toString());
         }
         else

@@ -200,7 +200,7 @@ public class Fenetre extends JFrame implements ActionListener {
         infosTerrain.add(panelLoc);
         infosTerrain.add(panelTypo);
         infosTerrain.add(panelMonu);
-        infosTerrain.add(panelRoute);
+        //infosTerrain.add(panelRoute);
 
         commandes.add(infosTerrain);
 
@@ -243,7 +243,7 @@ public class Fenetre extends JFrame implements ActionListener {
 
         JPanel panelPoids = new JPanel();
         panelPoids.setLayout(new FlowLayout(FlowLayout.LEFT));
-        JLabel strPoids = new JLabel("   - Poids à porter : ");
+        JLabel strPoids = new JLabel("   - Valeur de combat : ");
         panelPoids.add(strPoids);
         panelPoids.add(poids);
         poids.setForeground(Color.red);

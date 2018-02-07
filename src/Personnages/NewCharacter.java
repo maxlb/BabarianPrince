@@ -9,7 +9,7 @@ public class NewCharacter extends Character {
     public NewCharacter(String hisname, Integer hisloads,
                         Integer hismount, Integer hiswealth, Integer hisendurance,
                         Integer hiscombat, Integer characterNumber){
-        this.setCombat(hiscombat * characterNumber);
+        this.setCombat(hiscombat);
         this.setInitcombat(hiscombat);
         this.setEndurance(hisendurance * characterNumber);
         this.setWealth(hiswealth * characterNumber);
