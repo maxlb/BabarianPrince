@@ -35,16 +35,17 @@ class main {
             maFenetre.setTypo(caseActuelle.getType(caseActuelle.type));
             maFenetre.setRoute(caseActuelle.getRoad());
             maFenetre.setVie(myPrince.getEndurance().toString());
-            maFenetre.setPoids(myPrince.getWealth().toString());
-            String suite = "";
+            maFenetre.setPoids(myPrince.getCombat().toString());
 
+            StringBuilder suite = new StringBuilder("<html>");
             for (int i = 0; i < myGame.getSuite().size(); i++) {
-                if (!suite.equals("")) {
-                    suite = suite + ", ";
+                suite.append(myGame.getSuite().get(i).getName());
+                if (i < myGame.getSuite().size() - 1) {
+                    suite.append(",<br>");
                 }
-                suite = suite + myGame.getSuite().get(i).getName();
             }
-            maFenetre.setSuite(suite);
+            suite.append("</html>");
+            maFenetre.setSuite(suite.toString());
 
             if(myGame.getGold() >= 500){
                 myGame.setStatus(false);
