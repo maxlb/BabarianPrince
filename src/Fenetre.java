@@ -159,6 +159,49 @@ public class Fenetre extends JFrame implements ActionListener {
         commandes.add(panelDep);
 
 
+         /*
+         * Ajout des boutons de contrôle du jeu
+         */
+        JPanel boutons = new JPanel();
+        boutons.setLayout(new BoxLayout(boutons, BoxLayout.PAGE_AXIS));
+
+        JPanel boutonsN = new JPanel();
+        NW.addActionListener(this);
+        N.addActionListener(this);
+        NE.addActionListener(this);
+        boutonsN.add(NW);
+        boutonsN.add(N);
+        boutonsN.add(NE);
+
+        JPanel boutonsS = new JPanel();
+        SW.addActionListener(this);
+        S.addActionListener(this);
+        SE.addActionListener(this);
+        boutonsS.add(SW);
+        boutonsS.add(S);
+        boutonsS.add(SE);
+
+        JPanel yesno = new JPanel();
+        Oui.addActionListener(this);
+        Non.addActionListener(this);
+        yesno.add(Oui);
+        yesno.add(Non);
+
+        JPanel choix = new JPanel();
+        Choix1.addActionListener(this);
+        Choix2.addActionListener(this);
+        Choix3.addActionListener(this);
+        choix.add(Choix1);
+        choix.add(Choix2);
+        choix.add(Choix3);
+
+        boutons.add(boutonsN);
+        boutons.add(boutonsS);
+        boutons.add(yesno);
+        boutons.add(choix);
+
+        commandes.add(boutons);
+
         /*
          * Informations sur le terrain
          */
@@ -276,48 +319,7 @@ public class Fenetre extends JFrame implements ActionListener {
         commandes.add(infosPrince);
 
 
-        /*
-         * Ajout des boutons de contrôle du jeu
-         */
-        JPanel boutons = new JPanel();
-        boutons.setLayout(new BoxLayout(boutons, BoxLayout.PAGE_AXIS));
 
-        JPanel boutonsN = new JPanel();
-        NW.addActionListener(this);
-        N.addActionListener(this);
-        NE.addActionListener(this);
-        boutonsN.add(NW);
-        boutonsN.add(N);
-        boutonsN.add(NE);
-
-        JPanel boutonsS = new JPanel();
-        SW.addActionListener(this);
-        S.addActionListener(this);
-        SE.addActionListener(this);
-        boutonsS.add(SW);
-        boutonsS.add(S);
-        boutonsS.add(SE);
-
-        JPanel yesno = new JPanel();
-        Oui.addActionListener(this);
-        Non.addActionListener(this);
-        yesno.add(Oui);
-        yesno.add(Non);
-
-        JPanel choix = new JPanel();
-        Choix1.addActionListener(this);
-        Choix2.addActionListener(this);
-        Choix3.addActionListener(this);
-        choix.add(Choix1);
-        choix.add(Choix2);
-        choix.add(Choix3);
-
-        boutons.add(boutonsN);
-        boutons.add(boutonsS);
-        boutons.add(yesno);
-        boutons.add(choix);
-
-        commandes.add(boutons);
 
 
         /*
