@@ -134,7 +134,7 @@ public class Hex {
             }
         }
 
-        else fenetre.setStory(fenetre.getStory() + "\n Il n'y a pas âme qui vive par ici.");
+        else fenetre.setStory(fenetre.getStory() + "\nIl n'y a pas âme qui vive par ici.");
 
     }
 
@@ -188,7 +188,7 @@ public class Hex {
                 whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.encounterChevalier(myGame, myPrince, fenetre);
+                whathappen.encounterMeditatingMonk(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -216,7 +216,7 @@ public class Hex {
                 whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.encounterPriest(myGame, myPrince, fenetre);
+                whathappen.encounterWizard(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -232,7 +232,7 @@ public class Hex {
                 whathappen.encounterPriest(myGame, myPrince, fenetre);
                 break;
             case 2:
-                whathappen.encounterPriest(myGame, myPrince, fenetre);
+                whathappen.encounterEnforcementsOfficers(myGame, myPrince, fenetre);
                 break;
             case 3:
                 whathappen.ghostsAttack(myGame, myPrince, fenetre);
@@ -241,7 +241,7 @@ public class Hex {
                 whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 5:
-                whathappen.encounterPriest(myGame, myPrince, fenetre);
+                whathappen.encounterWizard(myGame, myPrince, fenetre);
                 break;
             case 6:
                 whathappen.encounterPriest(myGame, myPrince, fenetre);
@@ -272,7 +272,7 @@ public class Hex {
                 whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.encounterPriest(myGame, myPrince, fenetre);
+                whathappen.encounterWizard(myGame, myPrince, fenetre);
                 break;
 
             default:break;
@@ -300,7 +300,7 @@ public class Hex {
                 whathappen.ghostsAttack(myGame, myPrince, fenetre);
                 break;
             case 6:
-                whathappen.encounterChevalier(myGame, myPrince, fenetre);
+                whathappen.encounterEnforcementsOfficers(myGame, myPrince, fenetre);
                 break;
 
             default:break;
