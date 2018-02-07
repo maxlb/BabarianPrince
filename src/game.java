@@ -357,8 +357,8 @@ public class game {
         int diff = this.getSuiteLoad() /*capacité de portage de la suite*/ - this.getTotalLoad()/*ce qu'il faut porter*/ ;
         while (diff < 0) {
             fenetre.setStory(fenetre.getStory() + "\n" + this.getTotalLoad() + "\n" + this.getSuiteLoad() + "\n" + diff);
-            fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite. Vous devez abandonner des réserves de nourriture ou de l'or");
-            String abandon = fenetre.aRepondu();
+            fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite. \nVous devez abandonner des réserves de nourriture ou de l'or");
+            String abandon = fenetre.aChoisi("Abandonner de la nourriture", "Abandonner de l'or", "");
 
             if (abandon.equals("Abandonner de la nourriture"))//FOOD
             {
