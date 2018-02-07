@@ -66,11 +66,11 @@ public class game {
     GAME STATUS
     Le jeu est terminé si
     Le temps est écoulé : timeTrack <= 0
-    Le prince a récolté 50 pièces d'or : Gold >=500
+    Le prince a récolté 50 pièces d'or : Gold >=200
     L'endurance du prince est épuisée : */
 
     public Boolean getStatus(Prince myPrince) {
-        this.Status = !(this.timeTrack <= 0 || this.Gold >= 500 || myPrince.getEndurance() <= 0);
+        this.Status = !(this.timeTrack <= 0 || this.Gold >= 200 || myPrince.getEndurance() <= 0);
         return Status;
     }
 
@@ -318,16 +318,16 @@ public class game {
                 "\nvos éventuelles plaies et vous reposer ou continuer à voyager ?");
         String reponse = fenetre.aRepondu();
 
-        if(reponse.equals("Rester"))//REST
+        if(reponse.equals("Oui"))//REST
         {   this.Rest(fenetre);
             //case inchangée
         }
 
-        else if(reponse.equals("L'aventure n'attend pas !")){
+        /*else if(reponse.equals("Non")){
             fenetre.setStory(fenetre.getStory() + "\nSelectionnez la direction \nque vous souhaitez prendre.");
             this.currentCase = this.Travel(fenetre);
 
-            }
+            }*/
         if(!tour1Fini){
             tour1Fini = true;
         return this.currentCase;
@@ -344,12 +344,12 @@ public class game {
             this.suite.get(i).Heal(); //chaque personnage de la suite se repose et guérit
         fenetre.setStory(fenetre.getStory() + "\nVous et votre suite vous reposez à cet endroit. Quelle charmante journée !");
     }
+    /*
     //TRAVEL
     public Hex Travel(Fenetre fenetre){
-        //À VÉRIFIER !!
         Hex newHex = new Hex(fenetre.estDeplace());
         return newHex;
-    }
+    }*/
 
     //CHECK LOADS
     public void CheckLoads(Fenetre fenetre, Prince myPrince) {
