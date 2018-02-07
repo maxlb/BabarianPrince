@@ -51,13 +51,18 @@ public class game {
 
     // Total Load : chaque point Food vaut 1, 100 pièces ou moins vaut 1
     public Integer getTotalLoad(){
-        int goldLoad = this.Gold/100;
-        if(this.Gold==0)
-            this.TotalLoad= this.Food;
-        else
-            this.TotalLoad= this.Food + goldLoad;
-        return TotalLoad;
+        return this.Food + goldLoad();
     }
+
+    public Integer goldLoad(){
+        Integer goldLoad;
+        if(this.getGold()<=0) //pas d'or -> 0
+            goldLoad=0;
+        else
+            goldLoad=1 + this.getGold()/100; //ex : 50 pièces d'or -> 1 load | 205 pièces d'or -> 3 loads…
+        return goldLoad;
+    }
+
     public void setTotalLoad(Integer totalLoad) {
         TotalLoad = totalLoad;
     }
@@ -353,43 +358,41 @@ public class game {
 
     //CHECK LOADS
     public void CheckLoads(Fenetre fenetre, Prince myPrince) {
-        if(this.getStatus(myPrince)){
-        int diff = this.getSuiteLoad() /*capacité de portage de la suite*/ - this.getTotalLoad()/*ce qu'il faut porter*/ ;
-        while (diff < 0) {
-            fenetre.setStory(fenetre.getStory() + "\n" + this.getTotalLoad() + "\n" + this.getSuiteLoad() + "\n" + diff);
-            fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite. \nVous devez abandonner des réserves de nourriture ou de l'or");
+        if(this.getStatus(myPrince)){ /*si le prince n'est pas mort*/
+            int diff = this.getSuiteLoad() /*capacité de portage de la suite*/ - this.getTotalLoad()/*ce qu'il faut porter*/ ;
+            while (diff < 0) { //valeur négative
+                fenetre.setStory(fenetre.getStory() + "\nVotre charge est trop lourde pour vous et votre suite.\n Vous devez abandonner des réserves de nourriture ou de l'or");
             String abandon = fenetre.aChoisi("Abandonner de la nourriture", "Abandonner de l'or", "");
 
-            if (abandon.equals("Abandonner de la nourriture"))//FOOD
-            {
-                if (this.getFood() < 0) {
+                if (abandon.equals("Abandonner de la nourriture"))//FOOD
+                {
+                    if (this.getFood() < 0) {
                     fenetre.setStory(fenetre.getStory() + "\nPauvre fou ! Vous n'avez pas même de nourriture à abandonner");
-                } else {
-                    this.setFood(this.getFood() - diff, fenetre);
-                    this.setTotalLoad(this.getTotalLoad());
-                    fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
-                }
-            } else//GOLD
-            {
-                if (this.getGold() <= 0)
-                    fenetre.setStory(fenetre.getStory() + "\nPauvre Prince ruiné, vous n'avez pas d'or à abandonner");
-
-                else {//de 1 à 100 pièces d'or = 1 loads
-                    int goldLoad = this.Gold / 100;
-                    int newGoldLoad = goldLoad - diff;
-                    if (newGoldLoad <= 0)
-                        this.setGold(0, fenetre);
-                    else {
-                        this.setGold(100 * newGoldLoad, fenetre);
+                    } else {
+                        this.setFood(this.getFood() - diff, fenetre);
+                        this.setTotalLoad(this.getTotalLoad());
+                        fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
                     }
-                    fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé de quelques pièces. Vous avez maintenant " + this.getGold() + " pièce(s) d'or)");
                 }
+                else { //GOLD
+                    if (this.getGold() <= 0)
+                        fenetre.setStory(fenetre.getStory() + "\nPauvre Prince ruiné, vous n'avez pas d'or à abandonner");
 
+                    else {
+                        int newGoldLoad = goldLoad() + diff; //car diff est une valeur négative !
+                        if (newGoldLoad <= 0)
+                            this.setGold(0, fenetre);
+                        else {
+                            this.setGold(100 * newGoldLoad, fenetre);
+                        }
+                    fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé de quelques pièces. Vous avez maintenant " + this.getGold() + " pièce(s) d'or)");
+                    }
+
+                }
             }
-
-
         }
-    }}
+
+    }
 
 
 
