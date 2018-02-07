@@ -460,27 +460,34 @@ class happen {
        1-N, 2-NE, 3-SE, 4-S, 5-SW, 6-NW.
        */
 
-       int jete = util.de.randomDie();
+        int jete = util.de.randomDie();
         switch (jete) {
             case 1:
                 //N
+                fenetre.deplacementNord();
                 break;
             case 2:
                 //NE
+                fenetre.deplacementNordEst();
                 break;
             case 3:
                 //SE
+                fenetre.deplacementSudEst();
                 break;
             case 4:
                 //S
+                fenetre.deplacementSud();
                 break;
             case 5:
                 //SW
+                fenetre.deplacementSudOuest();
                 break;
             case 6:
                 //NW
+                fenetre.deplacementNordOuest();
                 break;
             default:break;
+
         }
            }
 

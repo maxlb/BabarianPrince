@@ -425,46 +425,51 @@ public class Fenetre extends JFrame implements ActionListener {
             updateLoc();
         }
         else if(arg8.getSource() == S){
-            monPanneau.setXP(monPanneau.getXP()+1);
+            /*monPanneau.setXP(monPanneau.getXP()+1);
             monPanneau.repaint();
             setaBouger(true);
-            updateLoc();
+            updateLoc();*/
+            deplacementSud();
         }
         else if(arg8.getSource() == SE){
-            monPanneau.setYP(monPanneau.getYP()+1);
+            /*monPanneau.setYP(monPanneau.getYP()+1);
             if(monPanneau.getYP() % 2 == 0) {
                 monPanneau.setXP(monPanneau.getXP()+1);
             }
             monPanneau.repaint();
             setaBouger(true);
-            updateLoc();
+            updateLoc();*/
+            deplacementSudEst();
         }
         else if(arg8.getSource() == NE){
-            monPanneau.setYP(monPanneau.getYP()+1);
+            /*monPanneau.setYP(monPanneau.getYP()+1);
             if(monPanneau.getYP() % 2 != 0){
                 monPanneau.setXP(monPanneau.getXP()-1);
             }
             monPanneau.repaint();
             setaBouger(true);
-            updateLoc();
+            updateLoc();*/
+            deplacementNordEst();
         }
         else if(arg8.getSource() == SW){
-            monPanneau.setYP(monPanneau.getYP()-1);
+            /*monPanneau.setYP(monPanneau.getYP()-1);
             if(monPanneau.getYP() % 2 == 0){
                 monPanneau.setXP(monPanneau.getXP()+1);
             }
             monPanneau.repaint();
             setaBouger(true);
-            updateLoc();
+            updateLoc();*/
+            deplacementSudOuest();
         }
         else if(arg8.getSource() == NW){
-            monPanneau.setYP(monPanneau.getYP()-1);
+            /*monPanneau.setYP(monPanneau.getYP()-1);
             if(monPanneau.getYP() % 2 != 0){
                 monPanneau.setXP(monPanneau.getXP()-1);
             }
             monPanneau.repaint();
             setaBouger(true);
-            updateLoc();
+            updateLoc();*/
+            deplacementNordOuest();
         }
         else if(arg8.getSource() == Oui){
             setYes(true);
@@ -753,5 +758,63 @@ public class Fenetre extends JFrame implements ActionListener {
 
     void DisableDe(){
         Dep.setEnabled(false);
+    }
+
+
+//DÉPLACEMENT
+
+
+public void deplacementNord(){
+        monPanneau.setXP(monPanneau.getXP()-1);
+        monPanneau.repaint();
+        setaBouger(true);
+        updateLoc();
+    }
+
+public void deplacementSud(){
+        monPanneau.setXP(monPanneau.getXP()+1);
+        monPanneau.repaint();
+        setaBouger(true);
+        updateLoc();
+    }
+
+public void deplacementSudEst(){
+        monPanneau.setYP(monPanneau.getYP()+1);
+        if(monPanneau.getYP() % 2 == 0) {
+            monPanneau.setXP(monPanneau.getXP()+1);
+        }
+        monPanneau.repaint();
+        setaBouger(true);
+        updateLoc();
+    }
+
+public void deplacementNordEst(){
+        monPanneau.setYP(monPanneau.getYP()+1);
+        if(monPanneau.getYP() % 2 != 0){
+            monPanneau.setXP(monPanneau.getXP()-1);
+        }
+        monPanneau.repaint();
+        setaBouger(true);
+        updateLoc();
+    }
+
+public void deplacementSudOuest(){
+        monPanneau.setYP(monPanneau.getYP()-1);
+        if(monPanneau.getYP() % 2 == 0){
+            monPanneau.setXP(monPanneau.getXP()+1);
+        }
+        monPanneau.repaint();
+        setaBouger(true);
+        updateLoc();
+    }
+
+public void deplacementNordOuest(){
+        monPanneau.setYP(monPanneau.getYP()-1);
+        if(monPanneau.getYP() % 2 != 0){
+            monPanneau.setXP(monPanneau.getXP()-1);
+        }
+        monPanneau.repaint();
+        setaBouger(true);
+        updateLoc();
     }
 }
