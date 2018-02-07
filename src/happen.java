@@ -122,7 +122,7 @@ class happen {
     }
 
     //SORCIER e023
-    private void encounterWizard(game myGame, Prince myPrince, Fenetre fenetre){
+    void encounterWizard(game myGame, Prince myPrince, Fenetre fenetre){
         //You meet a Wizard with combat skill 4, endurance 4, and wealth 60.
         // The wizard seems old, but still active and perhaps quite powerful.
 
@@ -137,7 +137,7 @@ class happen {
         String reponse = fenetre.aChoisi("Négocier", "Discuter", "Attaquer");
 
         switch (reponse) {
-            case "Laisser passer":
+            case "Négocier":
                 negociate(myGame, myPrince, fenetre, wizard, 10);
                 break;
             case "Discuter":
@@ -372,6 +372,8 @@ class happen {
         fenetre.setStory(fenetre.getStory() +"\n" + str + combL + " points de combat et " + adversaire.getName() + str2 + combA + " !");
         fenetre.setStory(fenetre.getStory() +"\n" + str + endL + " points de vie et " + adversaire.getName() + str2 + endA + " !");
 
+        String toSave = fenetre.getStory();
+
         Boolean tourJoueur = true;
         while ((endP > 0) && (endA > 0)){
             if (endL <= 0) {
@@ -382,13 +384,14 @@ class happen {
                     myGame.removeSuite(toDelete);
                 }
 
-                StringBuilder suite = new StringBuilder();
+                StringBuilder suite = new StringBuilder("<html>");
                 for (int i = 0; i < myGame.getSuite().size(); i++) {
-                    if (!suite.toString().equals("")) {
-                        suite.append(", ");
-                    }
                     suite.append(myGame.getSuite().get(i).getName());
+                    if (i < myGame.getSuite().size() - 1) {
+                        suite.append(",<br>");
+                    }
                 }
+                suite.append("</html>");
                 fenetre.setSuite(suite.toString());
 
                 endL = myGame.getSuite().get(myGame.getSuite().size()-1).getEndurance();
@@ -410,7 +413,7 @@ class happen {
 
                 int de = fenetre.aLancerDe(2);
                 Integer diff = dommagesCombat(combL - combA + de);
-                fenetre.setStory(fenetre.getStory() + "\n" + str + diff + " point(s) de dégat " + str2 + adversaire.getName());
+                fenetre.setStory(toSave + "\n" + str + diff + " point(s) de dégat " + str2 + adversaire.getName());
                 adversaire.setEndurance(endA - diff);
                 tourJoueur = false;
             } else {
