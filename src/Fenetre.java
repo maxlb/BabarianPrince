@@ -57,8 +57,8 @@ public class Fenetre extends JFrame implements ActionListener {
      */
     private JScrollPane jScrollPane;
     private JTextArea Story = new JTextArea("BIENVENUE AU \"PRINCE BARBARE\" ! \n\n" +
-                "Des événements maléfiques ont dépassés votre royaume du Nord. Votre \n" +
-                "père, le vieux roi, est mort assassiné par ses rivaux au trône. \n" +
+                "Des événements maléfiques ont dépassés votre royaume du Nord.\n" +
+                " Votre père, le vieux roi, est mort assassiné par ses rivaux au trône. \n" +
                 "Ces usurpateurs tiennent maintenant le palais avec leur garde \n" +
                 "royale mercenaire. \n" +
                 "Vous vous êtes échappé et devez collecter 500 PIECES D'OR pour lever \n" +

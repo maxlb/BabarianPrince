@@ -115,7 +115,7 @@ class main {
 
         if(myGame.getGold() >= 500){
             //PARTIE GAGNÉE
-            maFenetre.setStory(maFenetre.getStory() + "\nBRAVO ! Vous avez pû récupérer les 500 pièces d'or nécéssaires !\n VOTRE ROYAUME EST SAUVÉ !!!.");
+            maFenetre.setStory(maFenetre.getStory() + "\nBRAVO ! Vous avez pû récupérer les 500 pièces d'or nécéssaires !\n VOTRE ROYAUME EST SAUVÉ !!");
         }
 
     }
