@@ -371,6 +371,7 @@ public class game {
                     } else {
                         this.setFood(this.getFood() + diff, fenetre);
                         this.setTotalLoad(this.getTotalLoad());
+                        diff=this.getSuiteLoad() - this.getTotalLoad();
                         fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé. Vous avez maintenant " + this.getFood() + " unité(s) de nourriture");
                     }
                 }
@@ -381,9 +382,11 @@ public class game {
                     else {
                         int newGoldLoad = goldLoad() + diff; //car diff est une valeur négative !
                         if (newGoldLoad <= 0)
-                            this.setGold(0, fenetre);
+                            {this.setGold(0, fenetre);
+                            diff=this.getSuiteLoad() - this.getTotalLoad();}
                         else {
                             this.setGold(100 * newGoldLoad, fenetre);
+                            diff=this.getSuiteLoad() - this.getTotalLoad();
                         }
                     fenetre.setStory(fenetre.getStory() + "\nVous voilà allégé de quelques pièces. Vous avez maintenant " + this.getGold() + " pièce(s) d'or)");
                     }
