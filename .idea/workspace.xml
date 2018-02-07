@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7008603d-072f-4c60-aefc-462b98f6870a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/Fenetre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/happen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Fenetre.java" afterPath="$PROJECT_DIR$/src/Fenetre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game.java" afterPath="$PROJECT_DIR$/src/game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/happen.java" afterPath="$PROJECT_DIR$/src/happen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" afterPath="$PROJECT_DIR$/out/production/BarbarianPrince/game.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Personnages/NewCharacter.java" afterPath="$PROJECT_DIR$/src/Personnages/NewCharacter.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,14 +50,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="361" column="0" lean-forward="true" selection-start-line="361" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
+            <state relative-caret-position="729">
+              <caret line="365" column="0" lean-forward="true" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
               <folding>
-                <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
+                <element signature="e#1701#1702#0" expanded="true" />
+                <element signature="e#1746#1747#0" expanded="true" />
+                <element signature="e#2076#2077#0" expanded="true" />
+                <element signature="e#2113#2114#0" expanded="true" />
+                <element signature="e#2520#2521#0" expanded="true" />
+                <element signature="e#2551#2552#0" expanded="true" />
+                <element signature="e#2605#2606#0" expanded="true" />
+                <element signature="e#2637#2638#0" expanded="true" />
+                <element signature="e#2850#2851#0" expanded="true" />
+                <element signature="e#2884#2885#0" expanded="true" />
+                <element signature="e#2930#2931#0" expanded="true" />
+                <element signature="e#2977#2978#0" expanded="true" />
+                <element signature="e#3057#3058#0" expanded="true" />
+                <element signature="e#3085#3086#0" expanded="true" />
+                <element signature="e#3599#3600#0" expanded="true" />
+                <element signature="e#3638#3639#0" expanded="true" />
+                <element signature="e#4202#4203#0" expanded="true" />
+                <element signature="e#4244#4245#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewCharacter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="46" column="55" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,6 +100,7 @@
         <option value="$PROJECT_DIR$/src/Fenetre.java" />
         <option value="$PROJECT_DIR$/src/happen.java" />
         <option value="$PROJECT_DIR$/src/game.java" />
+        <option value="$PROJECT_DIR$/src/Personnages/NewCharacter.java" />
       </list>
     </option>
   </component>
@@ -361,7 +387,6 @@
           <folding>
             <element signature="e#1437#1438#0" expanded="true" />
             <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -497,14 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Fenetre.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
@@ -624,11 +641,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="361" column="0" lean-forward="true" selection-start-line="361" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
+        <state relative-caret-position="729">
+          <caret line="365" column="0" lean-forward="true" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
           <folding>
-            <element signature="method#FoodPurchase#0;class#game#0" expanded="false" />
+            <element signature="e#1701#1702#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#2076#2077#0" expanded="true" />
+            <element signature="e#2113#2114#0" expanded="true" />
+            <element signature="e#2520#2521#0" expanded="true" />
+            <element signature="e#2551#2552#0" expanded="true" />
+            <element signature="e#2605#2606#0" expanded="true" />
+            <element signature="e#2637#2638#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+            <element signature="e#2884#2885#0" expanded="true" />
+            <element signature="e#2930#2931#0" expanded="true" />
+            <element signature="e#2977#2978#0" expanded="true" />
+            <element signature="e#3057#3058#0" expanded="true" />
+            <element signature="e#3085#3086#0" expanded="true" />
+            <element signature="e#3599#3600#0" expanded="true" />
+            <element signature="e#3638#3639#0" expanded="true" />
+            <element signature="e#4202#4203#0" expanded="true" />
+            <element signature="e#4244#4245#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Personnages/NewCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="46" column="55" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>

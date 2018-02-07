@@ -12,6 +12,7 @@ public class NewCharacter extends Character {
         this.setCombat(hiscombat);
         this.setInitcombat(hiscombat);
         this.setEndurance(hisendurance * characterNumber);
+        this.setInitEndurance(hisendurance * characterNumber);
         this.setWealth(hiswealth * characterNumber);
         this.setMount(hismount);
         this.setLoads(hisloads * characterNumber);
