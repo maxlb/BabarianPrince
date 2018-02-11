@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="fr.epsi.myEpsi">
+    <serverData>
+      <paths name="fr.epsi.myEpsi">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/../fr.epsi.myEpsi" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
