@@ -12,7 +12,6 @@ class main {
 
         Hex caseActuelle = new Hex("0000");
 
-        //Quelle case pour demarrer ?
         Boolean a = true;
         Boolean tour1Fini = false;
 

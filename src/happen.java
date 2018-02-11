@@ -64,7 +64,7 @@ class happen {
                 "ou une attaque.\n" +
                 "Qu'allez vous faire ??");
 
-        String reponse = maFenetre.aChoisi("Contourner", "Approcher amicalement", "Attaquer");
+        String reponse = maFenetre.aChoisi("Contourner", "Approcher", "Attaquer");
 
         switch (reponse) {
             case "Attaquer":
@@ -76,6 +76,7 @@ class happen {
                 break;
             case "Contourner":
                 //DETOUR : fin du tour
+                maFenetre.setStory(maFenetre.getStory() + "\nHabile ! Vous contournez la ferme");
                 break;
             case "Approcher amicalement":
                 //FRIENDLY APPROACH
@@ -90,7 +91,7 @@ class happen {
     }
 
     //MOINE QUI MEDITE e019
-    private void encounterMeditatingMonk(game myGame, Prince myPrince, Fenetre fenetre){
+    void encounterMeditatingMonk(game myGame, Prince myPrince, Fenetre fenetre){
         //You encounter a hermit monk meditating in the wilderness,
         // with combat skill 3, endurance 6, wealth 0. He seems to be ignoring you.
         // You can select one of the options below;
@@ -127,7 +128,7 @@ class happen {
         // The wizard seems old, but still active and perhaps quite powerful.
 
         fenetre.setStory(fenetre.getStory() +"\nVous rencontrez un vieux sorcier.\n" +
-                "Il possède une compétence de combat de 5, une endurance de 4, et 60 pièces d\n'or.\n" +
+                "Il possède une compétence de combat de 5, une endurance de 4,\n et 60 pièces d\'or.\n" +
                 "Il semble faible et âgé mais surement encore puissant…\n" +
                 "Vous pouvez négocier votre passage, discuter avec lui ou l'attaquer !");
         NewCharacter wizard =
@@ -153,7 +154,7 @@ class happen {
 
 
     //LAW ENFORCEMENTS OFFICERS e050
-    private void encounterEnforcementsOfficers(game myGame, Prince myPrince, Fenetre fenetre){
+    void encounterEnforcementsOfficers(game myGame, Prince myPrince, Fenetre fenetre){
         /*You encounter local law enforcements officers.
         First roll one die to see if they are mounted,
         a 5 or higher roll means they are. Next roll one die to see how many you encounter,
@@ -449,8 +450,11 @@ class happen {
         }
 
         if (endA <= 0) {
-            fenetre.setStory(fenetre.getStory() +"\nVOUS AVEZ GAGNÉ ! Quel guerrier ! \nVous avez même pu récupérer " + adversaire.getWealth() + " pièces d'or !\n");
+            fenetre.setStory(fenetre.getStory() +"\nVOUS AVEZ GAGNÉ ! Quel guerrier !\n");
+            if(adversaire.getWealth()>0){
+                fenetre.setStory(fenetre.getStory() +"Vous avez pu récupérer " + adversaire.getWealth() + " pièces d'or !\n");
             myGame.setGold( myGame.getGold() + adversaire.getWealth(), fenetre); //On récupère l'or du personnage tué
+            }
         }
     }
 
@@ -508,15 +512,17 @@ class happen {
         }
 
         else {
-            fenetre.setStory(fenetre.getStory() + "\nVoulez-vous graisser la pate de votre rencontre " +
+            fenetre.setStory(fenetre.getStory() + "\nVoulez-vous graisser la pate de votre rencontre\n" +
                     "pour passer votre chemin tranquille ?\n" +
-                    amount + " pièces d'or sont réclamées");
+                    amount + " pièces d'or sont réclamées\n");
 
             String reponse = fenetre.aRepondu();
 
             //oui
-            if (reponse.equals("Oui"))
+            if (reponse.equals("Oui")){
                 myGame.setGold(myGame.getGold() - amount, fenetre);
+                fenetre.setStory(fenetre.getStory() + adversaire.getName() + " saisit vos " + amount + " pièces d\'or\n et vous laisse passer.");
+            }
             else
                 //non
                 fight(myGame, myPrince, adversaire, fenetre);

@@ -56,16 +56,16 @@ public class Fenetre extends JFrame implements ActionListener {
      * Zone d'histoire
      */
     private JScrollPane jScrollPane;
-    private JTextArea Story = new JTextArea("BIENVENUE AU \"PRINCE BARBARE\" ! \n\n" +
-                "Des événements maléfiques ont dépassés votre royaume du Nord.\n" +
-                " Votre père, le vieux roi, est mort assassiné par ses rivaux au trône. \n" +
-                "Ces usurpateurs tiennent maintenant le palais avec leur garde \n" +
+    private JTextArea Story = new JTextArea("BIENVENUE DANS \"PRINCE BARBARE\" ! \n\n" +
+                "Des événements maléfiques troublent votre royaume du Nord.\n" +
+                "Votre père, le vieux roi a été assassiné par ses rivaux au trône.\n" +
+                "Les usurpateurs tiennent maintenant le palais avec leur garde\n" +
                 "royale mercenaire. \n" +
-                "Vous vous êtes échappé et devez collecter 500 PIECES D'OR pour lever \n" +
-                "une armée pour les écraser et reprendre votre héritage. De plus, \n" +
-                "les usurpateurs ont de puissants amis à l'étranger. \n" +
+                "Vous vous êtes échappé et devez collecter 200 PIECES D'OR pour lever\n" +
+                "une armée et les écraser pour reprendre votre héritage.\n" +
+                "Mais attention ! les usurpateurs ont de puissants amis à l'étranger.\n" +
                 "Si vous ne pouvez pas revenir pour les vaincre dans 70 JOURS, leurs \n" +
-                "alliés s'armeront et vous perdrez votre royaume pour toujours. \n" +
+                "alliés s'armeront et votre royaume sera perdu. \n" +
                 "Pour échapper à la garde mercenaire et royale, votre fidèle serviteur \n" +
                 "Ogab vous a fait passer clandestinement dans une caravane marchande \n" +
                 "jusqu'à la frontière sud. \n\n" +
